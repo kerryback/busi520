@@ -26,6 +26,7 @@ linearmodels==4.27
 lxml==4.9.1
 matplotlib==3.5.3
 matplotlib-inline==0.1.6
+mock==4.0.3
 mypy-extensions==0.4.3
 nest-asyncio==1.5.5
 numpy==1.23.2
@@ -41,6 +42,7 @@ plotly==5.10.0
 prompt-toolkit==3.0.30
 property-cached==1.6.4
 psutil==5.9.1
+psycopg2-binary==2.9.3
 pure-eval==0.2.2
 Pygments==2.13.0
 pyhdfe==0.1.0
@@ -67,3 +69,4 @@ traitlets==5.3.0
 urllib3==1.26.11
 wcwidth==0.2.5
 wrapt==1.14.1
+wrds==3.1.2
