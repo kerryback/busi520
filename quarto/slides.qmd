@@ -1,0 +1,180 @@
+---
+title:  This is My Paper Title
+author: Kerry Back
+affiliation: Rice University
+execute:
+  echo: false
+jupyter: python3
+format: 
+  revealjs:
+    slide-number: true
+    preview-links: true
+    self-contained: true
+    transition: fade
+    theme: solarized
+    incremental: true
+    navigation-mode: grid
+    controls-layout: bottom-right
+    controls-tutorial: true
+---
+
+## A bulleted list
+
+* Point 1
+* Point 2
+* Point 3 involves some math $y=\sqrt{x}$.
+* Point 4 involves more math
+
+. . .
+$$y = \frac{\log x}{\sqrt{x}}$$
+
+## A numbered list
+
+1. Point 1
+2. Point 2
+3. Point 3
+
+## A slide with text and math 
+
+Here is the first part.
+
+. . .
+
+Now here is an equation.
+
+. . .
+```{=tex}
+$$
+f(x) = \int_0^x t^{2}\, \mathrm{d} t
+$$
+```
+
+. . . 
+
+Now here is another equation.
+
+. . .
+
+```{=tex}
+$$
+g(x) = \int_0^x t^{3}\, \mathrm{d} t
+$$
+```
+
+## Playing around some {auto-animate=true}
+
+::: {style="margin-top: 100px;"}
+```{=tex}
+$$
+f(x) = \int_0^x t^{2}\, \mathrm{d} t
+$$
+$$
+g(x) = \int_0^x t^{3}\, \mathrm{d} t
+$$
+```
+:::
+
+## Playing around some {auto-animate=true}
+
+::: {style="margin-top: 200px; font-size: 3em; color: red;"}
+```{=tex}
+$$
+g(x) = \int_0^x t^{3}\, \mathrm{d} t
+$$
+```
+:::
+
+## Playing around some {auto-animate=true}
+
+::: {style="margin-top: 100px;"}
+```{=tex}
+$$
+f(x) = \int_0^x t^{2}\, \mathrm{d} t
+$$
+$$
+g(x) = \int_0^x t^{3}\, \mathrm{d} t
+$$
+$$
+h(x) = \int_0^x t^{4}\, \mathrm{d} t
+$$
+```
+:::
+
+## Generate figure
+
+```{python}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import matplotlib as mpl
+
+from io import BytesIO
+from zipfile import ZipFile
+from urllib.request import urlopen
+    
+url = urlopen("https://www.cengage.com/aise/economics/wooldridge_3e_datasets/statafiles.zip")
+
+with ZipFile(BytesIO(url.read())) as zipped:
+    file = zipped.open("WAGE1.DTA")
+stata = pd.read_stata(file, iterator=True)
+wages = stata.read()
+
+wages['area'] = 0
+for i, col in enumerate(['northcen', 'south', 'west']):
+    wages['area'] += (i+1) * wages[col]
+wages['area'] = wages.area.map({0: 'Northeast', 1: 'North Central', 2: 'South', 3: 'West'})
+
+occupations = wages.columns.to_list()[12:18] 
+wages['occup'] = 0
+for i, col in enumerate(occupations):
+    wages['occup'] += (i+1) * wages[col]
+dct = {0: 'other'}
+dct.update({(i+1): occupations[i] for i in range(6)})
+wages['occup'] = wages.occup.map(dct)
+
+occup_cats = ['profocc', 'servocc', 'clerocc']
+wages['occup_cat'] = 0
+for i, col in enumerate(occup_cats):
+    wages['occup_cat'] += (i+1) * wages[col]
+dct = {0: 'other'}
+dct.update({(i+1): occup_cats[i] for i in range(3)})
+wages['occup_cat'] = wages.occup_cat.map(dct)
+
+
+sns.set_style('whitegrid')
+mpl.rcParams['legend.fontsize'] = 'xx-large'
+mpl.rcParams['axes.titlesize'] = 'xx-large'
+mpl.rcParams['axes.labelsize'] = 'xx-large'
+mpl.rcParams['xtick.labelsize'] = 'x-large'
+mpl.rcParams['ytick.labelsize'] = 'x-large'
+
+fig, axes = plt.subplots(2, 2, sharey=True, figsize=(12, 6))
+(ax1, ax2), (ax3, ax4) = axes
+for area, ax in zip(wages.area.unique(), (ax1, ax2, ax3, ax4)):
+    for gender in [0, 1]:
+        sns.regplot(
+            data=wages[(wages.area==area) & (wages.female==gender)], 
+            x="educ", 
+            y="wage", 
+            label=("female" if gender==1 else "male") if ax==ax1 else "",
+            ci=None, 
+            ax=ax
+        )
+    ax.set_title(area)
+ax1.set_xlabel("")
+ax1.set_ylabel("Wage")
+ax2.set_xlabel("")
+ax2.set_ylabel("")
+ax3.set_xlabel("Education")
+ax3.set_ylabel("Wage")
+ax4.set_xlabel("Education")
+fig.legend(bbox_to_anchor=(0.55, -0.1), loc='lower center', ncol=2)
+fig.tight_layout()  
+fig.show()
+```
+
+## {background-iframe="https://bbcx-investments.com" background-interactive=true}
+
+
+
