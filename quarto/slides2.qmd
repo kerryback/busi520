@@ -1,0 +1,194 @@
+---
+title:  My Paper Title
+author: Kerry Back
+execute:
+  echo: false
+  cache: true
+jupyter: python3
+format: 
+  beamer:
+    theme: metropolis
+---
+
+## Overview
+
+* We're using quarto to create beamer slides.
+
+* Our quarto qmd file contains markdown, latex, and python code.  
+
+* We're using the beamer Metropolis theme.
+
+* reveal.js slides can also be created in a point and click manner (including latex equations and more) at slides.com.
+
+
+## A numbered list
+
+1. Point 1
+2. Point 2
+3. Point 3 involves some math $y=\sqrt{x}$.
+4. Point 4 involves more math.
+
+. . .
+$$y = \frac{\log x}{\sqrt{x}}$$
+
+## Another slide with text and math 
+
+Here is the first part.
+
+. . .
+
+Here is an equation.
+
+. . .
+$$
+f(x) = \int_0^x t^{2}\, \mathrm{d} t
+$$
+
+
+. . . 
+
+Here is another equation.
+
+. . .
+
+
+$$
+g(x) = \int_0^x t^{3}\, \mathrm{d} t
+$$
+
+
+## Generate a figure
+
+This is produced within the qmd file.
+
+```{python}
+
+#| fig-align: center
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import matplotlib as mpl
+
+from io import BytesIO
+from zipfile import ZipFile
+from urllib.request import urlopen
+    
+url = urlopen("https://www.cengage.com/aise/economics/wooldridge_3e_datasets/statafiles.zip")
+
+with ZipFile(BytesIO(url.read())) as zipped:
+    file = zipped.open("WAGE1.DTA")
+stata = pd.read_stata(file, iterator=True)
+wages = stata.read()
+
+wages['area'] = 0
+for i, col in enumerate(['northcen', 'south', 'west']):
+    wages['area'] += (i+1) * wages[col]
+wages['area'] = wages.area.map({0: 'Northeast', 1: 'North Central', 2: 'South', 3: 'West'})
+
+occupations = wages.columns.to_list()[12:18] 
+wages['occup'] = 0
+for i, col in enumerate(occupations):
+    wages['occup'] += (i+1) * wages[col]
+dct = {0: 'other'}
+dct.update({(i+1): occupations[i] for i in range(6)})
+wages['occup'] = wages.occup.map(dct)
+
+occup_cats = ['profocc', 'servocc', 'clerocc']
+wages['occup_cat'] = 0
+for i, col in enumerate(occup_cats):
+    wages['occup_cat'] += (i+1) * wages[col]
+dct = {0: 'other'}
+dct.update({(i+1): occup_cats[i] for i in range(3)})
+wages['occup_cat'] = wages.occup_cat.map(dct)
+
+
+sns.set_style('whitegrid')
+mpl.rcParams['legend.fontsize'] = 'xx-large'
+mpl.rcParams['axes.titlesize'] = 'xx-large'
+mpl.rcParams['axes.labelsize'] = 'xx-large'
+mpl.rcParams['xtick.labelsize'] = 'x-large'
+mpl.rcParams['ytick.labelsize'] = 'x-large'
+
+fig, axes = plt.subplots(2, 2, sharey=True, figsize=(12, 6))
+(ax1, ax2), (ax3, ax4) = axes
+for area, ax in zip(wages.area.unique(), (ax1, ax2, ax3, ax4)):
+    for gender in [0, 1]:
+        sns.regplot(
+            data=wages[(wages.area==area) & (wages.female==gender)], 
+            x="educ", 
+            y="wage", 
+            label=("female" if gender==1 else "male") if ax==ax1 else "",
+            ci=None, 
+            ax=ax
+        )
+    ax.set_title(area)
+ax1.set_xlabel("")
+ax1.set_ylabel("Wage")
+ax2.set_xlabel("")
+ax2.set_ylabel("")
+ax3.set_xlabel("Education")
+ax3.set_ylabel("Wage")
+ax4.set_xlabel("Education")
+fig.legend(bbox_to_anchor=(0.55, -0.1), loc='lower center', ncol=2)
+fig.tight_layout()  
+fig.show()
+```
+
+
+
+```{python}
+
+import pandas as pd
+from pystout import pystout
+import statsmodels.formula.api as smf
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
+
+wages = pd.read_csv("wages.csv")
+
+mod0 = smf.ols(
+    "wage ~ educ+exper+tenure",
+    data=wages
+    )
+mod1 = smf.ols(
+    "wage ~ educ+exper+tenure+female",
+    data=wages
+    )
+
+mod2 = smf.ols(
+    "wage ~ educ+exper+tenure+female+nonwhite",
+    data=wages
+    )
+
+mod3 = smf.ols(
+    "wage ~ educ+exper+tenure+female+nonwhite+married", 
+    data=wages
+    )
+
+_ = pystout(
+    models=[mod.fit(cov_type="HC3") for mod in [mod0, mod1, mod2, mod3]],
+    file="table1.tex",
+       exogvars=[
+        'educ', 
+        'exper', 
+        'tenure', 
+        'female', 
+        'nonwhite', 
+        'married',
+        ],
+    stars={0.1: "*", 0.05: "**", 0.01: "***"},
+    addnotes=[
+        "$^*p<0.1$, $^{**}p<0.05$, $^{***}p<0.01$",
+        ],
+    modstat={"nobs": "Obs", "rsquared_adj": "Adj $R^2$"},
+)
+```
+
+## Table 1: Wage
+
+\scriptsize
+\centering
+\include{table1.tex}

@@ -1,9 +1,9 @@
 ---
-title:  This is My Paper Title
+title:  My Paper Title
 author: Kerry Back
-affiliation: Rice University
 execute:
   echo: false
+  cache: true
 jupyter: python3
 format: 
   revealjs:
@@ -13,81 +13,87 @@ format:
     transition: fade
     theme: solarized
     incremental: true
-    navigation-mode: grid
-    controls-layout: bottom-right
-    controls-tutorial: true
 ---
 
-## A bulleted list
+## Overview
 
-* Point 1
-* Point 2
-* Point 3 involves some math $y=\sqrt{x}$.
-* Point 4 involves more math
+* We're using quarto as a front-end to reveal.js to create html slides.  
 
-. . .
-$$y = \frac{\log x}{\sqrt{x}}$$
+* Our quarto qmd file contains markdown, latex, and python code.  
+
+* We're using the solarized theme.
+
+* reveal.js slides can also be created in a point and click manner (including latex equations and more) at slides.com.
+
 
 ## A numbered list
 
 1. Point 1
 2. Point 2
-3. Point 3
+3. Point 3 involves some math $y=\sqrt{x}$.
+4. Point 4 involves more math.
 
-## A slide with text and math 
+. . .
+$$y = \frac{\log x}{\sqrt{x}}$$
+
+## Another slide with text and math 
 
 Here is the first part.
 
 . . .
 
-Now here is an equation.
+Here is an equation.
 
 . . .
-```{=tex}
 $$
 f(x) = \int_0^x t^{2}\, \mathrm{d} t
 $$
-```
+
 
 . . . 
 
-Now here is another equation.
+Here is another equation.
 
 . . .
 
-```{=tex}
+
 $$
 g(x) = \int_0^x t^{3}\, \mathrm{d} t
 $$
-```
 
 ## Playing around some {auto-animate=true}
 
 ::: {style="margin-top: 100px;"}
-```{=tex}
+
 $$
 f(x) = \int_0^x t^{2}\, \mathrm{d} t
 $$
+
+:::
+
+## Playing around some {auto-animate=true}
+
+::: {style="margin-top: 100px;"}
+$$
+f(x) = \int_0^x t^{2}\, \mathrm{d} t
+$$
+
 $$
 g(x) = \int_0^x t^{3}\, \mathrm{d} t
 $$
-```
 :::
 
 ## Playing around some {auto-animate=true}
 
 ::: {style="margin-top: 200px; font-size: 3em; color: red;"}
-```{=tex}
 $$
 g(x) = \int_0^x t^{3}\, \mathrm{d} t
 $$
-```
 :::
 
 ## Playing around some {auto-animate=true}
 
 ::: {style="margin-top: 100px;"}
-```{=tex}
 $$
 f(x) = \int_0^x t^{2}\, \mathrm{d} t
 $$
@@ -97,12 +103,16 @@ $$
 $$
 h(x) = \int_0^x t^{4}\, \mathrm{d} t
 $$
-```
 :::
 
-## Generate figure
+## Generate a figure
+
+This is produced within the qmd file.
 
 ```{python}
+
+#| fig-align: center
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -174,7 +184,57 @@ fig.tight_layout()
 fig.show()
 ```
 
-## {background-iframe="https://bbcx-investments.com" background-interactive=true}
 
 
+## View a website 
 
+Here is a [website](https://bbcx-investments.com).
+
+```{python}
+
+import pandas as pd
+from pystout import pystout
+import statsmodels.formula.api as smf
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
+
+wages = pd.read_csv("wages.csv")
+
+mod0 = smf.ols(
+    "wage ~ educ+exper+tenure",
+    data=wages
+    )
+mod1 = smf.ols(
+    "wage ~ educ+exper+tenure+female",
+    data=wages
+    )
+
+mod2 = smf.ols(
+    "wage ~ educ+exper+tenure+female+nonwhite",
+    data=wages
+    )
+
+mod3 = smf.ols(
+    "wage ~ educ+exper+tenure+female+nonwhite+married", 
+    data=wages
+    )
+
+_ = pystout(
+    models=[mod.fit(cov_type="HC3") for mod in [mod0, mod1, mod2, mod3]],
+    file="table1.tex",
+       exogvars=[
+        'educ', 
+        'exper', 
+        'tenure', 
+        'female', 
+        'nonwhite', 
+        'married',
+        ],
+    stars={0.1: "*", 0.05: "**", 0.01: "***"},
+    addnotes=[
+        "$^*p<0.1$, $^{**}p<0.05$, $^{***}p<0.01$",
+        ],
+    modstat={"nobs": "Obs", "rsquared_adj": "Adj $R^2$"},
+)
+```
