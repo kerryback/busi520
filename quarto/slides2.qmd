@@ -14,9 +14,15 @@ format:
 
 * We're using quarto to create beamer slides.
 
+. . .
+
 * Our quarto qmd file contains markdown, latex, and python code.  
 
+. . .
+
 * We're using the beamer Metropolis theme.
+
+. . .
 
 * reveal.js slides can also be created in a point and click manner (including latex equations and more) at slides.com.
 
@@ -24,11 +30,21 @@ format:
 ## A numbered list
 
 1. Point 1
+
+. . .
+
 2. Point 2
+
+. . .
+
 3. Point 3 involves some math $y=\sqrt{x}$.
+
+. . .
+
 4. Point 4 involves more math.
 
 . . .
+
 $$y = \frac{\log x}{\sqrt{x}}$$
 
 ## Another slide with text and math 
@@ -40,6 +56,7 @@ Here is the first part.
 Here is an equation.
 
 . . .
+
 $$
 f(x) = \int_0^x t^{2}\, \mathrm{d} t
 $$
@@ -188,6 +205,8 @@ _ = pystout(
 ```
 
 ## Table 1: Wage
+
+This is also produced within the qmd file.
 
 \scriptsize
 \centering

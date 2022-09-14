@@ -34,6 +34,7 @@ format:
 4. Point 4 involves more math.
 
 . . .
+
 $$y = \frac{\log x}{\sqrt{x}}$$
 
 ## Another slide with text and math 
@@ -45,6 +46,7 @@ Here is the first part.
 Here is an equation.
 
 . . .
+
 $$
 f(x) = \int_0^x t^{2}\, \mathrm{d} t
 $$
@@ -150,7 +152,7 @@ for i, col in enumerate(occup_cats):
 dct = {0: 'other'}
 dct.update({(i+1): occup_cats[i] for i in range(3)})
 wages['occup_cat'] = wages.occup_cat.map(dct)
-
+wages.to_csv("wages.csv", index=False)
 
 sns.set_style('whitegrid')
 mpl.rcParams['legend.fontsize'] = 'xx-large'
@@ -190,51 +192,3 @@ fig.show()
 
 Here is a [website](https://bbcx-investments.com).
 
-```{python}
-
-import pandas as pd
-from pystout import pystout
-import statsmodels.formula.api as smf
-import warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
-
-
-wages = pd.read_csv("wages.csv")
-
-mod0 = smf.ols(
-    "wage ~ educ+exper+tenure",
-    data=wages
-    )
-mod1 = smf.ols(
-    "wage ~ educ+exper+tenure+female",
-    data=wages
-    )
-
-mod2 = smf.ols(
-    "wage ~ educ+exper+tenure+female+nonwhite",
-    data=wages
-    )
-
-mod3 = smf.ols(
-    "wage ~ educ+exper+tenure+female+nonwhite+married", 
-    data=wages
-    )
-
-_ = pystout(
-    models=[mod.fit(cov_type="HC3") for mod in [mod0, mod1, mod2, mod3]],
-    file="table1.tex",
-       exogvars=[
-        'educ', 
-        'exper', 
-        'tenure', 
-        'female', 
-        'nonwhite', 
-        'married',
-        ],
-    stars={0.1: "*", 0.05: "**", 0.01: "***"},
-    addnotes=[
-        "$^*p<0.1$, $^{**}p<0.05$, $^{***}p<0.01$",
-        ],
-    modstat={"nobs": "Obs", "rsquared_adj": "Adj $R^2$"},
-)
-```
