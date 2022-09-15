@@ -46,9 +46,6 @@ format:
 * Prediction is sum of predictions
 * Hyperparameters = number of trees and depth of trees
 
-## Adaptive boosting (AdaBoost)
-
-To be continued ...
 
 # Neural networks
 
@@ -57,7 +54,7 @@ To be continued ...
 * A multi-layer perceptron (MLP) consists of "neurons" arranged in layers.
 * A neuron is a mathematical function.  It takes inputs $x_1, \ldots, x_n$, calculates a function $y=f(x_1, \ldots, x_n)$ and passes $y$ to the neurons in the next level.
 * The inputs in the first layer are the predictors.
-* The inputs in successive layers are the calculations from the prior level.  There can be a different number of inputs in different layers (depending on the number of neurons in the prior level).
+* The inputs in successive layers are the calculations from the prior level. 
 * The last layer is a single neuron that produces the output.
 
 ## Illustration
@@ -67,7 +64,7 @@ To be continued ...
 ![](neuralnet.png)
 
 * 4 independent variables (features)
-* 5 different functions of the 4 features are calculated in the "hidden layer."  
+* 5 functions of the 4 features are calculated in the "hidden layer."  
 
 :::
 
@@ -77,10 +74,9 @@ To be continued ...
 ## Rectified linear units
 
 * The usual function for the neurons (except in the last layer) is $$ y = \max(0,b+w_1x_1 + \cdots + w_nx_n)$$
-The function depends on the parameters $b$ (called bias) and $w_1, \ldots w_n$ (called weights).  
+Parameters $b$ (called bias) and $w_1, \ldots w_n$ (called weights) are different for different neurons. 
 * This function is called a rectified linear unit (RLU).  It's like an option payoff.
-* The bias and weight parameters are different for different neurons.
-* The last layer uses the simpler linear function $$ y = b+w_1x_1 + \cdots + w_nx_n$$
+* Last layer uses a linear function $$ y = b+w_1x_1 + \cdots + w_nx_n$$
 
 ## Analogy to neurons firing
 
