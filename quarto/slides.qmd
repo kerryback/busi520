@@ -6,11 +6,12 @@ execute:
   jupyter: python3
 format: 
   revealjs:
+    logo: RiceLogo.png
     slide-number: true
     preview-links: true
     self-contained: true
     transition: fade
-    theme: [solarized, custom.scss]
+    theme: [solarized, ricedark.scss]
     incremental: true
 ---
 
@@ -63,19 +64,20 @@ format:
 
 ![](neuralnet.png)
 
-* 4 independent variables (features)
-* 5 functions of the 4 features are calculated in the "hidden layer."  
+* input is $x \in \mathbb{R}^4$
+* functions $f_1, \ldots, f_5$ of $x$ are calculated (called "hidden layer")
+* output is $g(f_1(x), \ldots, f_5(x))$
 
 :::
 
 
-* The output is a function of the 5 numbers calculated in the hidden layer.
+
 
 ## Rectified linear units
 
 * The usual function for the neurons (except in the last layer) is $$ y = \max(0,b+w_1x_1 + \cdots + w_nx_n)$$
 Parameters $b$ (called bias) and $w_1, \ldots w_n$ (called weights) are different for different neurons. 
-* This function is called a rectified linear unit (RLU).  It's like an option payoff.
+* This function is called a rectified linear unit (RLU).  
 * Last layer uses a linear function $$ y = b+w_1x_1 + \cdots + w_nx_n$$
 
 ## Analogy to neurons firing
