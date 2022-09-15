@@ -1,9 +1,12 @@
 ---
+project:
+  output-dir: docs
 title:  My Paper Title
 author: Kerry Back
 execute:
   echo: false
   cache: true
+  output-dir: docs
 jupyter: python3
 format: 
   revealjs:
