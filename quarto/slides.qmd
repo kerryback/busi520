@@ -4,7 +4,6 @@ author: <br>Kerry Back<br><br>BUSI 520, Fall 2022<br>JGSB, Rice University
 execute:
   echo: false
   jupyter: python3
-  cache: true
 format: 
   revealjs:
     slide-number: true
