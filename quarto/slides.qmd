@@ -1,13 +1,10 @@
 ---
-project:
-  output-dir: docs
-title:  My Paper Title
-author: Kerry Back
+title:  Trees and Nets
+author: <br>Kerry Back<br><br>BUSI 520, Fall 2022<br>JGSB, Rice University
 execute:
   echo: false
+  jupyter: python3
   cache: true
-  output-dir: docs
-jupyter: python3
 format: 
   revealjs:
     slide-number: true
@@ -17,6 +14,23 @@ format:
     theme: solarized
     incremental: true
 ---
+
+## Neural networks
+
+* A multi-layer perceptron (MLP) consists of "neurons" arranged in layers.
+* A neuron is really a mathematical function.  It takes inputs (real numbers) $x_1, \ldots, x_n$, calculates a function $y=f(x_1, \ldots, x_n)$ and passes $y$ to the neurons in the next level.
+* The inputs in the first layer are the independent variables in a row of the data.
+* The inputs in successive layers are the calculations from the prior level.  There can be a different number of inputs in different layers (depending on the number of neurons in the prior level).
+* The last layer is a single neuron that produces the output.
+
+## Illustration
+
+
+![](neuralnet.png)
+
+4 inputs, 5 different functions of the input are calculated in the "hidden layer."  
+
+The output is a function of the 5 numbers calculated in the hidden layer.
 
 ## Overview
 
