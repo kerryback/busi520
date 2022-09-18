@@ -22,12 +22,30 @@ format:
 * Split sample sucessively into smaller subsamples by answering "yes-no" questions.
 * Each question is based on a single variable: is it above a threshold?
 * Split a specified number of times (depth).  Final subsamples are called leaves.
-* The prediction for each observation is the mean of the training observations that end up in the same leaf.
-* Variable to split on and threshold are chosen each time to minimize the SSE after the split.
+* For regression problems, the prediction for each observation is the mean of the training observations that end up in the same leaf.
+* For classification problems the prediction is the category that occurs most frequently in the leaf.
 
-## Illustration
+## Example of a tree
 
 ![](tree.png)
+
+## Decision tree splitting for regression
+
+* At each step, the algorithm chooses a variable and threshold to split on.
+* In a regression problem, the standard decision criterion is SSE.
+    * Error = actual - mean of subset
+    * Outliers tend to get separated into their own subsets (less so for SAE)
+* There are also other relatively standard criteria, for example in scikit-learn.
+
+## Decision tree splitting for classification
+
+* Let $k$ = number of classes.  Suppose a split results in $n$ observations in a subset. Let $x_i=$ fraction in class $i$.
+* Default criterion for scikit-learn is Gini = $1 - \sum_{i=1}^k x_i^2$
+* If we consider $\sum x_i^2$ subject to $\sum x_i=n$, the value is maximized at $x_i=1/n$ and minimized at boundaries: some $x_i=1$ and others equal 0.  
+* So, maximizing Gini means trying to create "pure" subsets (all of same type).
+* There are also other standard criteria, for example entropy and log loss.
+
+
 
 ## Random forest
 
@@ -38,15 +56,13 @@ format:
 * Prediction is average of predictions of the trees
 * Hyperparameters = number of trees and depth of trees
 
-## Gradient boosting
+## Boosting
 
-* Multiple trees
-* First tree fit to data
-* Second tree fit to errors from first tree
-* Third tree fit to errors from second tree, ...
-* Prediction is sum of predictions
-* Hyperparameters = number of trees and depth of trees
-
+* Boosting means combining models, for example trees.
+* Prediction is sum of individual predictions.
+* Gradient boosting fits second model to errors of first, third to errors of first two combined, ...
+* Adaptive boosting fits original target but overweights errors from prior model
+* Learning rate (weight to put on new model) is a hyperparameter
 
 # Neural networks
 
@@ -88,10 +104,9 @@ Parameters $b$ (called bias) and $w_1, \ldots w_n$ (called weights) are differen
 
 ## Deep learning
 
-* Deep learning means a neural network with  many layers.
-* Deep learning is behind facial recognition, self-driving cars, ...
-* Need specialized library, probably TensorFlow (from Google) or PyTorch (from Facebook)
-* And probably need a graphical processing unit (GPU) -- i.e., run on a video card
-* Can often start from a pretrained model
+* Deep learning means a neural network with  many layers.  It is behind facial recognition, self-driving cars, ...
+* Need specialized library, probably TensorFlow (from Google) or PyTorch (from Facebook), and probably need graphical processing units (GPUs) -- i.e., run on video cards
+* Hands-On Machine Learning with Scikit-Learn and TensorFlow
+* Deep Learning for Coders with fastai and PyTorch (also fastai website)
 
 
