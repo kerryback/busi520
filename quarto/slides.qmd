@@ -94,13 +94,23 @@ format:
 * The usual function for the neurons (except in the last layer) is $$ y = \max(0,b+w_1x_1 + \cdots + w_nx_n)$$
 Parameters $b$ (called bias) and $w_1, \ldots w_n$ (called weights) are different for different neurons. 
 * This function is called a rectified linear unit (RLU).  
-* Last layer uses a linear function $$ y = b+w_1x_1 + \cdots + w_nx_n$$
+* There are other choices.  This function in general is called the "activation function."
+
 
 ## Analogy to neurons firing
 
 <br>If $w_i>0$ and $b<0$, then $y>0$ only when $x_i$ are large enough. 
 
 <br>A neuron  fires when it is sufficiently stimulated by signals from other neurons (in prior layer).
+
+## Neural net output function
+
+For regression problems, the output function is linear
+$$ y = b+w_1x_1 + \cdots + w_nx_n$$.  
+
+. . .
+
+For classification, there is a linear function for each class and the output is the set of probabilities $e^{y_i}/\sum e^{y_j}$.
 
 ## Deep learning
 
