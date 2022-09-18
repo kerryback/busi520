@@ -1,0 +1,13 @@
+This is just a test.
+This is a second test.
+This is a third test.
+
+\begin{tabular}{rr}
+\toprule
+ a &  b \\
+\midrule
+ 1 &  4 \\
+ 2 &  5 \\
+ 3 &  6 \\
+\bottomrule
+\end{tabular}
