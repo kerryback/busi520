@@ -3,7 +3,13 @@ project:
   output-dir: docs
   render:
     - index.qmd
-      
+    - intro.qmd
+    - visualization.qmd
+    - regression.qmd
+    - ml.qmd
+    - scientific.qmd
+    - miscellaneous.qmd
+        
 website:
   title: ""
 
@@ -14,6 +20,24 @@ website:
 
       - text: "Home"
         file: index.qmd
+
+      - text: "Intro to Python"
+        file: intro.qmd
+
+      - text: "Visualization"
+        file: visualization.qmd
+
+      - text: "Regression"
+        file: regression.qmd
+
+      - text: "Machine Learning"
+        file: ml.qmd
+
+      - text: "Scientific Programming"
+        file: scientific.qmd
+      
+      - text: "Miscellaneous"
+        file: miscellaneous.qmd
 
      
 format: 
