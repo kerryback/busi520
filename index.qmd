@@ -1,0 +1,3 @@
+[Course Syllabus](2022_Python_for_Business_Research.pdf)
+
+[Course Binder](https://mybinder.org/v2/gh/kerryback/2022-520-binder.git/HEAD)
