@@ -15,8 +15,9 @@ website:
       - text: Code Binder
         href: https://mybinder.org/v2/gh/kerryback/2022-520-binder.git/HEAD
         
-    theme: cosmo
-    scss: styles.css
+theme: cosmo
+scss: styles.css
+    
    
 
 
