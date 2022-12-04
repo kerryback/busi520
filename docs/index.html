@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.32">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,36 +11,31 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -63,34 +58,20 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">BUSI 520</span>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">Home</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./intro.html">Intro to Python</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./visualization.html">Visualization</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./regression.html">Regression</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./ml.html">Machine Learning</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./scientific.html">Scientific Programming</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./miscellaneous.html">Miscellaneous</a>
+    <a class="nav-link" href="https://mybinder.org/v2/gh/kerryback/2022-520-binder.git/HEAD">Code Binder</a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -105,12 +86,33 @@ ul.task-list{list-style: none;}
 
 
 
-<section id="busi-520-python-for-business-research-rice-university-fall-2022" class="level2">
-<h2 class="anchored" data-anchor-id="busi-520-python-for-business-research-rice-university-fall-2022">BUSI 520<br>Python for Business Research<br>Rice University<br>Fall 2022</h2>
-<p><a href="2022_Python_for_Business_Research.pdf">Course Syllabus</a></p>
-<p><a href="https://mybinder.org/v2/gh/kerryback/2022-520-binder.git/HEAD">Course Code Binder</a></p>
+<section id="python-for-business-research-rice-university-fall-2022" class="level2">
+<h2 class="anchored" data-anchor-id="python-for-business-research-rice-university-fall-2022">Python for Business Research<br>Rice University<br>Fall 2022</h2>
+<section id="instructor" class="level4">
+<h4 class="anchored" data-anchor-id="instructor">Instructor</h4>
+<p><a href="http://kerryback.com">Kerry Back</a> <br> J. Howard Creekmore Professor of Finance and Professor of Economics<br> <a href="mailto:kerryback@gmail.com">kerryback@gmail.com</a></p>
+</section>
+<section id="course-description" class="level4">
+<h4 class="anchored" data-anchor-id="course-description">Course Description</h4>
+<p>This course provides an introduction to the python programming language and to the libraries that are most useful for business research. By the end of the course, students will be able to program in python, will be familiar with several different IDEs, and will have enough knowledge of relevant libraries to undertake various types of business research.</p>
+</section>
+<section id="course-deliverables" class="level4">
+<h4 class="anchored" data-anchor-id="course-deliverables">Course Deliverables</h4>
+<p>Each student will perform a replication in python of the key parts of a paper in his or her area of research. The replication should demonstrate command of several different components of research; for example, data handling, econometrics, and visualization. The replications are due by December 1.</p>
+</section>
+<section id="course-schedule-by-week" class="level4">
+<h4 class="anchored" data-anchor-id="course-schedule-by-week">Course Schedule by Week</h4>
+<ol type="1">
+<li>Python basics, numpy, pandas, WRDS <br></li>
+<li>Visualization - matplotlib, seaborn, and plotly<br></li>
+<li>Regression - fixed effects, clustered standard errors, robust standard errors, rolling window regressions, Fama-MacBeth <br></li>
+<li>Machine Learning I - robust regression, data transformations, dimensionality reduction, cross validation, pipelines <br></li>
+<li>Machine Learning II - random forests, boosted forests, neural networks <br></li>
+<li>Scientific programming - linear algebra, optimization, solvers, simulation, differential equations</li>
+</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -183,7 +185,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

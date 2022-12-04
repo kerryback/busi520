@@ -3,46 +3,19 @@ project:
   output-dir: docs
   render:
     - index.qmd
-    - intro.qmd
-    - visualization.qmd
-    - regression.qmd
-    - ml.qmd
-    - scientific.qmd
-    - miscellaneous.qmd
-        
+           
 website:
   title: ""
-
+  search: false  
   navbar:
-    background: "#00205B"
-    search: true
-    left:
+    search: false
+    title: BUSI 520
+    right:
 
-      - text: "Home"
-        file: index.qmd
-
-      - text: "Intro to Python"
-        file: intro.qmd
-
-      - text: "Visualization"
-        file: visualization.qmd
-
-      - text: "Regression"
-        file: regression.qmd
-
-      - text: "Machine Learning"
-        file: ml.qmd
-
-      - text: "Scientific Programming"
-        file: scientific.qmd
-      
-      - text: "Miscellaneous"
-        file: miscellaneous.qmd
-
-     
-format: 
-  html:
-    theme: cyborg
+      - text: Code Binder
+        href: https://mybinder.org/v2/gh/kerryback/2022-520-binder.git/HEAD
+        
+    theme: cosmo
     scss: styles.css
    
 
