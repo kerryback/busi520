@@ -33,7 +33,7 @@ There will be weekly assignments.  There will not be an exam.
 9. Machine learning for regression: scikit-learn, xgboost
 10. Neural networks: tensorflow, pytorch
 
-Possible topics for days 11 and 12 include beautiful soup and selenium for web scraping, NLTK for natural language processing, OpenAI gym for reinforcement learning, LSTM models for time-series forecasting, plotly for interactive graphics and animations, and dash for web apps.
+Possible topics for days 11 and 12 include beautiful soup and selenium for web scraping, NLTK for natural language processing, OpenAI gym for reinforcement learning, LSTM models for time-series forecasting, plotly for interactive graphics and animations, and dash for web apps.  It is also possible that we use days 11 and 12 to go more deeply into topics covered previously.
 
 
 
