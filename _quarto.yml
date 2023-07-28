@@ -12,11 +12,13 @@ website:
     title: BUSI 520
     right:
 
-      - text: Code Binder
-        href: https://mybinder.org/v2/gh/kerryback/2022-520-binder.git/HEAD
+      - text: Github Repo
+        href: https://github.com/kerryback/BUSI-520-notebooks
         
-theme: cosmo
-scss: styles.css
+format: 
+  html:
+    theme: cosmo
+    scss: styles.css
     
    
 

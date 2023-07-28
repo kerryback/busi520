@@ -1,4 +1,4 @@
-## Python for Business Research<br>Rice University<br>Fall 2022
+## Python for Business Research<br>Rice University<br>Fall 2023
 
 #### Instructor
 
@@ -10,22 +10,30 @@ J. Howard Creekmore Professor of Finance and Professor of Economics<br>
    
 #### Course Description   
 
-This course provides an introduction to the python programming language and to the
-libraries that are most useful for business research. By the end of the course, students will be able to program in python, will be familiar with several different IDEs, and will have enough knowledge of relevant libraries to undertake various types of business research.
+Python is a general purpose programming language that can be used for many purposes.  It has become especially important for machine learning and for data analysis more generally.  It can also be used as a substitute for MATLAB, Stata, SAS, and R.  This course provides an introduction to the python programming language and to the python
+libraries that are most useful for business research.  The topics to be covered in the course are listed below.  This is a hands-on course, and a part of each class session will be allocated to students working individually or in groups to apply and extend the class material.  
+
+ChatGPT makes it much easier to use python.  Throughout the course, we will generate python code by using ChatGPT-4 either at the OpenAI website (for this, I highly recommend a Plus subscription) or via an extension to VS Code.    
+
+#### Grading
+
+There will be weekly assignments.  There will not be an exam.
+
+#### Course Schedule
 
 
-#### Course Deliverables
+1. Preliminaries: libraries, IDEs, environments, git
+2. Basic python: strings, ints, floats, lists, tuples, sets, dictionaries, conditional statements, loops, functions, classes
+3. Vectors and matrices: numpy
+4. Visualization: matplotlib, seaborn
+5. Scientific programming: scipy, cvxopt
+6. Data handling: pandas
+7. Statistics: statsmodels, linearmodels
+8. Machine learning for classification: scikit-learn, xgboost
+9. Machine learning for regression: scikit-learn, xgboost
+10. Neural networks: tensorflow, pytorch
 
-Each student will perform a replication in python of the key parts of a paper in his or
-her area of research. The replication should demonstrate command of several different
-components of research; for example, data handling, econometrics, and visualization.
-The replications are due by December 1.
+Possible topics for days 11 and 12 include beautiful soup and selenium for web scraping, NLTK for natural language processing, OpenAI gym for reinforcement learning, LSTM models for time-series forecasting, plotly for interactive graphics and animations, and dash for web apps.
 
-#### Course Schedule by Week
 
-(1) Python basics, numpy, pandas, WRDS <br>
-(2) Visualization - matplotlib, seaborn, and plotly<br>
-(3) Regression - fixed effects, clustered standard errors, robust standard errors, rolling window regressions, Fama-MacBeth <br>
-(4) Machine Learning I - robust regression, data transformations, dimensionality reduction, cross validation, pipelines <br>
-(5) Machine Learning II - random forests, boosted forests, neural networks <br>
-(6) Scientific programming - linear algebra, optimization, solvers, simulation, differential equations
+
