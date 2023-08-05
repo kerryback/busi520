@@ -13,27 +13,32 @@ J. Howard Creekmore Professor of Finance and Professor of Economics<br>
 Python is a general purpose programming language that can be used for many purposes.  It has become especially important for machine learning and for data analysis more generally.  It can also be used as a substitute for MATLAB, Stata, SAS, and R.  This course provides an introduction to the python programming language and to the python
 libraries that are most useful for business research.  The topics to be covered in the course are listed below.  This is a hands-on course, and a part of each class session will be allocated to students working individually or in groups to apply and extend the class material.  
 
-ChatGPT makes it much easier to use python.  Throughout the course, we will generate python code by using ChatGPT-4 either at the OpenAI website (for this, I highly recommend a Plus subscription) or via an extension to VS Code.    
+ChatGPT makes it much easier to use python.  Throughout the course, we will generate python code by using ChatGPT-4 either at the OpenAI website (for this, I highly recommend a Plus subscription) or via an extension to VS Code.  
+
+It is fine if you have zero experience with python or any other programming language.  It is also fine if you are experienced with python and are taking the course only to learn about certain libraries you haven't used before.  In the former case, I will not expect you to become a proficient programmer in six weeks.  My goal in that case is to introduce you to the possibilities and show you how to get started.  Googling and ChatGPT can take care of the rest.
 
 #### Grading
 
-There will be weekly assignments.  There will not be an exam.
+There will be weekly assignments.  You are allowed to google and/or to use ChatGPT for assistance with the assignments.  There will not be an exam.
 
 #### Course Schedule
 
+This is a tentative schedule.  I think it is a feasible schedule even for students with zero prior programming experience.  However, it may be modified based on student interests and abilities.  
 
 1. Preliminaries: libraries, IDEs, environments, git
-2. Basic python: strings, ints, floats, lists, tuples, sets, dictionaries, conditional statements, loops, functions, classes
+2. Basic python: data types, conditional statements, loops, functions, classes
 3. Vectors and matrices: numpy
 4. Visualization: matplotlib, seaborn
 5. Scientific programming: scipy, cvxopt
-6. Data handling: pandas
+6. Data handling: pandas and SQL
 7. Statistics: statsmodels, linearmodels
 8. Machine learning for classification: scikit-learn, xgboost
-9. Machine learning for regression: scikit-learn, xgboost
-10. Neural networks: tensorflow, pytorch
+9. Machine learning for regression and data pipelines: scikit-learn, xgboost
+10. Neural networks: pytorch
+11. Reinforcement learning: pytorch, openai gym
+12. Web scraping: beautiful soup, selenium
 
-Possible topics for days 11 and 12 include beautiful soup and selenium for web scraping, NLTK for natural language processing, OpenAI gym for reinforcement learning, LSTM models for time-series forecasting, plotly for interactive graphics and animations, and dash for web apps.  It is also possible that we use days 11 and 12 to go more deeply into topics covered previously.
+
 
 
 
