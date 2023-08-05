@@ -14,7 +14,7 @@ Room 316, 2:15 -- 3:45, 8/21/2023 -- 10/2/2023
 
 #### Course Description   
 
-Python is a general purpose programming language that can be used for many purposes.  It has become especially important for machine learning and for data analysis more generally.  It can also be used as a substitute for MATLAB, Stata, SAS, and R.  This course provides an introduction to the python programming language and to the python
+Python is a general purpose programming language that has become especially important for machine learning and for data analysis more generally.  It can be used as a substitute for MATLAB, Stata, SAS, and R and also for web scraping, natural language processing, and much more.  This course provides an introduction to the language and to the 
 libraries that are most useful for business research.  The topics to be covered in the course are listed below.  This is a hands-on course, and a part of each class session will be allocated to students working individually or in groups to apply and extend the class material.  
 
 ChatGPT makes it much easier to use python.  Throughout the course, we will generate python code by using ChatGPT-4 either at the OpenAI website (for this, I highly recommend a Plus subscription) or via an extension to VS Code.  
