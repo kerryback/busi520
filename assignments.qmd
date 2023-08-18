@@ -1,10 +1,7 @@
 ## Assignments
 
-[1. Intro to Python](assignment1.qmd)
+[1. Intro to Python](assignment1.html)
 
-[2. Numpy](assignment2.qmd)
-
-[3. Visualization](assignment3.qmd)
 
 
 
