@@ -2,6 +2,8 @@
 
 [1. Intro to Python](assignment1.html)
 
+[2. Numpy and Pandas](assignment2.html)
+
 
 
 

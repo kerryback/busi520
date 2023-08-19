@@ -32,9 +32,9 @@ This is a tentative schedule.  I think it is a feasible schedule even for studen
 1. Preliminaries: libraries, IDEs, environments, git
 2. Basic python: data types, conditional statements, loops, functions, classes
 3. Vectors and matrices: numpy
-4. Visualization: matplotlib, seaborn
-5. Scientific programming: scipy, cvxopt
-6. Data handling: pandas and SQL
+4. Data handling: pandas and SQL
+5. Visualization: matplotlib, seaborn
+6. Scientific programming: scipy, cvxopt
 7. Statistics: statsmodels, linearmodels
 8. Machine learning for classification: scikit-learn, xgboost
 9. Machine learning for regression and data pipelines: scikit-learn, xgboost

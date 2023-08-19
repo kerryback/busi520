@@ -1,0 +1,76 @@
+
+NumPy Course Assignments
+========================
+
+1. Creating Arrays:
+   - Create a one-dimensional array of integers from 0 to 9.
+   - Create a two-dimensional array of zeros with shape (5, 5).
+   - Create a three-dimensional array of ones with shape (2, 3, 4).
+
+2. Array Manipulation:
+   - Reshape the above two-dimensional array to a one-dimensional array.
+   - Stack two arrays horizontally and vertically.
+   - Split a given array into multiple sub-arrays.
+
+3. Array Indexing:
+   - Extract the third and fifth elements from a one-dimensional array.
+   - Extract a 2x2 sub-matrix from a given two-dimensional array.
+   - Use boolean indexing to extract even numbers from an array.
+
+
+Assignment 2: Operations on NumPy Arrays
+----------------------------------------
+1. Arithmetic Operations:
+   - Perform element-wise addition, subtraction, multiplication, and division on two given arrays.
+  
+2. Aggregation Functions:
+   - Calculate the sum, mean, standard deviation, and variance of an array.
+   - Find the minimum and maximum values in an array.
+
+3. Broadcasting:
+   - Multiply a 2x3 matrix with a 1x3 matrix using broadcasting.
+
+
+Assignment 3: Advanced Array Manipulations
+------------------------------------------
+1. Advanced Reshaping:
+   - Flatten a multi-dimensional array.
+   - Expand the dimensions of a one-dimensional array.
+
+2. Array Transposition:
+   - Transpose a given matrix.
+   - Swap axes of a three-dimensional array.
+
+3. Array Stacking:
+   - Stack multiple arrays along different axes.
+
+
+Assignment 4: Linear Algebra with NumPy
+---------------------------------------
+1. Matrix Operations:
+   - Multiply two matrices.
+   - Compute the dot product of two vectors.
+   - Calculate the determinant of a matrix.
+
+2. Eigenvalues and Eigenvectors:
+   - Compute the eigenvalues and eigenvectors of a matrix.
+
+3. Solving Linear Equations:
+   - Solve a system of linear equations using NumPy.
+
+
+Assignment 5: Real-world Applications
+--------------------------------------
+1. Image Processing:
+   - Load an image and convert it to a NumPy array.
+   - Apply a filter or transformation to the image using matrix operations.
+  
+2. Data Analysis:
+   - Load a dataset into a NumPy array.
+   - Compute descriptive statistics (mean, median, variance, etc.) for the dataset.
+   - Identify and handle missing data.
+
+3. Simulation:
+   - Simulate random walks using NumPy's random module.
+   - Calculate probabilities or other statistical measures based on the simulation results.
+
