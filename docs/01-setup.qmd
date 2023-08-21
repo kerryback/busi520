@@ -1,0 +1,25 @@
+---
+title:  "Python, VS Code, and Git"
+author: <br><br><br><br><span style="font-family:perpetua; font-variant:small-caps; color:#606060;">Kerry Back</span><br><br><img src="RiceBusiness-transparent-logo-sm.png"  height=80>
+output-dir: docs
+execute:
+  echo: false
+  jupyter: python3
+format: 
+  revealjs:
+    highlight-style: monokai
+    code-fold: true
+    scrollable: true
+    slide-number: true
+    preview-links: true
+    self-contained: true
+    controls: true
+    transition: fade
+    theme: [solarized, 2023.scss]
+    incremental: true
+---
+
+## Installing python
+
+- Install from python.org or anaconda.com.  I recommend python.org but either will work.
+- 
