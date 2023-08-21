@@ -5,7 +5,7 @@ project:
     - index.qmd
     - assignments.qmd
     - assignment1.qmd
-    - assignment2.qmc
+    - assignment2.qmd
            
 website:
   title: ""

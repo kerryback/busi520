@@ -1,0 +1,47 @@
+## Assignment 3<br>BUSI 520: Python for Business Research<br>Jones Graduate School of Business<br>Rice University<br>
+
+
+Assignment 3: Data Visualization and Exploration
+-------------------------------------------------
+1. Basic Visualization:
+   - Plot a line chart for a time series dataset.
+   - Create a bar chart for categorical data.
+   - Display a histogram for a numerical column.
+
+2. Aggregation and Grouping:
+   - Group data by a categorical column and calculate aggregates like sum, mean, etc.
+   - Use the `pivot_table` function to rearrange data.
+
+3. Correlation Analysis:
+   - Calculate the correlation matrix for a DataFrame.
+   - Visualize the correlations using a heatmap.
+
+
+Assignment 4: Advanced pandas Features
+--------------------------------------
+1. Text Data:
+   - Extract specific substrings from a text column.
+   - Convert a text column to lowercase.
+   - Split a text column into multiple columns.
+
+2. Time Series:
+   - Convert a column to a datetime format.
+   - Extract components like day, month, year from a datetime column.
+   - Resample time series data.
+
+3. Merging and Joining:
+   - Merge two DataFrames using inner, outer, left, and right joins.
+   - Concatenate multiple DataFrames.
+
+
+Assignment 5: Real-world Applications
+-------------------------------------
+1. Data Analysis:
+   - Load a real-world dataset into a DataFrame.
+   - Conduct exploratory data analysis (EDA) to understand the dataset's structure, patterns, and anomalies.
+   - Generate insightful visualizations.
+
+2. Data Transformation for Modeling:
+  
+
+

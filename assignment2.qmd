@@ -41,82 +41,27 @@
    a. Simulate 100 steps of a random walk with standard normal innovations.
    b. Generate 1,000 simulations of the random walk from part (a).  Compute the mean, median, and standard deviation of the terminal value across the 1,000 simulations.  
 
-### Pandas
-
 8. Basics of pandas Series and DataFrames
-   a.  Create a Series from a list of integers.
-   b.  Extract values at specific indices from the Series.
-   - Change the index of the Series to alphabetical letters.
+   a. Create a series from a list of integers.
+   b. Extract values at specific indices from the Series.
+   c. Change the index of the series to alphabetical letters.
+   d. Create a dataFrame from a dictionary of lists.
+   e. Extract specific columns from the dataFrame.
+   f. Add a new column to the dataFrame.
+   g. Create a dataframe filled with random numbers.
 
-2. DataFrame Basics:
-   - Create a DataFrame from a dictionary of lists.
-   - Extract specific columns from the DataFrame.
-   - Add a new column to the DataFrame.
+9. Basic DataFrame Operations:
+   a. Calculate the summary statistics for a DataFrame column.
+   b. Sort the dataFrame based on a specific column.
+   c. Filter rows based on certain criteria.
+   d. Replace specific values in a DataFrame.
+   e. Rename columns.
+   f. Map values in a column to other values using a dictionary.
 
-3. Basic Operations:
-   - Calculate the summary statistics for a DataFrame column.
-   - Sort the DataFrame based on a specific column.
-   - Filter rows based on certain criteria.
-
-
-Assignment 2: Data Cleaning with pandas
----------------------------------------
-1. Handling Missing Data:
-   - Detect missing values in a DataFrame.
-   - Fill missing values using different methods (mean, median, forward fill, etc.).
-   - Drop rows or columns with missing data.
-
-2. Data Transformation:
-   - Replace specific values in a DataFrame.
-   - Rename columns.
-   - Map values in a column to other values using a dictionary.
-
-3. Duplicate Data:
-   - Detect duplicate rows.
-   - Drop duplicate rows.
-
-
-Assignment 3: Data Visualization and Exploration
--------------------------------------------------
-1. Basic Visualization:
-   - Plot a line chart for a time series dataset.
-   - Create a bar chart for categorical data.
-   - Display a histogram for a numerical column.
-
-2. Aggregation and Grouping:
-   - Group data by a categorical column and calculate aggregates like sum, mean, etc.
-   - Use the `pivot_table` function to rearrange data.
-
-3. Correlation Analysis:
-   - Calculate the correlation matrix for a DataFrame.
-   - Visualize the correlations using a heatmap.
-
-
-Assignment 4: Advanced pandas Features
---------------------------------------
-1. Text Data:
-   - Extract specific substrings from a text column.
-   - Convert a text column to lowercase.
-   - Split a text column into multiple columns.
-
-2. Time Series:
-   - Convert a column to a datetime format.
-   - Extract components like day, month, year from a datetime column.
-   - Resample time series data.
-
-3. Merging and Joining:
-   - Merge two DataFrames using inner, outer, left, and right joins.
-   - Concatenate multiple DataFrames.
-
-
-Assignment 5: Real-world Applications
--------------------------------------
-1. Data Analysis:
-   - Load a real-world dataset into a DataFrame.
-   - Conduct exploratory data analysis (EDA) to understand the dataset's structure, patterns, and anomalies.
-   - Generate insightful visualizations.
-
-2. Data Transformation for Modeling:
-  
-
-
+10. Missing values and duplicate rows:
+   a. Find all missing values in a DataFrame.
+   b Fill missing values with zeros.
+   c. Fill missing values in a column with the column's mean value.
+   d. Drop rows with missing data.
+   e. Find duplicate rows.
+   f. Drop all but the last row in each set of duplicate rows.
