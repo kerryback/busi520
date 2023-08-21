@@ -96,7 +96,7 @@ to change the display theme.  Play around and see what you like.
 
 ## LaTex
 
-In the .tex file, you can type the following and render.  It compiles to a pdf if you have xelatex or tinytex installed.  I recommend uninstalling miktex and installing tinytex.  But that is outside the scope of our course.
+In the .tex file, you can type the following and render.  It compiles to a pdf if you have TeX Live or tinytex installed.  I recommend uninstalling miktex and installing tinytex.  But that is outside the scope of our course.
 
 ```{.verbatim}
   \documentclass{article}
@@ -133,6 +133,11 @@ In the .tex file, you can type the following and render.  It compiles to a pdf i
 - Cells can be executed by point-and-click or by CTRL-SHFT.  
 - Create a markdown cell like the .md file and execute.
 - Create a code cell like the .py file and execute.
+
+## ChatGPT
+
+- Click the ChatGPT (Bito) icon in the left toolbar.
+- Submit the message 'write python code to list all of the files in a directory'
 
 ## GIT
 
