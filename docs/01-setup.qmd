@@ -16,10 +16,49 @@ format:
     controls: true
     transition: fade
     theme: [solarized, 2023.scss]
-    incremental: true
+    incremental: false
 ---
 
 ## Installing python
 
-- Install from python.org or anaconda.com.  I recommend python.org but either will work.
-- 
+- Install from python.org or anaconda.com.  I use python.org but either will work.
+- Differences:
+    - anaconda installs IDEs: JupyterLab, Spyder, PyCharm
+    - anaconda installs scientific packages: numpy, pandas, statsmodels, scipy, jupyter, ...
+    - package manager: conda vs. pip
+    - We can do the installations easily ourselves, so conda vs. pip is the main difference.
+- Either way, add python to your path.
+
+## Installing VS Code
+
+- VS Code is an IDE (integrated development environment)
+- VS Code is short for Visual Studio Code.  
+  - Visual Studio is for .NET and C++ developers.  We don't need it.  
+  - VS Code is a stand-alone and much smaller product.
+- There are alternatives, but I like VS Code.
+
+## VS Code Extensions
+
+After installing VS Code, google in a browser to find the VS Code Marketplace (or click the Extensions icon on the left panel in VS Code) and install these extensions:
+
+- Python
+- ChatGpt4 (by bito)
+- Latex Workshop (if you want)
+
+## Command Palette in VS Code
+
+- CTRL-SHFT-P opens the command palette.
+- Find "Select Python Interpreter" and make sure that your installation of python has been detected.
+
+## Open Folder
+
+- File/Open Folder and browse to find a folder in which you want to work.
+- Click Pages icon on left if necessary to see a File Explorer.
+
+## Terminal
+
+- Terminal/New Terminal to get a terminal (command prompt).
+
+## File/New File
+
+- Open a 
