@@ -1,5 +1,3 @@
-import sys
-name = sys.argv[1]
-print("Hello", name)
-with open("hello.txt", "w") as f:
-    f.write("Hello " + name)
+import os
+dir_list = os.listdir()
+print(dir_list)

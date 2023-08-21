@@ -3,6 +3,7 @@ project:
   output-dir: docs
   render:
     - index.qmd
+    - slides.qmd
     - assignments.qmd
     - assignment1.qmd
     - assignment2.qmd
@@ -15,11 +16,13 @@ website:
     title: BUSI 520
     file: index.qmd
     right:
-
-      - text: Github Repo (under development)
-        href: https://github.com/kerryback/BUSI-520-notebooks
+      
+      - text: Slides
+        file: slides.qmd
       - text: Assignments
         file: assignments.qmd
+      - text: Github Repo (under development)
+        href: https://github.com/kerryback/BUSI-520-notebooks
       
         
 format: 
