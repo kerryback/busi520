@@ -1,0 +1,181 @@
+---
+title:  "Python, VS Code, Git, and ChatGPT"
+author: <br><br><br><br><span style="font-family:perpetua; font-variant:small-caps; color:#606060;">Kerry Back</span><br><br><img src="RiceBusiness-transparent-logo-sm.png"  height=80>
+output-dir: docs
+execute:
+  echo: false
+  jupyter: python3
+format: 
+  revealjs:
+    highlight-style: monokai
+    code-fold: true
+    code-line-numbers: false
+    scrollable: true
+    slide-number: true
+    preview-links: true
+    self-contained: true
+    controls: true
+    transition: fade
+    theme: [solarized, 2023.scss]
+    incremental: false
+---
+
+## Installing python
+
+- Install from python.org or anaconda.com.  I use python.org but either will work.
+- <span style="color:tomato;">Important: add python to your path.  </span>
+- If installing from python.org, the first installation screen (for choosing Install or Custom Install) has in small text at the bottom a check box for adding to path.  CHECK THE BOX!
+
+## Installing VS Code
+
+- VS Code is an IDE (integrated development environment)
+- VS Code is short for Visual Studio Code.  
+  - Visual Studio is for .NET and C++ developers.  We don't need it.  
+  - Visual Studio Code is a stand-alone and much smaller product.
+- There are alternatives, but I like VS Code.
+
+## VS Code Extensions
+
+After installing VS Code, google in a browser to find the VS Code Marketplace (or click the Extensions icon on the left panel in VS Code) and install these extensions:
+
+- Python
+- ChatGpt4 (by bito)
+- Latex Workshop (if desired - I recommend)
+
+## Display Theme
+
+File/Preferences/Theme/Color Theme
+
+to change the display theme.  Play around and see what you like.
+
+## Command Palette 
+
+- CTRL-SHFT-P opens the command palette.
+- Find "Select Python Interpreter" and make sure that your installation of python has been detected.
+
+## File/Open Folder
+
+- File/Open Folder and browse to find a folder in which you want to work.
+- Click File Explorer icon on left if necessary.
+
+## Terminal/New Terminal
+
+- Terminal/New Terminal to get a terminal (command prompt).
+- Command Palette and "Terminal: Select Default Profile" if you want a different type of terminal window (e.g., PowerShell instead of Command Prompt).
+- As a test, execute one of the following (you only need one to work).
+
+```{.verbatim}
+  pip install wrds
+  python -m pip install wrds
+  python3 -m pip install wrds
+```
+
+
+## File/New File
+
+
+- Open a text file.  Save as test.txt
+- Open another text file.  Save as test.md
+- Open another text file.  Save as test.tex
+- Open a python file.  Save as test.py
+- Open a Jupyter notebook.  Save as test.ipynb
+
+## Text and Markdown Files
+
+- In the .txt file, type some text and save.
+- In the .md file, type the following
+
+```{.verbatim}
+  # A Header
+  Some text
+  $$\int_0^2 x^2 \,dx$$
+```
+
+- Then try Render HTML (or PDF or DOCX).  Some versions of VS Code render automatically.  Click the split screen icon at top right to see the rendered document.
+
+## LaTex
+
+In the .tex file, you can type the following and render.  It compiles to a pdf if you have TeX Live or tinytex installed.  I recommend uninstalling miktex and installing tinytex.  But that is outside the scope of our course.
+
+```{.verbatim}
+  \documentclass{article}
+  \begin{document}
+  Some text
+  \begin{equation}
+    \int_0^2 x^2 \,dx
+  \end{equation}
+  \end{document}
+```
+
+## Python Scripts
+
+- In the .py file, type
+
+```{.verbatim}
+  import os
+  dir_list = os.listdir()
+  print(dir_list)
+```
+
+- Save the .py file (File/Save or CTRL-S).
+- In the terminal, execute
+
+```{.verbatim}
+  python test.py
+```
+
+## Jupyter Notebooks
+
+- Jupyter notebooks consist of cells.  They can be executed in any order.  
+- Cells are markdown, code, or raw.
+- Cells can be added from the toolbar or by popups below cells.  They can be changed from one type to another from the cell menu.  
+- Cells can be executed by point-and-click or by CTRL-SHFT.  
+- Create a markdown cell like the .md file and execute.
+
+## Jupyter Code Cells
+
+- Create a code cell like the .py file and execute.
+- If you get an error message about nbformat, you probably need to install jupyter.  Use 'pip install' or one of the other versions.
+
+## ChatGPT
+
+- Click the ChatGPT (Bito) icon in the left toolbar.
+- Submit the message 'write python code to list all of the files in a directory'
+- Also, I recommend getting a Plus subscription at openai.com.  
+  -  At chat.openai.com, start a conversation with ChatGPT-4.   -  Activate the Code Interpreter icon.
+  -  Submit a message like "use code interpreter to sum the integers from 1 through 25."  Click "Show Work" 
+
+## GIT
+
+- Install the git CLI (command line interface) from [https://git-scm.com/book/en/v2/Getting-Started-Installing-Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- Basic commands:
+
+```{.verbatim}
+  git clone <repo url>
+  git pull origin main
+  git add . 
+  git commit -m "<some message>"
+  git push origin main
+```
+
+## Cloning Repos
+
+- In a browser, visit [https://github.com/QuantEcon](https://github.com/QuantEcon)
+- Click on a rep name, then Code, then the copy icon
+- In your terminal window, use git to clone the repo (use CTRL-V to past the copied url).
+- As another test, visit [https://github.com/kerryback](https://github.com/kerryback).  Find the BUSI-520-Notebooks repo and clone it.
+- And another: visit [https://github.com/wesm/pydata-book](https://github.com/wesm/pydata-book) and clone the code for the book Python for Data Analysis.
+
+## Google Colab
+
+- In a browser, visit [https://colab.research.google.com/](https://colab.research.google.com/).
+- To use colab, you need to sign in from a google account.  Colab is not necessary for this course, so this is optional.
+- Once signed in, you should automatically be prompted to open a notebook.  If not, use File/Open Notebook.
+- Select github and enter wesm/pydata-book.  You can open any of the notebooks from the repo in colab and execute them there. You can also create and save your own notebooks to your google drive.
+
+## Noteable
+
+- This is not required, but I recommend it.  Go to noteable.io.  Open a free account.
+- The account gives you a free JupyterLab environment.  You can create and save notebooks.
+- Go to ChatGPT-4 at chat.openai.com.  Find the plugin store.  Select and activate the noteable plugin.
+- Enter a prompt like "use noteable to sum the integers from 1 through 25."  You'll have a new notebook at your noteable account that contains the code and the result.
