@@ -1,5 +1,5 @@
 ---
-title:  "Python, VS Code, and Git"
+title:  "Python, VS Code, Git, and ChatGPT"
 author: <br><br><br><br><span style="font-family:perpetua; font-variant:small-caps; color:#606060;">Kerry Back</span><br><br><img src="RiceBusiness-transparent-logo-sm.png"  height=80>
 output-dir: docs
 execute:
@@ -56,7 +56,7 @@ to change the display theme.  Play around and see what you like.
 ## File/Open Folder
 
 - File/Open Folder and browse to find a folder in which you want to work.
-- Click Pages icon on left if necessary to see a File Explorer.
+- Click File Explorer icon on left if necessary.
 
 ## Terminal/New Terminal
 
@@ -102,7 +102,7 @@ In the .tex file, you can type the following and render.  It compiles to a pdf i
   \begin{document}
   Some text
   \begin{equation}
-    \pi = \Sigma^{-1}\iota
+    \int_0^2 x^2 \,dx
   \end{equation}
   \end{document}
 ```
