@@ -23,11 +23,8 @@ format:
 ## Installing python
 
 - Install from python.org or anaconda.com.  I use python.org but either will work.
-- Differences:
-    - anaconda installs IDEs: JupyterLab, Spyder, PyCharm
-    - anaconda installs scientific packages: numpy, pandas, statsmodels, scipy, jupyter, ...
-    - package manager: conda vs. pip
-- Either way, add python to your path.
+- <span style="color:tomato;">Important: add python to your path.  </span>
+- If installing from python.org, the first installation screen (for choosing Install or Custom Install) has in small text at the bottom a check box for adding to path.  CHECK THE BOX!
 
 ## Installing VS Code
 
@@ -64,11 +61,13 @@ to change the display theme.  Play around and see what you like.
 ## Terminal/New Terminal
 
 - Terminal/New Terminal to get a terminal (command prompt).
-- Command palette and "Terminal: Select Default Profile" if you want a different type of terminal window (e.g., PowerShell instead of Command Prompt).
-- As a test, execute
+- Command Palette and "Terminal: Select Default Profile" if you want a different type of terminal window (e.g., PowerShell instead of Command Prompt).
+- As a test, execute one of the following (you only need one to work).
 
 ```{.verbatim}
   pip install wrds
+  python -m pip install wrds
+  python3 -m pip install wrds
 ```
 
 
@@ -89,10 +88,10 @@ to change the display theme.  Play around and see what you like.
 ```{.verbatim}
   # A Header
   Some text
-  $$\pi = \Sigma^{-1}\iota$$
+  $$\int_0^2 x^2 \,dx$$
 ```
 
-- Then try Render PDF, Render HTML, Render DOCX
+- Then try Render HTML (or PDF or DOCX).  Some versions of VS Code render automatically.  Click the split screen icon at top right to see the rendered document.
 
 ## LaTex
 
@@ -132,12 +131,19 @@ In the .tex file, you can type the following and render.  It compiles to a pdf i
 - Cells can be added from the toolbar or by popups below cells.  They can be changed from one type to another from the cell menu.  
 - Cells can be executed by point-and-click or by CTRL-SHFT.  
 - Create a markdown cell like the .md file and execute.
+
+## Jupyter Code Cells
+
 - Create a code cell like the .py file and execute.
+- If you get an error message about nbformat, you probably need to install jupyter.  Use 'pip install' or one of the other versions.
 
 ## ChatGPT
 
 - Click the ChatGPT (Bito) icon in the left toolbar.
 - Submit the message 'write python code to list all of the files in a directory'
+- Also, I recommend getting a Plus subscription at openai.com.  
+  -  At chat.openai.com, start a conversation with ChatGPT-4.   -  Activate the Code Interpreter icon.
+  -  Submit a message like "use code interpreter to sum the integers from 1 through 25."  Click "Show Work" 
 
 ## GIT
 
@@ -165,5 +171,11 @@ In the .tex file, you can type the following and render.  It compiles to a pdf i
 - In a browser, visit [https://colab.research.google.com/](https://colab.research.google.com/).
 - To use colab, you need to sign in from a google account.  Colab is not necessary for this course, so this is optional.
 - Once signed in, you should automatically be prompted to open a notebook.  If not, use File/Open Notebook.
-- Select github and enter wesm/pydata-book.  You can open any of the notebooks from the repo in colab and execute them there.
-- You can also create and save your own notebooks to your google drive.
+- Select github and enter wesm/pydata-book.  You can open any of the notebooks from the repo in colab and execute them there. You can also create and save your own notebooks to your google drive.
+
+## Noteable
+
+- This is not required, but I recommend it.  Go to noteable.io.  Open a free account.
+- The account gives you a free JupyterLab environment.  You can create and save notebooks.
+- Go to ChatGPT-4 at chat.openai.com.  Find the plugin store.  Select and activate the noteable plugin.
+- Enter a prompt like "use noteable to sum the integers from 1 through 25."  You'll have a new notebook at your noteable account that contains the code and the result.
