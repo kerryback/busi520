@@ -1,4 +1,6 @@
 ## Slide Decks<br>BUSI 520: Python for Business Research<br><br>![](RiceBusiness-transparent-logo-sm.png){height="50"}<br>
 
 
-[1. Python, VS Code, and Git Setup](01-setup.html){target="_blank"}
+[1. Python, VS Code, and Git Setup](00-setup.html){target="_blank"}
+
+[2. Introduction to the Python Language](01-Introduction_to_Python.html){target="_blank"}
