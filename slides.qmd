@@ -3,4 +3,4 @@
 
 [1. Python, VS Code, and Git Setup](00-setup.html){target="_blank"}
 
-[2. Introduction to the Python Language](01-Introduction_to_Python.html){target="_blank"}
+[2. Introduction to the Python Language](01-Introduction_to_Python.slides.html){target="_blank"}
