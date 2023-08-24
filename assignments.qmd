@@ -1,8 +1,8 @@
 ## Assignments<br>BUSI 520: Python for Business Research<br><br>![](RiceBusiness-transparent-logo-sm.png){height="50"}<br>
 
-[1. Intro to Python](assignment1.html)
+[1. Intro to Python](assignment1.html){target="_blank"}
 
-[2. Numpy and Pandas](assignment2.html)
+[2. Numpy and Pandas](assignment2.html){target="_blank"}
 
 
 
