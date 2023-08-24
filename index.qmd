@@ -14,6 +14,8 @@ Room 316, 10:15 -- 11:45, 8/21/2023 -- 10/2/2023
 
 #### Course Description   
 
+This course is intended for PhD students in business and economics.  However, it may be appropriate for students in other programs also.
+
 Python is a general purpose programming language that has become especially important for machine learning and for data analysis more generally.  It can be used as a substitute for MATLAB, Stata, SAS, and R and also for web scraping, natural language processing, and much more.  This course provides an introduction to the language and to the 
 libraries that are most useful for business research.  The topics to be covered in the course are listed below.  This is a hands-on course, and a part of each class session will be allocated to students working individually or in groups to apply and extend the class material.  
 
