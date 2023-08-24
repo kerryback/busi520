@@ -39,4 +39,3 @@
     }
 ```
 
-7. Write a script that, when executed in a directory, deletes all files in the directory whose extensions are not in ['.tex', '.pdf'].
