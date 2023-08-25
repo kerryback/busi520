@@ -4,7 +4,6 @@ project:
   render:
     - index.qmd
     - slides.qmd
-    - solutions.qmd
     - assignments.qmd
     - assignment1.qmd
     - assignment2.qmd
@@ -23,7 +22,7 @@ website:
       - text: Assignments
         file: assignments.qmd
       - text: Solutions
-        file: solutions.qmd
+        href: https://github.com/kerryback/BUSI-520-notebooks/solutions
       - text: Notebooks
         href: https://github.com/kerryback/BUSI-520-notebooks
       
