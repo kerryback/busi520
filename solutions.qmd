@@ -1,4 +1,9 @@
-## Assignment Solutions<br>BUSI 520: Python for Business Research<br><br>![](RiceBusiness-transparent-logo-sm.png){height="50"}<br>
+## Solutions<br>BUSI 520: Python for Business Research<br><br>![](RiceBusiness-transparent-logo-sm.png){height="50"}<br>
+
+Assignment 1
+
+  * [Jupyter Notebook](https://github.com/kerryback/BUSI-520/blob/main/solutions/assignment1_notebook.ipynb){target="_blank"}
+  * [Python Script](https://github.com/kerryback/BUSI-520/blob/main/solutions/assignment1_script.py){target="_blank"}
 
 
 
