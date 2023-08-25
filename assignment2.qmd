@@ -41,6 +41,8 @@
    a. Simulate 100 steps of a random walk with standard normal innovations.
    b. Generate 1,000 simulations of the random walk from part (a).  Compute the mean, median, and standard deviation of the terminal value across the 1,000 simulations.  
 
+#### Pandas
+
 8. Basics of pandas Series and DataFrames
    a. Create a series from a list of integers.
    b. Extract values at specific indices from the Series.
@@ -58,10 +60,15 @@
    e. Rename columns.
    f. Map values in a column to other values using a dictionary.
 
-10. Missing values and duplicate rows:
+10. Missing values:
    a. Find all missing values in a DataFrame.
    b Fill missing values with zeros.
    c. Fill missing values in a column with the column's mean value.
    d. Drop rows with missing data.
    e. Find duplicate rows.
    f. Drop all but the last row in each set of duplicate rows.
+
+11. Filtering and Aggregation:
+   a. Using the 'tips' dataset, filter the rows where the total bill is greater than $10.
+   b. Create a new column in the 'tips' dataset called 'bill_per_person' which is the total bill divided by the size of the party.
+   c. Group by the 'day' column and compute the average total bill for each day.
