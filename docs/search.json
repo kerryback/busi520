@@ -25,7 +25,7 @@
     "href": "slides.html",
     "title": "",
     "section": "",
-    "text": "1. Python, VS Code, and Git Setup\n2. Introduction to the Python Language\n3. Introduction to NumPy"
+    "text": "1. Python, VS Code, and Git Setup\n2. Introduction to the Python Language\n3. Introduction to NumPy\n4. Introduction to Pandas"
   },
   {
     "objectID": "assignment2.html",
@@ -40,5 +40,12 @@
     "title": "",
     "section": "",
     "text": "Assignment 1\n\nJupyter Notebook\nPython Script"
+  },
+  {
+    "objectID": "slides.html#slide-decks-busi-520-python-for-business-research",
+    "href": "slides.html#slide-decks-busi-520-python-for-business-research",
+    "title": "",
+    "section": "",
+    "text": "1. Python, VS Code, and Git Setup\n2. Introduction to the Python Language\n3. Introduction to NumPy\n4. Introduction to Pandas"
   }
 ]

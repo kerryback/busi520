@@ -6,3 +6,5 @@
 [2. Introduction to the Python Language](01-Introduction_to_Python.slides.html){target="_blank"}
 
 [3. Introduction to NumPy](02-Introduction_to_NumPy.slides.html){target="_blank"}
+
+[4. Introduction to Pandas](02-Introduction_to_Pandas.slides.html){target="_blank"}
