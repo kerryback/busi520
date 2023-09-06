@@ -10,3 +10,5 @@
 [4. Introduction to Pandas](03-Introduction_to_Pandas.slides.html){target="_blank"}
 
 [5. Additional Pandas](04-Additional_Pandas.slides.html){target="_blank"}
+
+[5. WRDS](04-WRDS.slides.html){target="_blank"}
