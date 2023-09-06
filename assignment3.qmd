@@ -29,8 +29,12 @@ Read the datasets announcements.csv and crsp.csv into dataframes.  Each row of a
 13. For each permno, calculate the fraction of zeros for date_diff.
 
 14. Filter the dataframe further to include only stock-quarters for which
+
     (a) the fraction of zeros for date_diff is less than 0.5
-    (b) the fraction of announcements on the permno's most popular day of the week is less than 0.9.  Post this dataframe to Canvas.
+
+    (b) the fraction of announcements on the permno's most popular day of the week is less than 0.9. 
+
+   Post this dataframe to Canvas.
 
 15.  How many stock-quarters are in the newly filtered dataframe?  How many unique permnos?
 
