@@ -14652,7 +14652,7 @@ div.jp-OutputPrompt {
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
 <div class="reveal">
-<div class="slides"><section ><section >
+<div class="slides"><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14664,7 +14664,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></section></section><section ><section ><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14689,7 +14689,9 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -14708,7 +14710,7 @@ Done
 
 </div>
 
-</div></section></section><section ><section >
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14720,7 +14722,7 @@ Done
 </div>
 </div>
 </div>
-</div></section></section><section ><section ><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14729,14 +14731,14 @@ Done
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">comp</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">raw_sql</span><span class="p">(</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">"""</span>
 <span class="sd">    select gvkey, datadate, at</span>
 <span class="sd">    from comp.funda</span>
-<span class="sd">    where datadate &gt;= &#39;2000-01-01&#39; and at&gt;0 </span>
-<span class="sd">    and indfmt=&#39;INDL&#39; and datafmt=&#39;STD&#39; and popsrc=&#39;D&#39; and consol=&#39;C&#39;</span>
+<span class="sd">    where datadate &gt;= '2000-01-01' and at&gt;0 </span>
+<span class="sd">    and indfmt='INDL' and datafmt='STD' and popsrc='D' and consol='C'</span>
 <span class="sd">    order by gvkey, datadate</span>
-<span class="sd">    &quot;&quot;&quot;</span><span class="p">,</span> 
-    <span class="n">date_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;datadate&#39;</span><span class="p">]</span>
+<span class="sd">    """</span><span class="p">,</span> 
+    <span class="n">date_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">'datadate'</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># convert string or float to int</span>
@@ -14748,7 +14750,7 @@ Done
 </div>
 </div>
 
-</div></section></section><section ><section >
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14759,7 +14761,7 @@ Done
 </div>
 </div>
 </div>
-</div></section></section><section ><section ><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14771,7 +14773,7 @@ Done
     <span class="n">days</span> <span class="o">=</span> <span class="n">dates</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>                                          
     <span class="k">return</span> <span class="n">days</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span><span class="o">.</span><span class="n">days</span><span class="p">)</span>
 
-<span class="n">comp</span><span class="p">[</span><span class="s2">&quot;days&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;gvkey&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">datadate</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">days_between</span><span class="p">)</span>
+<span class="n">comp</span><span class="p">[</span><span class="s2">"days"</span><span class="p">]</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"gvkey"</span><span class="p">)</span><span class="o">.</span><span class="n">datadate</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">days_between</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14779,7 +14781,7 @@ Done
 </div>
 </div>
 
-</div></section></section><section ><section >
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14791,7 +14793,7 @@ Done
 </div>
 </div>
 </div>
-</div></section></section><section ><section ><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14799,8 +14801,8 @@ Done
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">comp</span><span class="p">[</span><span class="s2">&quot;inv&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;gvkey&quot;</span><span class="p">)[</span><span class="s2">&quot;at&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
-<span class="n">comp</span><span class="p">[</span><span class="s2">&quot;inv&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">comp</span><span class="o">.</span><span class="n">days</span><span class="p">)</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">comp</span><span class="o">.</span><span class="n">days</span><span class="o">&gt;</span><span class="mi">720</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">comp</span><span class="o">.</span><span class="n">inv</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">comp</span><span class="p">[</span><span class="s2">"inv"</span><span class="p">]</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"gvkey"</span><span class="p">)[</span><span class="s2">"at"</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
+<span class="n">comp</span><span class="p">[</span><span class="s2">"inv"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">comp</span><span class="o">.</span><span class="n">days</span><span class="p">)</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">comp</span><span class="o">.</span><span class="n">days</span><span class="o">&gt;</span><span class="mi">720</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">comp</span><span class="o">.</span><span class="n">inv</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14808,7 +14810,7 @@ Done
 </div>
 </div>
 
-</div></section></section><section ><section >
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14820,7 +14822,7 @@ Done
 </div>
 </div>
 </div>
-</div></section></section><section ><section ><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14842,7 +14844,9 @@ Done
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
 
@@ -14926,7 +14930,7 @@ Done
 
 </div>
 
-</div></section></section><section ><section >
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14938,7 +14942,7 @@ Done
 </div>
 </div>
 </div>
-</div></section></section><section ><section ><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14947,10 +14951,10 @@ Done
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># define date as June 30 of year following datadate</span>
-<span class="n">comp</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">comp</span><span class="o">.</span><span class="n">datadate</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">year</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;-06-30&#39;</span><span class="p">))</span>
+<span class="n">comp</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">comp</span><span class="o">.</span><span class="n">datadate</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">year</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s1">'-06-30'</span><span class="p">))</span>
     
 <span class="c1"># if two annual reports in one calendar year (due to change of fiscal year), keep last one</span>
-<span class="n">comp</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;gvkey&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s1">&#39;last&#39;</span><span class="p">)</span> 
+<span class="n">comp</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">'gvkey'</span><span class="p">,</span> <span class="s1">'date'</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s1">'last'</span><span class="p">)</span> 
 </pre></div>
 
      </div>
@@ -14958,7 +14962,7 @@ Done
 </div>
 </div>
 
-</div></section></section><section ><section >
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14969,7 +14973,7 @@ Done
 </div>
 </div>
 </div>
-</div></section></section><section ><section ><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14978,26 +14982,26 @@ Done
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">link</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">raw_sql</span><span class="p">(</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">"""</span>
 <span class="sd">    select distinct gvkey, lpermno as permno, linkdt, linkenddt</span>
 <span class="sd">    from crsp.Ccmxpf_linktable</span>
-<span class="sd">    where linktype in (&#39;LU&#39;, &#39;LC&#39;)</span>
-<span class="sd">    and LINKPRIM in (&#39;P&#39;, &#39;C&#39;)</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    where linktype in ('LU', 'LC')</span>
+<span class="sd">    and LINKPRIM in ('P', 'C')</span>
+<span class="sd">    """</span>
 <span class="p">)</span>
 
 <span class="c1"># convert strings or floats to ints</span>
-<span class="n">link</span><span class="p">[</span><span class="s1">&#39;gvkey&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">gvkey</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<span class="n">link</span><span class="p">[</span><span class="s1">&#39;permno&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">permno</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">link</span><span class="p">[</span><span class="s1">'gvkey'</span><span class="p">]</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">gvkey</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">link</span><span class="p">[</span><span class="s1">'permno'</span><span class="p">]</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">permno</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
 <span class="c1"># fill in missing end dates with a future date</span>
-<span class="n">link</span><span class="p">[</span><span class="s1">&#39;linkenddt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">linkenddt</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;21000101&#39;</span><span class="p">))</span>
+<span class="n">link</span><span class="p">[</span><span class="s1">'linkenddt'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">linkenddt</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">'21000101'</span><span class="p">))</span>
 
 <span class="c1"># merge with Compustat data and keep rows with Compustat datadate between link date and link end date</span>
-<span class="n">comp</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;gvkey&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<span class="n">comp</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'gvkey'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'inner'</span><span class="p">)</span>
 <span class="n">comp</span> <span class="o">=</span> <span class="n">comp</span><span class="p">[(</span><span class="n">comp</span><span class="o">.</span><span class="n">datadate</span><span class="o">&gt;=</span><span class="n">comp</span><span class="o">.</span><span class="n">linkdt</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">comp</span><span class="o">.</span><span class="n">datadate</span><span class="o">&lt;=</span><span class="n">comp</span><span class="o">.</span><span class="n">linkenddt</span><span class="p">)]</span>
 
-<span class="n">comp</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;days&#39;</span><span class="p">,</span> <span class="s1">&#39;gvkey&#39;</span><span class="p">,</span> <span class="s1">&#39;datadate&#39;</span><span class="p">,</span> <span class="s1">&#39;linkdt&#39;</span><span class="p">,</span> <span class="s1">&#39;linkenddt&#39;</span><span class="p">])</span>
+<span class="n">comp</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'days'</span><span class="p">,</span> <span class="s1">'gvkey'</span><span class="p">,</span> <span class="s1">'datadate'</span><span class="p">,</span> <span class="s1">'linkdt'</span><span class="p">,</span> <span class="s1">'linkenddt'</span><span class="p">])</span>
 </pre></div>
 
      </div>
@@ -15005,7 +15009,7 @@ Done
 </div>
 </div>
 
-</div></section></section><section ><section >
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15017,7 +15021,7 @@ Done
 </div>
 </div>
 </div>
-</div></section></section><section ><section ><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15026,23 +15030,23 @@ Done
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">crsp</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">raw_sql</span><span class="p">(</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">"""</span>
 <span class="sd">    select a.permno, a.permco, a.date, a.ret, abs(a.prc)*a.shrout as me, b.exchcd</span>
 <span class="sd">    from crsp.msf a inner join crsp.msenames b</span>
 <span class="sd">    on a.permno=b.permno and a.date between b.namedt and b.nameendt</span>
 <span class="sd">    and b.exchcd in (1,2,3) and b.shrcd in (10,11)</span>
-<span class="sd">    where a.date &gt;= &#39;2000-01-01&#39;</span>
+<span class="sd">    where a.date &gt;= '2000-01-01'</span>
 <span class="sd">    order by a.permno, a.date</span>
-<span class="sd">    &quot;&quot;&quot;</span><span class="p">,</span>
-<span class="n">date_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
+<span class="sd">    """</span><span class="p">,</span>
+<span class="n">date_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># change strings or floats to integers</span>
-<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;permno&#39;</span><span class="p">,</span><span class="s1">&#39;permco&#39;</span><span class="p">]:</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'permno'</span><span class="p">,</span><span class="s1">'permco'</span><span class="p">]:</span>
     <span class="n">crsp</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">crsp</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
 <span class="c1"># define market equity as sum of market equities of all permnos associated with a permco</span>
-<span class="n">crsp</span><span class="p">[</span><span class="s1">&#39;me&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">crsp</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;date&#39;</span><span class="p">,</span><span class="s1">&#39;permco&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">me</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+<span class="n">crsp</span><span class="p">[</span><span class="s1">'me'</span><span class="p">]</span> <span class="o">=</span> <span class="n">crsp</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'date'</span><span class="p">,</span><span class="s1">'permco'</span><span class="p">])</span><span class="o">.</span><span class="n">me</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15050,7 +15054,7 @@ Done
 </div>
 </div>
 
-</div></section></section><section ><section >
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15062,7 +15066,7 @@ Done
 </div>
 </div>
 </div>
-</div></section></section><section ><section ><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15071,19 +15075,19 @@ Done
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mse</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">raw_sql</span><span class="p">(</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">"""</span>
 <span class="sd">    select permno, dlret, dlstcd</span>
 <span class="sd">    from crsp.mse</span>
-<span class="sd">    where event=&#39;DELIST&#39; and dlstcd&gt;100</span>
+<span class="sd">    where event='DELIST' and dlstcd&gt;100</span>
 <span class="sd">    order by permno</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 <span class="p">)</span>
 
 <span class="c1"># change string or float to int</span>
-<span class="n">mse</span><span class="p">[</span><span class="s1">&#39;permno&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mse</span><span class="o">.</span><span class="n">permno</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">mse</span><span class="p">[</span><span class="s1">'permno'</span><span class="p">]</span> <span class="o">=</span> <span class="n">mse</span><span class="o">.</span><span class="n">permno</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
 <span class="c1"># merge with crsp, keeping all rows of crsp</span>
-<span class="n">crsp</span> <span class="o">=</span> <span class="n">crsp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">mse</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;permno&#39;</span><span class="p">)</span>
+<span class="n">crsp</span> <span class="o">=</span> <span class="n">crsp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">mse</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'permno'</span><span class="p">)</span>
 <span class="k">del</span> <span class="n">mse</span>
 
 <span class="c1"># series of True and False, True if it is the last date for a stock</span>
@@ -15093,19 +15097,19 @@ Done
 <span class="n">DLCode</span> <span class="o">=</span> <span class="p">(</span><span class="n">crsp</span><span class="o">.</span><span class="n">dlstcd</span><span class="o">==</span><span class="mi">500</span><span class="p">)</span> <span class="o">|</span> <span class="p">((</span><span class="n">crsp</span><span class="o">.</span><span class="n">dlstcd</span> <span class="o">&gt;=</span><span class="mi">520</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">crsp</span><span class="o">.</span><span class="n">dlstcd</span><span class="o">&lt;=</span><span class="mi">584</span><span class="p">))</span>
 
 <span class="c1"># -35% if no delisting return, delisted for poor performance and NYSE/AMEX</span>
-<span class="n">crsp</span><span class="p">[</span><span class="s1">&#39;dlret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">DLCode</span> <span class="o">&amp;</span> <span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">crsp</span><span class="o">.</span><span class="n">exchcd</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]),</span> <span class="o">-</span><span class="mf">0.35</span><span class="p">,</span> <span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="p">)</span> 
+<span class="n">crsp</span><span class="p">[</span><span class="s1">'dlret'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">DLCode</span> <span class="o">&amp;</span> <span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">crsp</span><span class="o">.</span><span class="n">exchcd</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]),</span> <span class="o">-</span><span class="mf">0.35</span><span class="p">,</span> <span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="p">)</span> 
 
 <span class="c1"># -55% if no delisting return, delisted for poor performance and Nasdaq</span>
-<span class="n">crsp</span><span class="p">[</span><span class="s1">&#39;dlret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">DLCode</span> <span class="o">&amp;</span> <span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">crsp</span><span class="o">.</span><span class="n">exchcd</span><span class="o">==</span><span class="mi">3</span><span class="p">),</span> <span class="o">-</span><span class="mf">0.55</span><span class="p">,</span> <span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="p">)</span>
+<span class="n">crsp</span><span class="p">[</span><span class="s1">'dlret'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">DLCode</span> <span class="o">&amp;</span> <span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">crsp</span><span class="o">.</span><span class="n">exchcd</span><span class="o">==</span><span class="mi">3</span><span class="p">),</span> <span class="o">-</span><span class="mf">0.55</span><span class="p">,</span> <span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="p">)</span>
 
 <span class="c1"># if delisting return exists and &lt; -1, change to -1</span>
-<span class="n">crsp</span><span class="p">[</span><span class="s1">&#39;dlret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="o">&lt;-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="p">)</span>
+<span class="n">crsp</span><span class="p">[</span><span class="s1">'dlret'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="o">&lt;-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="p">)</span>
 
 <span class="c1"># if last day and return exists, define return by compounding with delisting return (if exists)      </span>
-<span class="n">crsp</span><span class="p">[</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">LastObs</span> <span class="o">&amp;</span> <span class="n">crsp</span><span class="o">.</span><span class="n">ret</span><span class="o">.</span><span class="n">notnull</span><span class="p">(),</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">crsp</span><span class="o">.</span><span class="n">ret</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">crsp</span><span class="o">.</span><span class="n">ret</span><span class="p">)</span>
+<span class="n">crsp</span><span class="p">[</span><span class="s1">'ret'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">LastObs</span> <span class="o">&amp;</span> <span class="n">crsp</span><span class="o">.</span><span class="n">ret</span><span class="o">.</span><span class="n">notnull</span><span class="p">(),</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">crsp</span><span class="o">.</span><span class="n">ret</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">crsp</span><span class="o">.</span><span class="n">ret</span><span class="p">)</span>
 
 <span class="c1"># if last day and return does not exist, define return as delisting return</span>
-<span class="n">crsp</span><span class="p">[</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">LastObs</span> <span class="o">&amp;</span> <span class="n">crsp</span><span class="o">.</span><span class="n">ret</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span> <span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="p">,</span> <span class="n">crsp</span><span class="o">.</span><span class="n">ret</span><span class="p">)</span>
+<span class="n">crsp</span><span class="p">[</span><span class="s1">'ret'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">LastObs</span> <span class="o">&amp;</span> <span class="n">crsp</span><span class="o">.</span><span class="n">ret</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span> <span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="p">,</span> <span class="n">crsp</span><span class="o">.</span><span class="n">ret</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15113,7 +15117,7 @@ Done
 </div>
 </div>
 
-</div></section></section><section ><section >
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15128,7 +15132,7 @@ Done
 </div>
 </div>
 </div>
-</div></section></section><section ><section ><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15136,10 +15140,10 @@ Done
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">crsp</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">crsp</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">to_period</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
-<span class="n">comp</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">to_period</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">crsp</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">crsp</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">to_period</span><span class="p">(</span><span class="s1">'M'</span><span class="p">)</span>
+<span class="n">comp</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">to_period</span><span class="p">(</span><span class="s1">'M'</span><span class="p">)</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">crsp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">comp</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;permno&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">crsp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">comp</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">'permno'</span><span class="p">,</span> <span class="s1">'date'</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15162,7 +15166,7 @@ Done
 </div>
 </div>
 </div>
-</div></section></section><section ><section ><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15170,7 +15174,7 @@ Done
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;at&#39;</span><span class="p">,</span> <span class="s1">&#39;inv&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;permno&#39;</span><span class="p">)[[</span><span class="s1">&#39;at&#39;</span><span class="p">,</span> <span class="s1">&#39;inv&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">ffill</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">'at'</span><span class="p">,</span> <span class="s1">'inv'</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'permno'</span><span class="p">)[[</span><span class="s1">'at'</span><span class="p">,</span> <span class="s1">'inv'</span><span class="p">]]</span><span class="o">.</span><span class="n">ffill</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15211,7 +15215,9 @@ Done
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
 
@@ -15331,7 +15337,7 @@ Done
 
 </div>
 
-</div></section></section><section ><section ><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15353,7 +15359,9 @@ Done
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
 
@@ -15371,7 +15379,7 @@ Done
 
 </div>
 
-</div></section></section><section ><section >
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15384,7 +15392,7 @@ Done
 </div>
 </div>
 </div>
-</div></section></section><section ><section ><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15393,17 +15401,17 @@ Done
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">comp</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">raw_sql</span><span class="p">(</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">"""</span>
 <span class="sd">    select gvkey, datadate, pstkrv, pstkl, pstk</span>
 <span class="sd">    from comp.funda </span>
-<span class="sd">    where datadate &gt;= &#39;2000-01-01&#39; </span>
-<span class="sd">    and indfmt=&#39;INDL&#39; and datafmt=&#39;STD&#39; and popsrc=&#39;D&#39; and consol=&#39;C&#39;</span>
+<span class="sd">    where datadate &gt;= '2000-01-01' </span>
+<span class="sd">    and indfmt='INDL' and datafmt='STD' and popsrc='D' and consol='C'</span>
 <span class="sd">    order by gvkey, datadate</span>
-<span class="sd">    &quot;&quot;&quot;</span><span class="p">,</span> 
-    <span class="n">date_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;datadate&#39;</span><span class="p">]</span>
+<span class="sd">    """</span><span class="p">,</span> 
+    <span class="n">date_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">'datadate'</span><span class="p">]</span>
 <span class="p">)</span>
 
-<span class="n">comp</span><span class="p">[</span><span class="s1">&#39;preferred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">comp</span><span class="p">[[</span><span class="s1">&#39;pstkrv&#39;</span><span class="p">,</span><span class="s1">&#39;pstkl&#39;</span><span class="p">,</span><span class="s1">&#39;pstk&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">bfill</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">comp</span><span class="p">[</span><span class="s1">'preferred'</span><span class="p">]</span> <span class="o">=</span> <span class="n">comp</span><span class="p">[[</span><span class="s1">'pstkrv'</span><span class="p">,</span><span class="s1">'pstkl'</span><span class="p">,</span><span class="s1">'pstk'</span><span class="p">]]</span><span class="o">.</span><span class="n">bfill</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15411,7 +15419,7 @@ Done
 </div>
 </div>
 
-</div></section></section><section ><section ><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15433,7 +15441,9 @@ Done
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
 
@@ -15523,7 +15533,7 @@ Done
 
 </div>
 
-</div></section></section><section ><section ><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15545,7 +15555,9 @@ Done
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
 
