@@ -22,7 +22,7 @@ website:
       - text: Assignments
         file: assignments.qmd
       - text: Solutions
-        href: https://github.com/kerryback/BUSI-520-notebooks/solutions
+        href: https://github.com/kerryback/BUSI-520-notebooks/tree/main/solutions
       - text: Notebooks
         href: https://github.com/kerryback/BUSI-520-notebooks
       
