@@ -1,10 +1,10 @@
 ## Assignment 3<br>BUSI 520: Python for Business Research<br>Jones Graduate School of Business<br>Rice University<br>
 
-Read the datasets announcements.csv and crsp.csv into dataframes.  Each row of announcements.csv is a (stock, quarter) pair.  Each row of crsp.csv is a (stock, day) pair.  Complete the following.
+Read the datasets announcements.csv and crsp.csv into dataframes.  Each row of announcements.csv is a (stock, quarter) pair.  Each row of crsp.csv is a (stock, day) pair.  Complete the following.  Upload a zip file containing (i) your code, (ii) a text file or Word doc containing your answers to 1, 2, 9, 10, 11, 12, and 15, and (iii) three .csv files as specified in 8, 11, and 14.
 
 1.  How many stock-days are there in the crsp dataframe?  How many stock-quarters are there in announcements.csv?
 
-2.  How many unique permnos are there in the announcements dataframe?  Hint: there is a unique method.  Use len also.
+2.  How many unique permnos are there in the announcements dataframe?  Hint: there is a "unique" method.  Use "len" also.
 
 3.  Create a "quarter" column in the announcements dataframe based on the fiscal_period column.
 
@@ -16,13 +16,13 @@ Read the datasets announcements.csv and crsp.csv into dataframes.  Each row of a
 
 7.  Merge the reduced crsp dataframe with the announcement dataframe, matching on ['permno', 'quarter'].  Hint: permno and quarter will form the index of the reduced crsp dataframe after grouping.  You will need to reset the index or use left_on=... and right_index=True, or right_on=... and left_index=True in the merge.
 
-8.  Filter the merged dataframe to keep only rows satisfying price>=5, me>=50000, and shrcd in [10, 11].  Save this as a csv file and submit on Canvas.  Use the filtered dataframe to answer all remaining questions.
+8.  Filter the merged dataframe to keep only rows satisfying price>=5, me>=50000, and shrcd in [10, 11].  Save this as a csv file with the name merged.csv and submit on Canvas.  Use the filtered dataframe to answer all remaining questions.
 
 9. How many stock-quarters are there in the filtered dataframe and how many unique permnos?
 
 10.  Which day of the week is the most popular day for earnings announcements? What fraction of earnings announcements occur on this day?  Hint: the weekday method of a datetime object returns 0 for Monday, 1 for Tuesday, etc.
 
-11.  For each permno, find the most popular day of the week for earnings announcements.  For each permno, calculate the fraction of the announcements that are made on that day?  What is the mean of this fraction across permnos?
+11.  For each permno, find the most popular day of the week for earnings announcements.  For each permno, calculate the fraction of the announcements that are made on that day.  Save this as a csv file with the name days.csv and submit on Canvas.  What is the mean of this fraction across permnos?
 
 12. Cut the dataframe into 'above median' and 'below median' based on the absolute value of date_diff.  What is the mean of the fraction in the previous queston across permnos within each of the two groups?
 
@@ -34,7 +34,7 @@ Read the datasets announcements.csv and crsp.csv into dataframes.  Each row of a
 
     (b) the fraction of announcements on the permno's most popular day of the week is less than 0.9. 
 
-   Post this dataframe to Canvas.
+   Save this as a csv file with the name filtered.csv and submit on Canvas.
 
 15.  How many stock-quarters are in the newly filtered dataframe?  How many unique permnos?
 
