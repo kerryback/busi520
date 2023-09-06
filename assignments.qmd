@@ -4,6 +4,6 @@
 
 [2. Numpy and Pandas](assignment2.html){target="_blank"}
 
-
+[3. More Pandas](assignment3.html){target="_blank"}
 
 
