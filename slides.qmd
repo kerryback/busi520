@@ -12,3 +12,5 @@
 [5. Additional Pandas](04-Additional_Pandas.slides.html){target="_blank"}
 
 [5. WRDS](04-WRDS.slides.html){target="_blank"}
+
+[6. Visualization](05-Visualization.slides.html){target="_blank"}
