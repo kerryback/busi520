@@ -18,7 +18,13 @@ b = np.linspace(10, 20, 11)
 A, B = np.meshgrid(a, b)
 ```
 
-Look at A and B and explain what they are.
+Look at A and B and explain what they are.  Define
+
+```.p
+C = A + B
+```
+
+Create a filled contour plot with three labeled contour lines at the values C=15, C=20, and C=25.
 
 6. The file option_sims.csv contains simulations from a model of market maker profits and stock and option order imbalances.  Produce a bivariate density plot of the stock and option order imbalances.  What do you learn from the figure?
 
