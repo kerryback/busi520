@@ -2,15 +2,14 @@
 
 Submit a Jupyter notebook.  Answer the "what do you learn" questions in markdown cells.
 
-1. Create a stacked bar chart to show the different distributions of tips for males and females in the seaborn tips dataset.  What do you learn from the figure?
 
-2.  Create a figure or figures to show the different distributions of wages for white males, white females, nonwhite males, and nonwhite females in the WAGES1 dataset.  What do you learn from the figure.
+1.  Create a figure or figures to show the different distributions of wages for white males, white females, nonwhite males, and nonwhite females in the WAGES1 dataset.  What do you learn from the figure.
 
-3. Create a figure or figures to show how wage depends on education for white males, white females, nonwhite males, and nonwhite females in the WAGES1 dataset.  Change the 0-1 dummy variables to more informative names so the legend will be easier to interpret.  What do you learn from the figure?
+2. Create a figure or figures to show how wage depends on education for white males, white females, nonwhite males, and nonwhite females in the WAGES1 dataset.  Change the 0-1 dummy variables to more informative names so the legend will be easier to interpret.  What do you learn from the figure?
 
-4. Create a pairplot of educ and wage.  Use hue="female."  Change the dummy variable to more informative names so the legend will be easier to interpret.  Add regression lines to the scatterplot in a different color than the points.  Create it as a lower diagonal matrix to reduce the clutter (i.e., only one scatter plot).  Put educ on the x-axis of the scatter plot.  What do you learn from the figure?
+3. Create a pairplot of educ and wage.  Use hue="female."  Change the dummy variable to more informative names so the legend will be easier to interpret.  Add regression lines to the scatterplot in a different color than the points.  Create it as a lower diagonal matrix to reduce the clutter (i.e., only one scatter plot).  Put educ on the x-axis of the scatter plot.  What do you learn from the figure?
 
-5. For 3d plotting, we used code like the following:
+4. For 3d plotting, we used code like the following:
 
 ```.p
 a = np.linspace(0, 1, 11)
@@ -26,6 +25,8 @@ C = A + B
 
 Create a filled contour plot with three labeled contour lines at the values C=15, C=20, and C=25.
 
-6. The file option_sims.csv contains simulations from a model of market maker profits and stock and option order imbalances.  Produce a bivariate density plot of the stock and option order imbalances.  What do you learn from the figure?
+5. The file option_sims.csv contains simulations from a model of market maker profits and stock and option order imbalances.  Produce a bivariate density plot of the stock and option order imbalances.  What do you learn from the figure?
 
-7. Bin the stock and option order imbalances into a 100 x 100 grid and compute the average market maker profits in each cell.  Use a heatmap to show the average market maker profits as a function of the stock and option order imbalances.  What do you learn from the figure?
+6. Bin the stock and option order imbalances into a 100 x 100 grid and compute the average market maker profits in each cell.  Use a heatmap to show the average market maker profits as a function of the stock and option order imbalances.  What do you learn from the figure?
+
+7. Create a stacked bar chart to show the different distributions of tips for males and females in the seaborn tips dataset.  What do you learn from the figure?
