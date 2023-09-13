@@ -11,6 +11,12 @@
 
 [5. Additional Pandas](04-Additional_Pandas.slides.html){target="_blank"}
 
-[5. WRDS](04-WRDS.slides.html){target="_blank"}
+[5. WRDS](05-WRDS.slides.html){target="_blank"}
 
-[6. Visualization](05-Visualization.slides.html){target="_blank"}
+[6. Visualization](06-Visualization.slides.html){target="_blank"}
+
+[7. Scientific Programming](07-Scientific_Programming.slides.html){target="_blank"}
+
+[7. Dynamic Programming](08-Dynamic_Programming.slides.html){target="_blank"}
+
+[7. SymPy](09-Sympy.slides.html){target="_blank"}
