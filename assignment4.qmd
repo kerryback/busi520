@@ -12,7 +12,7 @@ Submit a Jupyter notebook.  Answer the "what do you learn" questions in markdown
 4. For 3d plotting, we used code like the following:
 
 ```.p
-a = np.linspace(0, 1, 11)
+a = np.linspace(0, 10, 11)
 b = np.linspace(10, 20, 11)
 A, B = np.meshgrid(a, b)
 ```
