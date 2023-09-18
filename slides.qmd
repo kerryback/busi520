@@ -20,3 +20,5 @@
 [7. Dynamic Programming](08-Dynamic_Programming.slides.html){target="_blank"}
 
 [7. SymPy](09-Sympy.slides.html){target="_blank"}
+
+[8. Statistics](11-Statistics.slides.html){target="_blank"}
