@@ -12,7 +12,7 @@ game = [
 ```  
 If you prefer some other format for representing the game, then the first part of your function should transform the 2x2 array of tuples into your preferred form.
 
-2. The following function accepts as its input a 2x2 array of tuples and returns a list.  Move the code outside the function, create an example 2x2 array and execute the code line by line.  Display in your notebook the object created by each line and explain what it is.  
+2. The following function accepts as its input a 2x2 array of tuples and returns a list.  Move the code outside the function, create an example 2x2 array and execute the code line by line.  Display in your notebook the object created by each line and explain what it is and what operation was performed to create it.
 
 ```.p
 def nash(game):
