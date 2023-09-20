@@ -1,0 +1,53 @@
+## Assignment 5<br>BUSI 520: Python for Business Research<br>Jones Graduate School of Business<br>Rice University<br>
+
+Submit a Jupyter notebook.  
+
+1. Create a function that takes a 2x2 game as an input and returns a list of the pure strategy Nash equilibria.  If there are no pure strategy equilibria, then it should return an empty list.  It should accept a game input as a 2x2 array of tuples, the first element of the tuple being the utility of the row player and the second element being the utility of the column player.  Here is an example of a game that it should accept as its input:
+
+```.p
+game = [
+    [(5, 0), (5, 5)],
+    [(5, 2), (0, 0)]
+]
+```  
+If you prefer some other format for representing the game, then the first part of your function should transform the 2x2 array of tuples into your preferred form.
+
+2. The following function accepts as its input a 2x2 array of tuples and returns a list.  Move the code outside the function, create an example 2x2 array and execute the code line by line.  Explain in your notebook what each line does.
+
+```.p
+def nash(game):
+
+    g = pd.DataFrame(
+        game, 
+        index = ["T", "B"],
+        columns = ["L", "R"]
+    )
+    g = g.unstack()
+    g.index.names = ["col", "row"]
+    
+    g = pd.concat(
+        (
+            g.map(lambda x: x[0]), 
+            g.map(lambda x: x[1])
+        ), 
+        axis=1
+    )
+    g.columns = ["u1", "u2"]
+    g.index = g.index.swaplevel()
+
+    row_max = g.groupby("col").apply(
+        lambda x: x[x.u1 == x.u1.max()].index.values
+    )
+    row_max = [x for arr in row_max for x in arr]
+
+    col_max = g.groupby("row").apply(
+        lambda x: x[x.u2 == x.u2.max()].index.values
+    )
+    col_max = [x for arr in col_max for x in arr]
+
+    return list(set(col_max) & set(row_max))
+```
+
+3. The knapsack problem is as follows.  There are $n$ objects that you might put in your knapsack (backpack).  Each has a weight $w_i$ and a value $u_i$.  Your knapsack can only hold a total weight of $W$.  Among the combinations of objects that have a combined weight no more than $W$, you want to choose the combination that has the maximum total value.  Denote your decision about whether to include the $i$-th object as $a_i \in \{0, 1\}$, with $a_i=1$ meaning put it in the knapsack.  So, the problem is to choose the $a_i$ to maximize $\sum_{i=1}^n a_iu_i$ subject to $\sum_{i=1}^n a_iw_i \le W$.  We can write this as a nonstationary finite dynamic programming problem by supposing that we first consider object 1 (at "time 1") then move on to consider object 2 (at "time 2"), etc.  Denote the weight in the knapsack prior to making the $i$-th decision by $x_i$.  Denote the total value of the objects in the knapsack prior to making the $i$-th decison by $y_i$.  The pair $(x_i, y_i)$ serves as the state vector for the problem.   Write code to (1) calculate the value function $V_n(x, y)$ before making the $n$-th decison by maximizing the ending value $y + au_n$ subject to the constraints imposed by $x$, and (2) use the recursion 
+$$V_{i}(x, y) = \max_{a \in \{0, 1\} } V_{i+1}(x+aw_i, y+au_i) \quad \text{subject to} \quad x+aw_i \le W$$
+to compute $V_1(0, 0)$, which is the maximum total value the knapsack can hold.
