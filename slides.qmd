@@ -24,3 +24,6 @@
 [8. Statistics](11-Statistics.slides.html){target="_blank"}
 
 [9. Introduction to Machine Learning](12-ML1.slides.html){target="_blank"}
+
+[10. More Machine Learning](13-ML2.slides.html){target="_blank"}
+
