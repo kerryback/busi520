@@ -14707,7 +14707,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="An-alternative-to-logs-for-dealing-with-skewness">An alternative to logs for dealing with skewness<a class="anchor-link" href="#An-alternative-to-logs-for-dealing-with-skewness">&#182;</a></h4><ul>
+<h3 id="An-alternative-to-logs-for-dealing-with-skewness">An alternative to logs for dealing with skewness<a class="anchor-link" href="#An-alternative-to-logs-for-dealing-with-skewness">&#182;</a></h3><ul>
 <li>For any sample $x$, there exists a monotone transformation $f$ such that $y = f(x)$ is distributed as a standard normal sample.</li>
 <li>True more generally for continuous random variables $x$.</li>
 <li>Let $F$ denote cdf of a random variable $x$ and $N$ the standard normal cdf.</li>
@@ -14724,7 +14724,7 @@ $$\text{prob}(f(x) &lt; a) = N(a) \quad\Leftrightarrow\quad \text{prob}(x &lt; f
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Scikit-learn-quantile-transformer">Scikit-learn quantile transformer<a class="anchor-link" href="#Scikit-learn-quantile-transformer">&#182;</a></h4><pre><code>from sklearn.preprocessing import QuantileTransformer
+<h3 id="Scikit-learn-quantile-transformer">Scikit-learn quantile transformer<a class="anchor-link" href="#Scikit-learn-quantile-transformer">&#182;</a></h3><pre><code>from sklearn.preprocessing import QuantileTransformer
 transformer = QuantileTransformer(output_distribution=&quot;normal&quot;)
 transformer.fit_transform(X_train)
 </code></pre>
@@ -14739,15 +14739,16 @@ transformer.fit_transform(X_train)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Scaling">Scaling<a class="anchor-link" href="#Scaling">&#182;</a></h4><ul>
+<h3 id="Scaling">Scaling<a class="anchor-link" href="#Scaling">&#182;</a></h3><ul>
 <li><p>Subtract mean and divide by standard deviation</p>
 </li>
 <li><p>An alternative to transforming (but doesn't really fix outliers)</p>
 </li>
 <li><p>Scikit-learn's standard scaler:</p>
-<p>from sklearn.preprocessing import StandardScaler
-  scaler = StandardScaler()
-  scaler.fit_transform(X_train)</p>
+<pre><code>from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+scaler.fit_transform(X_train)
+</code></pre>
 </li>
 </ul>
 
@@ -14761,7 +14762,7 @@ transformer.fit_transform(X_train)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Pipelines">Pipelines<a class="anchor-link" href="#Pipelines">&#182;</a></h4><p>Add pre-processing to the model in a pipeline and fit/predict in one step</p>
+<h3 id="Pipelines">Pipelines<a class="anchor-link" href="#Pipelines">&#182;</a></h3><p>Add pre-processing to the model in a pipeline and fit/predict in one step</p>
 <pre><code>from sklearn.pipeline import Pipeline
 transformer = ...
 model = ...
@@ -14785,7 +14786,7 @@ pipe.score(X_test, y_test)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Dummy-variables">Dummy variables<a class="anchor-link" href="#Dummy-variables">&#182;</a></h4><ul>
+<h3 id="Dummy-variables">Dummy variables<a class="anchor-link" href="#Dummy-variables">&#182;</a></h3><ul>
 <li>Transform categorical features into dummy variables with OneHotEncoder</li>
 <li>Can add this to the pipeline too</li>
 </ul>
@@ -15143,7 +15144,7 @@ pipe.score(X_test, y_test)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Drop-rows-with-missing-values">Drop rows with missing values<a class="anchor-link" href="#Drop-rows-with-missing-values">&#182;</a></h4>
+<h3 id="Drop-rows-with-missing-values">Drop rows with missing values<a class="anchor-link" href="#Drop-rows-with-missing-values">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -15172,7 +15173,7 @@ pipe.score(X_test, y_test)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Train-test-split">Train-test split<a class="anchor-link" href="#Train-test-split">&#182;</a></h4>
+<h3 id="Train-test-split">Train-test split<a class="anchor-link" href="#Train-test-split">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -15205,7 +15206,7 @@ pipe.score(X_test, y_test)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Transformer">Transformer<a class="anchor-link" href="#Transformer">&#182;</a></h4>
+<h3 id="Transformer">Transformer<a class="anchor-link" href="#Transformer">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -15241,7 +15242,7 @@ pipe.score(X_test, y_test)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="See-what-the-transformer-does">See what the transformer does<a class="anchor-link" href="#See-what-the-transformer-does">&#182;</a></h4>
+<h3 id="See-what-the-transformer-does">See what the transformer does<a class="anchor-link" href="#See-what-the-transformer-does">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -15310,14 +15311,14 @@ pipe.score(X_test, y_test)
   <tbody>
     <tr>
       <th>0</th>
-      <td>-1.125776</td>
-      <td>0.897655</td>
-      <td>0.924252</td>
-      <td>-1.364813</td>
-      <td>-1.716415</td>
-      <td>-1.706360</td>
-      <td>-1.674186</td>
-      <td>1.901903</td>
+      <td>-1.152175</td>
+      <td>0.899534</td>
+      <td>0.912774</td>
+      <td>-1.355132</td>
+      <td>-1.694923</td>
+      <td>-1.697037</td>
+      <td>-1.639539</td>
+      <td>1.919214</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15326,14 +15327,14 @@ pipe.score(X_test, y_test)
     </tr>
     <tr>
       <th>1</th>
-      <td>-1.109378</td>
-      <td>0.880888</td>
-      <td>-0.462610</td>
-      <td>1.836260</td>
-      <td>1.452890</td>
-      <td>1.201070</td>
-      <td>1.614096</td>
-      <td>1.896497</td>
+      <td>-1.137677</td>
+      <td>0.882739</td>
+      <td>-0.479432</td>
+      <td>1.813497</td>
+      <td>1.466763</td>
+      <td>1.193058</td>
+      <td>1.623705</td>
+      <td>1.914455</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15342,14 +15343,14 @@ pipe.score(X_test, y_test)
     </tr>
     <tr>
       <th>2</th>
-      <td>-1.144896</td>
-      <td>0.873515</td>
+      <td>-1.169401</td>
+      <td>0.875354</td>
       <td>5.199338</td>
       <td>-0.654930</td>
-      <td>-1.346386</td>
-      <td>-1.338019</td>
-      <td>-1.352623</td>
-      <td>1.610002</td>
+      <td>-1.334066</td>
+      <td>-1.317949</td>
+      <td>-1.324958</td>
+      <td>1.629912</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15358,14 +15359,14 @@ pipe.score(X_test, y_test)
     </tr>
     <tr>
       <th>3</th>
-      <td>-1.169401</td>
-      <td>0.873515</td>
+      <td>-1.189522</td>
+      <td>0.875354</td>
       <td>5.199338</td>
-      <td>-0.873515</td>
+      <td>-0.874727</td>
       <td>-1.059682</td>
-      <td>-1.193642</td>
-      <td>-1.072973</td>
-      <td>1.089939</td>
+      <td>-1.176890</td>
+      <td>-1.068522</td>
+      <td>1.083588</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15374,14 +15375,14 @@ pipe.score(X_test, y_test)
     </tr>
     <tr>
       <th>4</th>
-      <td>-1.169401</td>
-      <td>0.873515</td>
+      <td>-1.189522</td>
+      <td>0.875354</td>
       <td>5.199338</td>
-      <td>-0.474512</td>
-      <td>-0.771450</td>
-      <td>-1.184447</td>
-      <td>-0.814401</td>
-      <td>0.201896</td>
+      <td>-0.471004</td>
+      <td>-0.773140</td>
+      <td>-1.164444</td>
+      <td>-0.810910</td>
+      <td>0.191633</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15406,7 +15407,7 @@ pipe.score(X_test, y_test)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Pipeline-with-lasso">Pipeline with lasso<a class="anchor-link" href="#Pipeline-with-lasso">&#182;</a></h4>
+<h3 id="Pipeline-with-lasso">Pipeline with lasso<a class="anchor-link" href="#Pipeline-with-lasso">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -15439,7 +15440,7 @@ pipe.score(X_test, y_test)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Train-and-test">Train and test<a class="anchor-link" href="#Train-and-test">&#182;</a></h4>
+<h3 id="Train-and-test">Train and test<a class="anchor-link" href="#Train-and-test">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -15475,8 +15476,8 @@ pipe.score(X_test, y_test)
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>R-squared on training data is 0.617362292202591
-R-squared on test data is 0.6263937937029972
+<pre>R-squared on training data is 0.617063711730554
+R-squared on test data is 0.6264072535855956
 </pre>
 </div>
 </div>
@@ -15534,8 +15535,8 @@ R-squared on test data is 0.6263937937029972
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>best alpha is {&#39;model__alpha&#39;: 0.1}
-score on the test data is 0.6278836856414864
+<pre>best alpha is {&#39;model__alpha&#39;: 10}
+score on the test data is 0.6264072535855956
 </pre>
 </div>
 </div>
