@@ -27,3 +27,7 @@
 
 [10. More Machine Learning](13-ML2.slides.html){target="_blank"}
 
+[11. Preprocessing](14-PreProcessing.slides.html){target="_blank"}
+
+[11. Neural Networks](15-Neural_Nets.slides.html){target="_blank"}
+
