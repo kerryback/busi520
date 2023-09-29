@@ -229,8 +229,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Run GridSearchCV on RandomForestClassifier for max_depths in (4, 6, 8, 10, 12, 16). Report the best max_depth and the score on the test data.</li>
 </ol>
 <ol start="3" type="1">
-<li>Run train-test-split on scikit-learn’s wine dataset. Create pipelines with StandardScaler and (a) LogisticRegression with an <span class="math inline">\(\ell^2\)</span> penalty, (b) RandomForestClassifier, and (c) MLPClassifier on scikit-learn’s wine dataset. Run GridSearchCV on the pipeline in each case to get some idea of the best hyperparameters. Report (i) the best hyperparameters, (ii) the fraction correct on the test data, and (iii) the confusion matrix for the test data.</li>
+<li>Run train-test-split on scikit-learn’s wine dataset. Create pipelines with StandardScaler and (a) LogisticRegression with an <span class="math inline">\(\ell^2\)</span> penalty, (b) RandomForestClassifier, and (c) MLPClassifier on scikit-learn’s wine dataset. Run GridSearchCV on the pipeline in each case to get some idea of the best hyperparameters. Report (i) the best hyperparameters, (ii) the fraction correct on the test data, and (iii) the confusion matrix for the test data. For MLPClassifier, use</li>
 </ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode .p code-with-copy"><code class="sourceCode pascal"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>model = MLPClassifier(solver="adam")</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

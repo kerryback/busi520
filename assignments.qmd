@@ -10,4 +10,6 @@
 
 [5. Scientific Programming](assignment5.html){target="_blank"}
 
+[6. Machine Learning](assignment6.html){target="_blank"}
+
 

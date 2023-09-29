@@ -76,4 +76,8 @@ Run train-test-split in our "noisy sine curve example" and then run GridSearchCV
 
   (b) Run GridSearchCV on RandomForestClassifier for max_depths in (4, 6, 8, 10, 12, 16).  Report the best max_depth and the score on the test data.
 
-3. Run train-test-split on scikit-learn's wine dataset.  Create pipelines with StandardScaler and (a) LogisticRegression with an $\ell^2$ penalty, (b) RandomForestClassifier, and (c) MLPClassifier on scikit-learn's wine dataset.  Run GridSearchCV on the pipeline in each case to get some idea of the best hyperparameters.  Report (i) the best hyperparameters, (ii) the fraction correct on the test data, and (iii) the confusion matrix for the test data.
+3. Run train-test-split on scikit-learn's wine dataset.  Create pipelines with StandardScaler and (a) LogisticRegression with an $\ell^2$ penalty, (b) RandomForestClassifier, and (c) MLPClassifier on scikit-learn's wine dataset.  Run GridSearchCV on the pipeline in each case to get some idea of the best hyperparameters.  Report (i) the best hyperparameters, (ii) the fraction correct on the test data, and (iii) the confusion matrix for the test data.  For MLPClassifier, use
+
+```.p
+model = MLPClassifier(solver="adam")
+```
