@@ -31,5 +31,5 @@
 
 [11. Neural Networks](15-Neural_Nets.slides.html){target="_blank"}
 
-[12. Web Scraping](16-web_scraping.slides.html){target="_blank"}
+[12. Web Scraping](16_web_scraping.slides.html){target="_blank"}
 
