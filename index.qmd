@@ -1,4 +1,4 @@
-## Python for Business Research<br>Rice University<br>Fall 2023
+## Python for Business Research<br>Rice University<br>Fall 2024
 
 #### Instructor
 
@@ -35,13 +35,13 @@ This is a tentative schedule.  I think it is a feasible schedule even for studen
 2. Basic python: data types, conditional statements, loops, functions, classes
 3. Vectors and matrices: numpy
 4. Data handling: pandas
-5. More data handling: pandas and SQL
-6. Visualization: matplotlib, seaborn
-7. Scientific programming: scipy, cvxopt
-8. Statistics: statsmodels, linearmodels
-9. Machine learning for classification: scikit-learn, xgboost
-10. Machine learning for regression and data pipelines: scikit-learn, xgboost
-11. Neural networks: pytorch
+5. Visualization: matplotlib, seaborn, plotly
+6. Scientific programming: scipy
+7. Statistics: statsmodels, linearmodels
+8. Tree models for machine learning: scikit-learn, xgboost
+9. Neural networks for machine learning: pytorch
+10. Neural networks for solving games, dynamic programming, and differential equations
+11. Reinforcement learning
 12. Web scraping: beautiful soup, selenium
 
 
