@@ -46,7 +46,7 @@
     "href": "slides.html#slide-decks-busi-520-python-for-business-research",
     "title": "",
     "section": "",
-    "text": "1. Python, VS Code, and Git Setup\n2. Introduction to the Python Language\n3. Introduction to NumPy\n4. Introduction to Pandas"
+    "text": "1. Python, VS Code, and Git Setup\n2. Introduction to the Python Language\n3. Introduction to NumPy\n4. Introduction to Pandas\n5. Additional Pandas\n5. WRDS\n6. Visualization\n7. Scientific Programming\n7. Dynamic Programming\n7. SymPy\n8. Statistics\n9. Introduction to Machine Learning\n10. More Machine Learning\n11. Preprocessing\n11. Neural Networks\n12. Web Scraping"
   },
   {
     "objectID": "index.html#python-for-business-research-rice-university-fall-2023",
@@ -117,5 +117,12 @@
     "title": "",
     "section": "Disability Accommodations",
     "text": "Disability Accommodations\nAny student with a documented disability requiring accommodations in this course is encouraged to contact me outside of class. All discussions will remain confidential. Any adjustments or accommodations regarding assignments or the final exam must be made in advance. Students with disabilities should also contact Disability Support Services in the Allen Center."
+  },
+  {
+    "objectID": "assignments.html#assignments-busi-520-python-for-business-research",
+    "href": "assignments.html#assignments-busi-520-python-for-business-research",
+    "title": "",
+    "section": "",
+    "text": "1. Intro to Python\n2. Numpy and Pandas\n3. More Pandas\n4. Visualizaton\n5. Scientific Programming\n6. Machine Learning"
   }
 ]
