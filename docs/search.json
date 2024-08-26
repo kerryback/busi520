@@ -25,7 +25,7 @@
     "href": "slides.html",
     "title": "",
     "section": "",
-    "text": "1. Python, VS Code, and Git Setup\n2. Introduction to the Python Language\n3. Introduction to NumPy\n4. Introduction to Pandas\n5. Additional Pandas\n5. WRDS\n6. Visualization\n7. Scientific Programming\n7. Dynamic Programming\n7. SymPy\n8. Statistics\n9. Introduction to Machine Learning\n10. More Machine Learning\n11. Preprocessing\n11. Neural Networks\n12. Web Scraping"
+    "text": "1. Introduction to Python\n2. Introduction to NumPy\n3. Introduction to Pandas\n4. Additional Pandas\n5. WRDS\n6. Visualization\n7. Scientific Programming\n8. Dynamic Programming\n9. SymPy\n10. Statistics\n11. Introduction to Machine Learning\n12. More Machine Learning\n13. Preprocessing\n14. Neural Networks\n15. Web Scraping"
   },
   {
     "objectID": "assignment2.html",
@@ -46,7 +46,7 @@
     "href": "slides.html#slide-decks-busi-520-python-for-business-research",
     "title": "",
     "section": "",
-    "text": "1. Python, VS Code, and Git Setup\n2. Introduction to the Python Language\n3. Introduction to NumPy\n4. Introduction to Pandas\n5. Additional Pandas\n5. WRDS\n6. Visualization\n7. Scientific Programming\n7. Dynamic Programming\n7. SymPy\n8. Statistics\n9. Introduction to Machine Learning\n10. More Machine Learning\n11. Preprocessing\n11. Neural Networks\n12. Web Scraping"
+    "text": "1. Introduction to Python\n2. Introduction to NumPy\n3. Introduction to Pandas\n4. Additional Pandas\n5. WRDS\n6. Visualization\n7. Scientific Programming\n8. Dynamic Programming\n9. SymPy\n10. Statistics\n11. Introduction to Machine Learning\n12. More Machine Learning\n13. Preprocessing\n14. Neural Networks\n15. Web Scraping"
   },
   {
     "objectID": "index.html#python-for-business-research-rice-university-fall-2023",

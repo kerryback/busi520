@@ -1,15 +1,13 @@
 ## Slide Decks<br>BUSI 520: Python for Business Research<br><br>![](RiceBusiness-transparent-logo-sm.png){height="50"}<br>
 
 
-[1. Python, VS Code, and Git Setup](00-setup.html){target="_blank"}
+[1. Introduction to Python](01-Introduction_to_Python.slides.html){target="_blank"}
 
-[2. Introduction to the Python Language](01-Introduction_to_Python.slides.html){target="_blank"}
+[2. Introduction to NumPy](02-Introduction_to_NumPy.slides.html){target="_blank"}
 
-[3. Introduction to NumPy](02-Introduction_to_NumPy.slides.html){target="_blank"}
+[3. Introduction to Pandas](03-Introduction_to_Pandas.slides.html){target="_blank"}
 
-[4. Introduction to Pandas](03-Introduction_to_Pandas.slides.html){target="_blank"}
-
-[5. Additional Pandas](04-Additional_Pandas.slides.html){target="_blank"}
+[4. Additional Pandas](04-Additional_Pandas.slides.html){target="_blank"}
 
 [5. WRDS](05-WRDS.slides.html){target="_blank"}
 
@@ -17,19 +15,19 @@
 
 [7. Scientific Programming](07-Scientific_Programming.slides.html){target="_blank"}
 
-[7. Dynamic Programming](08-Dynamic_Programming.slides.html){target="_blank"}
+[8. Dynamic Programming](08-Dynamic_Programming.slides.html){target="_blank"}
 
-[7. SymPy](09-Sympy.slides.html){target="_blank"}
+[9. SymPy](09-Sympy.slides.html){target="_blank"}
 
-[8. Statistics](11-Statistics.slides.html){target="_blank"}
+[10. Statistics](11-Statistics.slides.html){target="_blank"}
 
-[9. Introduction to Machine Learning](12-ML1.slides.html){target="_blank"}
+[11. Introduction to Machine Learning](12-ML1.slides.html){target="_blank"}
 
-[10. More Machine Learning](13-ML2.slides.html){target="_blank"}
+[12. More Machine Learning](13-ML2.slides.html){target="_blank"}
 
-[11. Preprocessing](14-PreProcessing.slides.html){target="_blank"}
+[13. Preprocessing](14-PreProcessing.slides.html){target="_blank"}
 
-[11. Neural Networks](15-Neural_Nets.slides.html){target="_blank"}
+[14. Neural Networks](15-Neural_Nets.slides.html){target="_blank"}
 
-[12. Web Scraping](16_web_scraping.slides.html){target="_blank"}
+[15. Web Scraping](16_web_scraping.slides.html){target="_blank"}
 
