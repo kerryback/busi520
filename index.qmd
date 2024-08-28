@@ -31,9 +31,9 @@ There will be weekly assignments.  You are allowed to google and/or use generati
 
 1. Preliminaries: VS Code, Jupyter notebooks, python scripts, libraries
 2. Basic python: data types, conditional statements, loops, functions, classes
-3. Vectors and matrices: numpy
-4. Data handling: pandas
-5. Visualization: matplotlib, seaborn, plotly
+3. Data handling: pandas
+4. Visualization: matplotlib, seaborn, plotly
+5. Vectors and matrices: numpy
 6. Scientific programming: scipy
 7. Statistics: statsmodels, linearmodels
 8. Intro to machine learning: LASSO and ridge regression
