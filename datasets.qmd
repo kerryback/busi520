@@ -1,0 +1,6 @@
+## Datasets<br>BUSI 520: Python for Business Research<br><br>![](RiceBusiness-transparent-logo-sm.png){height="50"}<br>
+
+
+[WAGE1.DTA](WAGE1.DTA){target="_blank"}
+
+

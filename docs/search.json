@@ -25,7 +25,7 @@
     "href": "slides.html",
     "title": "",
     "section": "",
-    "text": "1. Introduction to Python\n2. Introduction to NumPy\n3. Introduction to Pandas\n4. Additional Pandas\n5. WRDS\n6. Visualization\n7. Scientific Programming\n8. Dynamic Programming\n9. SymPy\n10. Statistics\n11. Introduction to Machine Learning\n12. More Machine Learning\n13. Preprocessing\n14. Neural Networks\n15. Web Scraping"
+    "text": "1. Introduction to Python\n2. Pandas"
   },
   {
     "objectID": "assignment2.html",
@@ -46,7 +46,7 @@
     "href": "slides.html#slide-decks-busi-520-python-for-business-research",
     "title": "",
     "section": "",
-    "text": "1. Introduction to Python\n2. Introduction to NumPy\n3. Introduction to Pandas\n4. Additional Pandas\n5. WRDS\n6. Visualization\n7. Scientific Programming\n8. Dynamic Programming\n9. SymPy\n10. Statistics\n11. Introduction to Machine Learning\n12. More Machine Learning\n13. Preprocessing\n14. Neural Networks\n15. Web Scraping"
+    "text": "1. Introduction to Python\n2. Pandas"
   },
   {
     "objectID": "index.html#python-for-business-research-rice-university-fall-2023",
@@ -124,5 +124,19 @@
     "title": "",
     "section": "",
     "text": "1. Intro to Python\n2. Numpy and Pandas\n3. More Pandas\n4. Visualizaton\n5. Scientific Programming\n6. Machine Learning"
+  },
+  {
+    "objectID": "datasets.html",
+    "href": "datasets.html",
+    "title": "",
+    "section": "",
+    "text": "WAGE1.DTA"
+  },
+  {
+    "objectID": "datasets.html#datasets-busi-520-python-for-business-research",
+    "href": "datasets.html#datasets-busi-520-python-for-business-research",
+    "title": "",
+    "section": "",
+    "text": "WAGE1.DTA"
   }
 ]

@@ -4,6 +4,7 @@ project:
   render:
     - index.qmd
     - slides.qmd
+    - datasets.qmd
     - assignments.qmd
     - assignment1.qmd
     - assignment2.qmd
@@ -26,8 +27,9 @@ website:
       - text: Assignments
         file: assignments.qmd
       - text: Notebooks
-        href: https://github.com/kerryback/BUSI-520-notebooks
-      
+        href: https://github.com/kerryback/busi520/tree/main/notebooks
+      - text: Datasets 
+        file: datasets.qmd
         
 format: 
   html:
