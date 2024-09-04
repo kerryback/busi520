@@ -3,5 +3,7 @@
 
 [1. Introduction to Python](01-Introduction_to_Python.slides.html){target="_blank"}
 
-[2. Pandas](Day2.slides.html)
+[2. Pandas](Day2.slides.html){target="_blank"}
+
+[3. WRDS](-3-WRDS.slides.html){target="_blank"}
 
