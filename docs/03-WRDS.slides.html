@@ -5,7 +5,7 @@
 <meta content="chrome=1" http-equiv="X-UA-Compatible"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-<title>02-pandas slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+<title>03-WRDS slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
@@ -7434,41 +7434,81 @@ main {
 <main>
 <div class="reveal">
 <div class="slides"><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6c8174fd">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Day-2">Day 2<a class="anchor-link" href="#Day-2">¶</a></h1><h3 id="BUSI-520:-Python-for-Business-Research">BUSI 520: Python for Business Research<a class="anchor-link" href="#BUSI-520:-Python-for-Business-Research">¶</a></h3><h3 id="Kerry-Back,-JGSB,-Rice-University">Kerry Back, JGSB, Rice University<a class="anchor-link" href="#Kerry-Back,-JGSB,-Rice-University">¶</a></h3>
+<h1 id="Day-3">Day 3<a class="anchor-link" href="#Day-3">¶</a></h1><h3 id="BUSI-520:-Python-for-Business-Research">BUSI 520: Python for Business Research<a class="anchor-link" href="#BUSI-520:-Python-for-Business-Research">¶</a></h3><h3 id="Kerry-Back,-JGSB,-Rice-University">Kerry Back, JGSB, Rice University<a class="anchor-link" href="#Kerry-Back,-JGSB,-Rice-University">¶</a></h3>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4c4a2f43">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Lambda-functions">Lambda functions<a class="anchor-link" href="#Lambda-functions">¶</a></h3><p>Convenient way to write short function definitions</p>
+<h2 id="Topics-for-today">Topics for today<a class="anchor-link" href="#Topics-for-today">¶</a></h2><ul>
+<li>Warm-up - build a 2x2 table of average wage by male/female and white/nonwhite from WAGE1.DTA<ul>
+<li>Use groupby</li>
+<li>Use nested for loops</li>
+<li>Use a pivot table</li>
+</ul>
+</li>
+<li>Merging datasets</li>
+<li>Visualization<ul>
+<li>Fama-French factors and 5x5 portfolios</li>
+<li>WAGE1.DTA</li>
+</ul>
+</li>
+<li>WRDS (rest of notebook is about WRDS)</li>
+</ul>
 </div>
 </div>
 </div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2090b14a">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Merging-dataframes">Merging dataframes<a class="anchor-link" href="#Merging-dataframes">¶</a></h2><ul>
+<li>pd.concat, df.join, df.merge</li>
+<li>pd.concat can stack on top of each other or side by side</li>
+<li>df.join is a special case of merge</li>
+<li>df.merge is the most general and flexible</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>   
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="c1"># Sample DataFrames</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">'A'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'A0'</span><span class="p">,</span> <span class="s1">'A1'</span><span class="p">,</span> <span class="s1">'A2'</span><span class="p">],</span>
+    <span class="s1">'B'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'B0'</span><span class="p">,</span> <span class="s1">'B1'</span><span class="p">,</span> <span class="s1">'B2'</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">'A'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'A3'</span><span class="p">,</span> <span class="s1">'A4'</span><span class="p">,</span> <span class="s1">'A5'</span><span class="p">],</span>
+    <span class="s1">'B'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'B3'</span><span class="p">,</span> <span class="s1">'B4'</span><span class="p">,</span> <span class="s1">'B5'</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># pd.concat - stacking vertically</span>
+<span class="n">concat_vertical</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">,</span> <span class="n">concat_vertical</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n\n</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7481,507 +7521,29 @@ main {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>9
-9
+<pre>    A   B
+0  A0  B0
+1  A1  B1
+2  A2  B2
+
+    A   C
+0  A3  B3
+1  A4  B4
+2  A5  B5
+
+    A    B    C
+0  A0   B0  NaN
+1  A1   B1  NaN
+2  A2   B2  NaN
+0  A3  NaN   B3
+1  A4  NaN   B4
+2  A5  NaN   B5
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8e681396">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Line-continuations">Line continuations<a class="anchor-link" href="#Line-continuations">¶</a></h3><ul>
-<li>can use a backslash \ at the end of a line to continue it on the next</li>
-<li>or enclose in ()</li>
-<li>lists can be continued without a backslash</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d46fa185">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> \
-        <span class="o">+</span> <span class="mi">3</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span>
-        <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
-        <span class="o">+</span> <span class="mi">3</span>
-    <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-
-<span class="n">lst</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">"a"</span><span class="p">,</span> 
-    <span class="s2">"b"</span><span class="p">,</span> 
-    <span class="s2">"c"</span>
-<span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>7
-7
-['a', 'b', 'c']
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b63fd6d1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Reading-and-writing-dataframes-with-pandas">Reading and writing dataframes with pandas<a class="anchor-link" href="#Reading-and-writing-dataframes-with-pandas">¶</a></h3><ul>
-<li>Can read csv, excel, sas, stata, sql, ...</li>
-<li>Can write also</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d7982199">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Two-ways-to-read-stata-dta-files">Two ways to read stata dta files<a class="anchor-link" href="#Two-ways-to-read-stata-dta-files">¶</a></h3><ol>
-<li>pd.read_stata</li>
-<li>StataReader</li>
-</ol>
-</div>
-</div>
-</div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b0505483">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_stata</span><span class="p">(</span><span class="s2">"WAGE1.DTA"</span><span class="p">)</span>
-<span class="n">df</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>wage</th>
-<th>educ</th>
-<th>exper</th>
-<th>tenure</th>
-<th>nonwhite</th>
-<th>female</th>
-<th>married</th>
-<th>numdep</th>
-<th>smsa</th>
-<th>northcen</th>
-<th>...</th>
-<th>trcommpu</th>
-<th>trade</th>
-<th>services</th>
-<th>profserv</th>
-<th>profocc</th>
-<th>clerocc</th>
-<th>servocc</th>
-<th>lwage</th>
-<th>expersq</th>
-<th>tenursq</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>3.10</td>
-<td>11</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>2</td>
-<td>1</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1.131402</td>
-<td>4</td>
-<td>0</td>
-</tr>
-<tr>
-<th>1</th>
-<td>3.24</td>
-<td>12</td>
-<td>22</td>
-<td>2</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>3</td>
-<td>1</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1.175573</td>
-<td>484</td>
-<td>4</td>
-</tr>
-<tr>
-<th>2</th>
-<td>3.00</td>
-<td>11</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1.098612</td>
-<td>4</td>
-<td>0</td>
-</tr>
-<tr>
-<th>3</th>
-<td>6.00</td>
-<td>8</td>
-<td>44</td>
-<td>28</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1.791759</td>
-<td>1936</td>
-<td>784</td>
-</tr>
-<tr>
-<th>4</th>
-<td>5.30</td>
-<td>12</td>
-<td>7</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1.667707</td>
-<td>49</td>
-<td>4</td>
-</tr>
-<tr>
-<th>...</th>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr>
-<th>521</th>
-<td>15.00</td>
-<td>16</td>
-<td>14</td>
-<td>2</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>2.708050</td>
-<td>196</td>
-<td>4</td>
-</tr>
-<tr>
-<th>522</th>
-<td>2.27</td>
-<td>10</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0.819780</td>
-<td>4</td>
-<td>0</td>
-</tr>
-<tr>
-<th>523</th>
-<td>4.67</td>
-<td>15</td>
-<td>13</td>
-<td>18</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>1.541159</td>
-<td>169</td>
-<td>324</td>
-</tr>
-<tr>
-<th>524</th>
-<td>11.56</td>
-<td>16</td>
-<td>5</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>2.447551</td>
-<td>25</td>
-<td>1</td>
-</tr>
-<tr>
-<th>525</th>
-<td>3.50</td>
-<td>14</td>
-<td>5</td>
-<td>4</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1.252763</td>
-<td>25</td>
-<td>16</td>
-</tr>
-</tbody>
-</table>
-<p>526 rows × 24 columns</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e41be63f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pandas.io.stata</span> <span class="kn">import</span> <span class="n">StataReader</span>
-
-<span class="n">file</span> <span class="o">=</span> <span class="n">StataReader</span><span class="p">(</span><span class="s2">"WAGE1.dta"</span><span class="p">)</span>
-<span class="n">variables</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">variable_labels</span><span class="p">()</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=73e14a90">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">variables</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>{'wage': 'average hourly earnings',
- 'educ': 'years of education',
- 'exper': 'years potential experience',
- 'tenure': 'years with current employer',
- 'nonwhite': '=1 if nonwhite',
- 'female': '=1 if female',
- 'married': '=1 if married',
- 'numdep': 'number of dependents',
- 'smsa': '=1 if live in SMSA',
- 'northcen': '=1 if live in north central U.S',
- 'south': '=1 if live in southern region',
- 'west': '=1 if live in western region',
- 'construc': '=1 if work in construc. indus.',
- 'ndurman': '=1 if in nondur. manuf. indus.',
- 'trcommpu': '=1 if in trans, commun, pub ut',
- 'trade': '=1 if in wholesale or retail',
- 'services': '=1 if in services indus.',
- 'profserv': '=1 if in prof. serv. indus.',
- 'profocc': '=1 if in profess. occupation',
- 'clerocc': '=1 if in clerical occupation',
- 'servocc': '=1 if in service occupation',
- 'lwage': 'log(wage)',
- 'expersq': 'exper^2',
- 'tenursq': 'tenure^2'}</pre>
-</div>
-</div>
-</div>
-</div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5e3ed000">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7989,7 +7551,395 @@ main {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># pd.concat - stacking horizontally</span>
+
+<span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">'C'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'C0'</span><span class="p">,</span> <span class="s1">'C1'</span><span class="p">,</span> <span class="s1">'C2'</span><span class="p">],</span>
+    <span class="s1">'D'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'D0'</span><span class="p">,</span> <span class="s1">'D1'</span><span class="p">,</span> <span class="s1">'D2'</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="n">concat_horizontal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df3</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">concat_horizontal</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>    A   B
+0  A0  B0
+1  A1  B1
+2  A2  B2
+    C   D
+0  C0  D0
+1  C1  D1
+2  C2  D2
+    A   B   C   D
+0  A0  B0  C0  D0
+1  A1  B1  C1  D1
+2  A2  B2  C2  D2
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># df.join - joining on index</span>
+<span class="n">df4</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">'E'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'E0'</span><span class="p">,</span> <span class="s1">'E1'</span><span class="p">,</span> <span class="s1">'E2'</span><span class="p">]</span>
+<span class="p">},</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+
+<span class="n">joined</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df4</span><span class="p">,</span> <span class="n">joined</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n\n</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>    A   B
+0  A0  B0
+1  A1  B1
+2  A2  B2
+
+    E
+0  E0
+1  E1
+2  E2
+
+    A   B   E
+0  A0  B0  E0
+1  A1  B1  E1
+2  A2  B2  E2
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># df.merge - merging on a common column</span>
+<span class="n">df5</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">'A'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'A0'</span><span class="p">,</span> <span class="s1">'A1'</span><span class="p">,</span> <span class="s1">'A2'</span><span class="p">],</span>
+    <span class="s1">'C'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'C0'</span><span class="p">,</span> <span class="s1">'C1'</span><span class="p">,</span> <span class="s1">'C2'</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">merged</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df5</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'A'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df5</span><span class="p">,</span> <span class="n">merged</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n\n</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>    A   B
+0  A0  B0
+1  A1  B1
+2  A2  B2
+
+    A   C
+0  A0  C0
+1  A1  C1
+2  A2  C2
+
+    A   B   C
+0  A0  B0  C0
+1  A1  B1  C1
+2  A2  B2  C2
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Another-example">Another example<a class="anchor-link" href="#Another-example">¶</a></h2><p>Ask Julius to use pandas-datareader to get the monthly Fama-French factors from 1990 to the present and the monthly 25 size and book-to-market sorted portfolios from 1980 to the present from French's data library and merge them.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Plotting-libraries">Plotting libraries<a class="anchor-link" href="#Plotting-libraries">¶</a></h2><ul>
+<li><p>matplotlib: import matplotlib.pyplot as plt</p>
+</li>
+<li><p>seaborn: import seaborn as sns</p>
+<ul>
+<li>seaborn is built on top of matplotlib.</li>
+<li>Use matplotlib to control axis labels, title, etc.</li>
+</ul>
+</li>
+<li><p>plotly express: import plotly.express as px</p>
+</li>
+<li><p>plotly.graph_objects: import plotly.graph_objects as go</p>
+<ul>
+<li>plotly creates interactive html plots</li>
+<li>check out Vizly: <a href="https://vizly.fyi/">https://vizly.fyi/</a></li>
+</ul>
+</li>
+<li><p>You can also plot directly from a dataframe as in</p>
+<ul>
+<li>df.plot(kind='line', x='date', y='value')</li>
+<li>You will still want matplotlib to control axis labels, title, etc.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Examples">Examples<a class="anchor-link" href="#Examples">¶</a></h2><ul>
+<li>Ask Julius to plot the compounded returns of the Fama-French factors.</li>
+<li>Ask Julius to plot the compounded returns of the 5x5 portfolios.</li>
+<li>Ask Julius to create density plots and histograms of the Fama-French factors.</li>
+<li>Ask Julius to use the seaborn style whitegrid and to repeat the above.</li>
+<li>Ask Julius to produce a scatter plot of HML on Mkt-RF</li>
+<li>Ask Julius to create a seaborn regplot of HML on Mkt-RF</li>
+<li>Ask Julius to produce a scatter matrix of the Fama-French factors with regression lines and density plots on the diagonal</li>
+<li>Ask Julius to annotate outliers in the seaborn regplot of HML on Mkt-RF</li>
+<li>Ask Julius to change axis labels, change the size of fonts, add titles, change the colors of plots, use different line styles, use a different color palette, use a different seaborn style, etc.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Plotly">Plotly<a class="anchor-link" href="#Plotly">¶</a></h2><ul>
+<li>Ask Julius to use plotly to create a scatter plot of HML on Mkt-RF with a regression line and include the date in the hover data.</li>
+<li>Ask Julius to provide a link to the html figure.</li>
+<li>Ask Julius to use use pandas-datareader to get the 3 month, 1 year, 5 year, and 20 year Treasury yields from FRED.</li>
+<li>Ask Julius to use plotly to create an animation over time of the plot of Treasury yields on maturity and to provide a link to the html output.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Determinants-of-wages">Determinants of wages<a class="anchor-link" href="#Determinants-of-wages">¶</a></h2><ul>
+<li>Ask Julius to read WAGE1.DTA</li>
+<li>You want to explore the determinants of wages in the data</li>
+<li>What plots can you create to explore the data or to present the data? (we'll run regressions later)</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="WRDS">WRDS<a class="anchor-link" href="#WRDS">¶</a></h2><ul>
+<li>The remainder of this notebook illustrates getting and using CRSP and Compustat data from WRDS</li>
+<li>See <a href="https://wrds-www.wharton.upenn.edu/search/?queryTerms=python&amp;activeTab=navAlgoliaSearchTab">https://wrds-www.wharton.upenn.edu/search/?queryTerms=python&amp;activeTab=navAlgoliaSearchTab</a> for more advice and examples.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">wrds</span>       
+<span class="n">conn</span> <span class="o">=</span> <span class="n">wrds</span><span class="o">.</span><span class="n">Connection</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>WRDS recommends setting up a .pgpass file.
+You can create this file yourself at any time
+with the create_pgpass_file() function.
+Loading library list...
+Done
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Annual-Compustat">Annual Compustat<a class="anchor-link" href="#Annual-Compustat">¶</a></h3><p>An example of pulling data from the annual Compustat table.  datadate is the end of the fiscal year.  We impose standard filters.  See <a href="https://wrds-web.wharton.upenn.edu/wrds/demo/demoform_compustat.cfm">https://wrds-web.wharton.upenn.edu/wrds/demo/demoform_compustat.cfm</a> for a full list of Compustat variable definitions. Quarterly data is also available.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">comp</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">raw_sql</span><span class="p">(</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    select gvkey, datadate, at</span>
+<span class="sd">    from comp.funda</span>
+<span class="sd">    where datadate &gt;= '2000-01-01' and at&gt;0 </span>
+<span class="sd">    and indfmt='INDL' and datafmt='STD' and popsrc='D' and consol='C'</span>
+<span class="sd">    order by gvkey, datadate</span>
+<span class="sd">    """</span><span class="p">,</span> 
+    <span class="n">date_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">'datadate'</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># convert string or float to int</span>
+<span class="n">comp</span><span class="o">.</span><span class="n">gvkey</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">gvkey</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Days-between-datadates">Days between datadates<a class="anchor-link" href="#Days-between-datadates">¶</a></h3>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">days_between</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">days</span> <span class="o">=</span> <span class="n">dates</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>                                          
+    <span class="k">return</span> <span class="n">days</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span><span class="o">.</span><span class="n">days</span><span class="p">)</span>
+
+<span class="n">comp</span><span class="p">[</span><span class="s2">"days"</span><span class="p">]</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"gvkey"</span><span class="p">)</span><span class="o">.</span><span class="n">datadate</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">days_between</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Investment-rate">Investment rate<a class="anchor-link" href="#Investment-rate">¶</a></h3><p>Set it to missing if more than x days between datadates</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">comp</span><span class="p">[</span><span class="s2">"inv"</span><span class="p">]</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"gvkey"</span><span class="p">)[</span><span class="s2">"at"</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
+<span class="n">comp</span><span class="p">[</span><span class="s2">"inv"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">comp</span><span class="o">.</span><span class="n">days</span><span class="p">)</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">comp</span><span class="o">.</span><span class="n">days</span><span class="o">&gt;</span><span class="mi">720</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">comp</span><span class="o">.</span><span class="n">inv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Example</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">comp</span><span class="p">[</span><span class="n">comp</span><span class="o">.</span><span class="n">gvkey</span><span class="o">==</span><span class="mi">1019</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -8000,7 +7950,7 @@ main {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8020,478 +7970,708 @@ main {
 <thead>
 <tr style="text-align: right;">
 <th></th>
-<th>wage</th>
-<th>educ</th>
-<th>exper</th>
-<th>tenure</th>
-<th>nonwhite</th>
-<th>female</th>
-<th>married</th>
-<th>numdep</th>
-<th>smsa</th>
-<th>northcen</th>
-<th>...</th>
-<th>trcommpu</th>
-<th>trade</th>
-<th>services</th>
-<th>profserv</th>
-<th>profocc</th>
-<th>clerocc</th>
-<th>servocc</th>
-<th>lwage</th>
-<th>expersq</th>
-<th>tenursq</th>
+<th>gvkey</th>
+<th>datadate</th>
+<th>at</th>
+<th>days</th>
+<th>inv</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th>0</th>
-<td>3.10</td>
-<td>11</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>2</td>
-<td>1</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1.131402</td>
-<td>4</td>
-<td>0</td>
+<th>38</th>
+<td>1019</td>
+<td>2000-12-31</td>
+<td>28.638</td>
+<td>NaN</td>
+<td>NaN</td>
 </tr>
 <tr>
-<th>1</th>
-<td>3.24</td>
-<td>12</td>
-<td>22</td>
-<td>2</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>3</td>
-<td>1</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1.175573</td>
-<td>484</td>
-<td>4</td>
+<th>39</th>
+<td>1019</td>
+<td>2001-12-31</td>
+<td>30.836</td>
+<td>365.0</td>
+<td>0.076751</td>
 </tr>
 <tr>
-<th>2</th>
-<td>3.00</td>
-<td>11</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1.098612</td>
-<td>4</td>
-<td>0</td>
+<th>40</th>
+<td>1019</td>
+<td>2007-12-31</td>
+<td>34.180</td>
+<td>2191.0</td>
+<td>NaN</td>
 </tr>
 <tr>
-<th>3</th>
-<td>6.00</td>
-<td>8</td>
-<td>44</td>
-<td>28</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1.791759</td>
-<td>1936</td>
-<td>784</td>
+<th>41</th>
+<td>1019</td>
+<td>2008-12-31</td>
+<td>33.486</td>
+<td>366.0</td>
+<td>-0.020304</td>
 </tr>
 <tr>
-<th>4</th>
-<td>5.30</td>
-<td>12</td>
-<td>7</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1.667707</td>
-<td>49</td>
-<td>4</td>
-</tr>
-<tr>
-<th>...</th>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr>
-<th>521</th>
-<td>15.00</td>
-<td>16</td>
-<td>14</td>
-<td>2</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>2.708050</td>
-<td>196</td>
-<td>4</td>
-</tr>
-<tr>
-<th>522</th>
-<td>2.27</td>
-<td>10</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0.819780</td>
-<td>4</td>
-<td>0</td>
-</tr>
-<tr>
-<th>523</th>
-<td>4.67</td>
-<td>15</td>
-<td>13</td>
-<td>18</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>1.541159</td>
-<td>169</td>
-<td>324</td>
-</tr>
-<tr>
-<th>524</th>
-<td>11.56</td>
-<td>16</td>
-<td>5</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>2.447551</td>
-<td>25</td>
-<td>1</td>
-</tr>
-<tr>
-<th>525</th>
-<td>3.50</td>
-<td>14</td>
-<td>5</td>
-<td>4</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>...</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1.252763</td>
-<td>25</td>
-<td>16</td>
+<th>42</th>
+<td>1019</td>
+<td>2009-12-31</td>
+<td>32.678</td>
+<td>365.0</td>
+<td>-0.024129</td>
 </tr>
 </tbody>
 </table>
-<p>526 rows × 24 columns</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b9ad15e7">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="What-can-we-do-with-pandas?">What can we do with pandas?<a class="anchor-link" href="#What-can-we-do-with-pandas?">¶</a></h3><ul>
-<li>Explore</li>
-<li>Select</li>
-<li>Transform</li>
-<li>Aggregate</li>
-<li>Sort, rank, and cut</li>
-<li>Filter</li>
-<li>Aggregate by group</li>
-<li>Merge</li>
-<li>Plot</li>
-</ul>
+<h3 id="Use-Fama-French-lagging">Use Fama-French lagging<a class="anchor-link" href="#Use-Fama-French-lagging">¶</a></h3><p>Shift all annual reports in a calendar year to June 30 of the following year.</p>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=34562eb7">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Explore">Explore<a class="anchor-link" href="#Explore">¶</a></h3><ul>
-<li>.info()</li>
-<li>.describe()</li>
-<li>.head()</li>
-<li>.tail()</li>
-<li>.columns</li>
-<li>.index</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8a0ca407">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Select">Select<a class="anchor-link" href="#Select">¶</a></h3><ul>
-<li>[] for columns</li>
-<li>or .column_name for columns</li>
-<li>.loc[] to get rows using labels</li>
-<li>.iloc[] to get rows using index 0, 1, ...</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1a628a65">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Transform">Transform<a class="anchor-link" href="#Transform">¶</a></h3><ul>
-<li>mathematical operations to individual columns or rows</li>
-<li>combine columns or combine rows in mathematical operations (add, subtract, ...)</li>
-<li>create new columns or rows</li>
-<li>np.where(condition, if_true, if_false)</li>
-<li>.map(f) or .map(lambda x: ...)</li>
-<li>exercises:<ol>
-<li>change the female column to be "F" if 1 and "M" if 0</li>
-<li>create a new column that is 1 if experience &lt;=5, is 2 if 5 &lt; experience &lt;= 10, 3 if 10 &lt; experience &lt;= 20, 4 otherwise</li>
-<li>create a new column that is "northcen" if northcen=1, is "south" if south=1, is "west" if west=1, and is "east" otherwise.</li>
-</ol>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e0da5d55">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Aggregate">Aggregate<a class="anchor-link" href="#Aggregate">¶</a></h3><ul>
-<li>.sum(), .mean(), .median(), .quantile(), .std(), .var(), .min(), .max()</li>
-<li>.apply(lambda x: ...)</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ceadef02">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Sort,-rank,-and-cut">Sort, rank, and cut<a class="anchor-link" href="#Sort,-rank,-and-cut">¶</a></h3><ul>
-<li>sort_values() or sort_index()</li>
-<li>.rank()</li>
-<li>pd.cut(data, bin_edges, right=True or False, labels=...)</li>
-<li>pd.qcut(data, number_of_groups, labels=...)</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=804728ad">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Filter">Filter<a class="anchor-link" href="#Filter">¶</a></h3><ul>
-<li>df[df.wage&lt;10]</li>
-<li>df[(df.wage&lt;10) &amp; (df.female==1)]</li>
-<li>df[(df.wage&lt;10) | (df.female==1)]</li>
-<li>df.dropna() or df.dropna(subset=[...])</li>
-<li>not filtering, but .fillna is also useful</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=da694755">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Aggregate-by-group">Aggregate by group<a class="anchor-link" href="#Aggregate-by-group">¶</a></h3><ul>
-<li>df.groupby("female").wage.mean()</li>
-<li>df.groupby(["female", "married"]).wage.mean().unstack()</li>
-<li>can use any aggregation function including custom functions with .apply</li>
-<li>df.groupby("female").wage.apply(
-lambda x: x.quantile([0.2, 0.4, 0.6, 0.8])
-)</li>
-<li>df.groupby("female").wage.apply(
-lambda x: pd.qcut(x, 5, labels=range(1, 6))
-)</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7752f95e">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"group"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"female"</span><span class="p">],</span> <span class="n">group_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">wage</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
-    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">qcut</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># define date as June 30 of year following datadate</span>
+<span class="n">comp</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span>
+    <span class="n">comp</span><span class="o">.</span><span class="n">datadate</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">year</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s1">'-06-30'</span>
+    <span class="p">)</span>
 <span class="p">)</span>
-<span class="n">df</span><span class="p">[[</span><span class="s2">"female"</span><span class="p">,</span> <span class="s2">"wage"</span><span class="p">,</span> <span class="s2">"group"</span><span class="p">]]</span>
+    
+<span class="c1"># if two annual reports in one calendar year (due to change of fiscal year), keep last one</span>
+<span class="n">comp</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span>
+    <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">'gvkey'</span><span class="p">,</span> <span class="s1">'date'</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s1">'last'</span>
+<span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e8bd337a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="ask-Julius">ask Julius<a class="anchor-link" href="#ask-Julius">¶</a></h3><ul>
-<li>to read WAGE1.DTA and describe it and then do some aggregation by groups with it</li>
-<li>to get the seaborn tips dataset and do some aggregation by groups with it</li>
-<li>to use pandas datareader to get the Fama-French factors from French's data library and merge them with MOM from French's data library</li>
-<li>to create boxplots for the Fama-French factors and MOM</li>
+<h3 id="Assign-permnos-if-merging-with-CRSP">Assign permnos if merging with CRSP<a class="anchor-link" href="#Assign-permnos-if-merging-with-CRSP">¶</a></h3>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">link</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">raw_sql</span><span class="p">(</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    select distinct gvkey, lpermno as permno, linkdt, linkenddt</span>
+<span class="sd">    from crsp.Ccmxpf_linktable</span>
+<span class="sd">    where linktype in ('LU', 'LC')</span>
+<span class="sd">    and LINKPRIM in ('P', 'C')</span>
+<span class="sd">    """</span>
+<span class="p">)</span>
+
+<span class="c1"># convert strings or floats to ints</span>
+<span class="n">link</span><span class="p">[</span><span class="s1">'gvkey'</span><span class="p">]</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">gvkey</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">link</span><span class="p">[</span><span class="s1">'permno'</span><span class="p">]</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">permno</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="c1"># fill in missing end dates with a future date</span>
+<span class="n">link</span><span class="p">[</span><span class="s1">'linkenddt'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span>
+    <span class="n">link</span><span class="o">.</span><span class="n">linkenddt</span>
+<span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">'21000101'</span><span class="p">))</span>
+
+<span class="c1"># merge with Compustat data and keep rows with Compustat datadate between link date and link end date</span>
+<span class="n">comp</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'gvkey'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'inner'</span><span class="p">)</span>
+<span class="n">comp</span> <span class="o">=</span> <span class="n">comp</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">comp</span><span class="o">.</span><span class="n">datadate</span><span class="o">&gt;=</span><span class="n">comp</span><span class="o">.</span><span class="n">linkdt</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">comp</span><span class="o">.</span><span class="n">datadate</span><span class="o">&lt;=</span><span class="n">comp</span><span class="o">.</span><span class="n">linkenddt</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">comp</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'days'</span><span class="p">,</span> <span class="s1">'gvkey'</span><span class="p">,</span> <span class="s1">'datadate'</span><span class="p">,</span> <span class="s1">'linkdt'</span><span class="p">,</span> <span class="s1">'linkenddt'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="CRSP">CRSP<a class="anchor-link" href="#CRSP">¶</a></h3><p>Get stock prices and returns from  CRSP (Center for Research in Security Prices).  We use standard filters.  See <a href="http://www.crsp.com/files/data_descriptions_guide_0.pdf">http://www.crsp.com/files/data_descriptions_guide_0.pdf</a> for a complete set of variable definitions.  CRSP uses PERMCO as a permanent company identifier and PERMNO as a permanent security identifier.  Some companies have multiple classes of common stock, which means multiple common stock PERMNOs can be associated with a single PERMCO.  Both monthly and daily data are available.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">crsp</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">raw_sql</span><span class="p">(</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    select a.permno, a.permco, a.date, a.ret, abs(a.prc)*a.shrout as me, b.exchcd</span>
+<span class="sd">    from crsp.msf a inner join crsp.msenames b</span>
+<span class="sd">    on a.permno=b.permno and a.date between b.namedt and b.nameendt</span>
+<span class="sd">    and b.exchcd in (1,2,3) and b.shrcd in (10,11)</span>
+<span class="sd">    where a.date &gt;= '2000-01-01'</span>
+<span class="sd">    order by a.permno, a.date</span>
+<span class="sd">    """</span><span class="p">,</span>
+<span class="n">date_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># change strings or floats to integers</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'permno'</span><span class="p">,</span><span class="s1">'permco'</span><span class="p">]:</span>
+    <span class="n">crsp</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">crsp</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="c1"># define market equity as sum of market equities of all permnos associated with a permco</span>
+<span class="n">crsp</span><span class="p">[</span><span class="s1">'me'</span><span class="p">]</span> <span class="o">=</span> <span class="n">crsp</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'date'</span><span class="p">,</span><span class="s1">'permco'</span><span class="p">])</span><span class="o">.</span><span class="n">me</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Define-delisting-returns">Define delisting returns<a class="anchor-link" href="#Define-delisting-returns">¶</a></h3><p>This is always done, but there are some different ways to do it.  Here, we follow some of the literature and assign a lower delisting return to Nasdaq stocks than to NYSE/AMEX stocks if the delisting return is missing and delisting was due to poor performance.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mse</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">raw_sql</span><span class="p">(</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    select permno, dlret, dlstcd</span>
+<span class="sd">    from crsp.mse</span>
+<span class="sd">    where event='DELIST' and dlstcd&gt;100</span>
+<span class="sd">    order by permno</span>
+<span class="sd">    """</span>
+<span class="p">)</span>
+
+<span class="c1"># change string or float to int</span>
+<span class="n">mse</span><span class="p">[</span><span class="s1">'permno'</span><span class="p">]</span> <span class="o">=</span> <span class="n">mse</span><span class="o">.</span><span class="n">permno</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="c1"># merge with crsp, keeping all rows of crsp</span>
+<span class="n">crsp</span> <span class="o">=</span> <span class="n">crsp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">mse</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'permno'</span><span class="p">)</span>
+<span class="k">del</span> <span class="n">mse</span>
+
+<span class="c1"># series of True and False, True if it is the last date for a stock</span>
+<span class="n">LastObs</span> <span class="o">=</span> <span class="n">crsp</span><span class="o">.</span><span class="n">permno</span> <span class="o">!=</span> <span class="n">crsp</span><span class="o">.</span><span class="n">permno</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># series of True and False, True if delisted for poor performance</span>
+<span class="n">DLCode</span> <span class="o">=</span> <span class="p">(</span><span class="n">crsp</span><span class="o">.</span><span class="n">dlstcd</span><span class="o">==</span><span class="mi">500</span><span class="p">)</span> <span class="o">|</span> <span class="p">((</span><span class="n">crsp</span><span class="o">.</span><span class="n">dlstcd</span> <span class="o">&gt;=</span><span class="mi">520</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">crsp</span><span class="o">.</span><span class="n">dlstcd</span><span class="o">&lt;=</span><span class="mi">584</span><span class="p">))</span>
+
+<span class="c1"># -35% if no delisting return, delisted for poor performance and NYSE/AMEX</span>
+<span class="n">crsp</span><span class="p">[</span><span class="s1">'dlret'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">DLCode</span> <span class="o">&amp;</span> <span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">crsp</span><span class="o">.</span><span class="n">exchcd</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]),</span> <span class="o">-</span><span class="mf">0.35</span><span class="p">,</span> <span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="p">)</span> 
+
+<span class="c1"># -55% if no delisting return, delisted for poor performance and Nasdaq</span>
+<span class="n">crsp</span><span class="p">[</span><span class="s1">'dlret'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">DLCode</span> <span class="o">&amp;</span> <span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">crsp</span><span class="o">.</span><span class="n">exchcd</span><span class="o">==</span><span class="mi">3</span><span class="p">),</span> <span class="o">-</span><span class="mf">0.55</span><span class="p">,</span> <span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="p">)</span>
+
+<span class="c1"># if delisting return exists and &lt; -1, change to -1</span>
+<span class="n">crsp</span><span class="p">[</span><span class="s1">'dlret'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="o">&lt;-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="p">)</span>
+
+<span class="c1"># if last day and return exists, define return by compounding with delisting return (if exists)      </span>
+<span class="n">crsp</span><span class="p">[</span><span class="s1">'ret'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">LastObs</span> <span class="o">&amp;</span> <span class="n">crsp</span><span class="o">.</span><span class="n">ret</span><span class="o">.</span><span class="n">notnull</span><span class="p">(),</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">crsp</span><span class="o">.</span><span class="n">ret</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">crsp</span><span class="o">.</span><span class="n">ret</span><span class="p">)</span>
+
+<span class="c1"># if last day and return does not exist, define return as delisting return</span>
+<span class="n">crsp</span><span class="p">[</span><span class="s1">'ret'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">LastObs</span> <span class="o">&amp;</span> <span class="n">crsp</span><span class="o">.</span><span class="n">ret</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span> <span class="n">crsp</span><span class="o">.</span><span class="n">dlret</span><span class="p">,</span> <span class="n">crsp</span><span class="o">.</span><span class="n">ret</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Merge-CRSP-with-Compustat">Merge CRSP with Compustat<a class="anchor-link" href="#Merge-CRSP-with-Compustat">¶</a></h3><ul>
+<li>Change dates to monthly period format before merging, because Compustat date is the last day of the month, and CRSP date is the last trading day  of the month.</li>
+<li>Merge keeping all rows of CRSP data.  There will be NaNs for Compustat data for 11 months each year.</li>
 </ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">crsp</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">crsp</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">to_period</span><span class="p">(</span><span class="s1">'M'</span><span class="p">)</span>
+<span class="n">comp</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">to_period</span><span class="p">(</span><span class="s1">'M'</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">crsp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">comp</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">'permno'</span><span class="p">,</span> <span class="s1">'date'</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Fill-Compustat-data-into-months">Fill Compustat data into months<a class="anchor-link" href="#Fill-Compustat-data-into-months">¶</a></h3><ul>
+<li>Group by permno when filling forward so we don't fill from one stock into another</li>
+<li>A limit of 11 months on the forward fill is the right limit if we have shifted to June 30, but it should probably be longer otherwise, because a firm might change its fiscal year and go more than 12 months between annual reports.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">'at'</span><span class="p">,</span> <span class="s1">'inv'</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'permno'</span><span class="p">)[[</span><span class="s1">'at'</span><span class="p">,</span> <span class="s1">'inv'</span><span class="p">]]</span><span class="o">.</span><span class="n">ffill</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Check-result">Check result<a class="anchor-link" href="#Check-result">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>permno</th>
+<th>permco</th>
+<th>date</th>
+<th>ret</th>
+<th>me</th>
+<th>exchcd</th>
+<th>dlret</th>
+<th>dlstcd</th>
+<th>at</th>
+<th>days</th>
+<th>inv</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>10001</td>
+<td>7953</td>
+<td>2000-01</td>
+<td>-0.044118</td>
+<td>19906.25</td>
+<td>3.0</td>
+<td>0.011583</td>
+<td>233.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>1</th>
+<td>10001</td>
+<td>7953</td>
+<td>2000-02</td>
+<td>0.015385</td>
+<td>20212.50</td>
+<td>3.0</td>
+<td>0.011583</td>
+<td>233.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>2</th>
+<td>10001</td>
+<td>7953</td>
+<td>2000-03</td>
+<td>-0.015758</td>
+<td>19712.00</td>
+<td>3.0</td>
+<td>0.011583</td>
+<td>233.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>3</th>
+<td>10001</td>
+<td>7953</td>
+<td>2000-04</td>
+<td>0.011719</td>
+<td>19943.00</td>
+<td>3.0</td>
+<td>0.011583</td>
+<td>233.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>4</th>
+<td>10001</td>
+<td>7953</td>
+<td>2000-05</td>
+<td>-0.023166</td>
+<td>19481.00</td>
+<td>3.0</td>
+<td>0.011583</td>
+<td>233.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">days</span><span class="o">&gt;</span><span class="mi">720</span><span class="p">]</span><span class="o">.</span><span class="n">gvkey</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>array([177405.,  28877.,  30950.,  15253.,  61697., 120354., 114747.,
+       135425.,  25632.])</pre>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Coalescing-Compustat-data">Coalescing Compustat data<a class="anchor-link" href="#Coalescing-Compustat-data">¶</a></h3><p>Often one fills in a missing Compustat variable with another variable or with some calculation involving other variables.  An example is the calculation of preferred stock by Fama and French when they calculate book equity.  They use pstkrv if it is not missing; if it is missing, they use pstkl; if both of those are missing, they use pstk; if all three of those are missing they set it to zero.</p>
+<p>Here is an implementation using bfill.  axis=1 means fill across rows.  With axis=1, bfill fills from the right, going to the left.  It produces an array of the same shape that you started with.  The .iloc[:,0] produces the first (zero-th) column of the array.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">comp</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">raw_sql</span><span class="p">(</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    select gvkey, datadate, pstkrv, pstkl, pstk</span>
+<span class="sd">    from comp.funda </span>
+<span class="sd">    where datadate &gt;= '2000-01-01' </span>
+<span class="sd">    and indfmt='INDL' and datafmt='STD' and popsrc='D' and consol='C'</span>
+<span class="sd">    order by gvkey, datadate</span>
+<span class="sd">    """</span><span class="p">,</span> 
+    <span class="n">date_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">'datadate'</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">comp</span><span class="p">[</span><span class="s1">'preferred'</span><span class="p">]</span> <span class="o">=</span> <span class="n">comp</span><span class="p">[[</span><span class="s1">'pstkrv'</span><span class="p">,</span><span class="s1">'pstkl'</span><span class="p">,</span><span class="s1">'pstk'</span><span class="p">]]</span><span class="o">.</span><span class="n">bfill</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">comp</span><span class="p">[</span><span class="n">comp</span><span class="o">.</span><span class="n">preferred</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>gvkey</th>
+<th>datadate</th>
+<th>pstkrv</th>
+<th>pstkl</th>
+<th>pstk</th>
+<th>preferred</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>23</th>
+<td>001010</td>
+<td>2000-12-31</td>
+<td>11.225</td>
+<td>9.600</td>
+<td>9.600</td>
+<td>11.225</td>
+</tr>
+<tr>
+<th>24</th>
+<td>001010</td>
+<td>2001-12-31</td>
+<td>48.070</td>
+<td>48.070</td>
+<td>48.100</td>
+<td>48.070</td>
+</tr>
+<tr>
+<th>25</th>
+<td>001010</td>
+<td>2002-12-31</td>
+<td>70.209</td>
+<td>70.209</td>
+<td>70.200</td>
+<td>70.209</td>
+</tr>
+<tr>
+<th>65</th>
+<td>001021</td>
+<td>2006-06-30</td>
+<td>4.744</td>
+<td>4.744</td>
+<td>4.744</td>
+<td>4.744</td>
+</tr>
+<tr>
+<th>77</th>
+<td>001037</td>
+<td>2000-03-31</td>
+<td>2.583</td>
+<td>2.583</td>
+<td>2.583</td>
+<td>2.583</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">comp</span><span class="p">[(</span><span class="n">comp</span><span class="o">.</span><span class="n">pstkrv</span><span class="o">.</span><span class="n">isna</span><span class="p">())</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">comp</span><span class="o">.</span><span class="n">preferred</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>gvkey</th>
+<th>datadate</th>
+<th>pstkrv</th>
+<th>pstkl</th>
+<th>pstk</th>
+<th>preferred</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1303</th>
+<td>001429</td>
+<td>2000-08-31</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>38.275</td>
+<td>38.275</td>
+</tr>
+<tr>
+<th>1304</th>
+<td>001429</td>
+<td>2001-08-31</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>38.275</td>
+<td>38.275</td>
+</tr>
+<tr>
+<th>2857</th>
+<td>001932</td>
+<td>2000-12-31</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>44.865</td>
+<td>44.865</td>
+</tr>
+<tr>
+<th>2858</th>
+<td>001932</td>
+<td>2001-12-31</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>43.629</td>
+<td>43.629</td>
+</tr>
+<tr>
+<th>2859</th>
+<td>001932</td>
+<td>2002-12-31</td>
+<td>NaN</td>
+<td>49.895</td>
+<td>49.895</td>
+<td>49.895</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 </div>
