@@ -1,0 +1,71 @@
+\documentclass[12pt]{scrarticle}
+\RequirePackage{graphicx,
+amsthm,
+amsmath,
+amsfonts,
+amssymb,
+stfloats,
+natbib,
+booktabs,
+chngcntr,
+setspace,
+dcolumn,
+pgfplots, 
+caption,
+rotating,
+longtable,
+subcaption,
+comment,
+ulem,
+appendix
+}
+
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\onehalfspacing
+\pgfplotsset{compat=1.18}
+\usepackage[tight-spacing=true]{siunitx}
+\usepackage{afterpage}
+\usepackage{placeins}
+\usepackage{enumerate}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}[proposition]{Theorem}
+\newtheorem{corollary}[proposition]{Corollary}
+\newtheorem{lemma}{Lemma}
+
+\numberwithin{lemma}{section}
+\numberwithin{proposition}{section}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
+
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\mye}{\ensuremath{\mathsf{E}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\prob}{prob}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\stdev}{stdev}
+
+\begin{document}
+
+Let $W$ denote an $N \times K$ matrix of factor portfolio weights of $K$ portfolios. Let $\mu$ denote the vector of risk premia of the $N$ assets, and let $\Sigma$ denote the covariance matrix.  Let $\tilde R$ denote the vector of excess returns.  
+
+The risk premia of the $K$ factors are $\hat \mu := W'\mu$.  The covariance matrix of the $K$ factors is $\widehat \Sigma = W'\Sigma W$.  We can find a frontier portfolio of the factors $\pi \in \mathbb{R}^k$ by solving: 
+$$\min E[(\pi'W'\tilde R - 1)^2]/2\,,$$
+which is equivalent to
+$$\min \frac{1}{2} \pi' W'\mye[\tilde R \tilde R'] W\pi - \hat \mu'\pi \quad \Leftrightarrow \quad \min \frac{1}{2}\pi'(\widehat \Sigma + \hat \mu \hat \mu')\pi - \hat \mu'\pi\,.$$
+The FOC is 
+$$\widehat \Sigma \pi + \hat \mu \hat \mu'\pi = \hat \mu \quad \Leftrightarrow \quad \hat \Sigma \pi = (1- \hat \mu'\pi)\hat \mu \quad \Leftrightarrow \quad \pi = (1-\hat \mu'\pi)\widehat\Sigma^{-1}\hat\mu\,.$$
+Multiply by $\hat \mu'$ to obtain
+$$\hat\mu'\pi = (1-\hat\mu'\pi)\hat\mu'\widehat\Sigma^{-1}\hat\mu$$
+so
+$$\hat\mu'\pi = \frac{\hat\mu'\widehat\Sigma^{-1}\hat\mu}{1+\hat\mu'\widehat\Sigma^{-1}\hat\mu}\,.$$
+Substituting this gives us
+
+
+\end{document}

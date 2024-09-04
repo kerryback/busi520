@@ -1,74 +1,33 @@
 ## Assignment 2<br>BUSI 520: Python for Business Research<br>Jones Graduate School of Business<br>Rice University<br>
 
 
-### Numpy
 
-1. Creating Arrays:
-   a. Create a one-dimensional array of integers from 0 to 9.
-   b. Create a two-dimensional array of zeros with shape (5, 5).
-   c. Create a three-dimensional array of ones with shape (2, 3, 4).
-
-2. Manipulating Arrays:
-   a. Reshape the above two-dimensional array to a one-dimensional array.
-   b. Stack two arrays horizontally and vertically.
-   c. Split a given array into multiple sub-arrays.
-   d. Flatten a multi-dimensional array.
-   e. Expand the dimensions of a one-dimensional array.
-
-3. Array Indexing:
-   a. Extract the third and fifth elements from a one-dimensional array.
-   b. Extract a 2x2 sub-matrix from a given two-dimensional array.
-   c. Use boolean indexing to extract even numbers from an array.
-
-4. Arithmetic Operations:  
-   a. Perform element-wise addition, subtraction, multiplication, and division on two given arrays.
-   b. Multiply a 2x3 matrix with a 1x3 matrix using broadcasting.
-  
-5. Aggregation Functions:
-   a. Calculate the sum, mean, standard deviation, and variance of a one-dimensional array.
-   b. Find the minimum and maximum values in a one-dimensional array.
-   c. Repeat (a) and (b) along a single axis of a two-dimensional array.
-
-6. Linear Algebra:
-   a. Transpose a matrix
-   b. Multiply two matrices.
-   c. Compute the dot product of two vectors.
-   d. Calculate the determinant of a matrix.
-   e. Compute the eigenvalues and eigenvectors of a matrix.
-   f. Solve a system of linear equations using NumPy.
-
-7. Simulation:
-   a. Simulate 100 steps of a random walk with standard normal innovations.
-   b. Generate 1,000 simulations of the random walk from part (a).  Compute the mean, median, and standard deviation of the terminal value across the 1,000 simulations.  
-
-#### Pandas
-
-8. Basics of pandas Series and DataFrames
+1. Basics of pandas series and dataframes
    a. Create a series from a list of integers.
-   b. Extract values at specific indices from the Series.
+   b. Extract values at specific indices from the series.
    c. Change the index of the series to alphabetical letters.
    d. Create a dataFrame from a dictionary of lists.
-   e. Extract specific columns from the dataFrame.
-   f. Add a new column to the dataFrame.
+   e. Extract specific columns from the dataframe.
+   f. Add a new column to the dataframe.
    g. Create a dataframe filled with random numbers.
 
-9. Basic DataFrame Operations:
-   a. Calculate the summary statistics for a DataFrame column.
-   b. Sort the dataFrame based on a specific column.
+2. Basic dataFrame operations:
+   a. Calculate the summary statistics for a fataframe column.
+   b. Sort the dataframe based on a specific column.
    c. Filter rows based on certain criteria.
-   d. Replace specific values in a DataFrame.
+   d. Replace specific values in a datadrame.
    e. Rename columns.
    f. Map values in a column to other values using a dictionary.
 
-10. Missing values:
-   a. Find all missing values in a DataFrame.
+3. Missing values:
+   a. Find all missing values in a dataframe.
    b Fill missing values with zeros.
    c. Fill missing values in a column with the column's mean value.
    d. Drop rows with missing data.
    e. Find duplicate rows.
    f. Drop all but the last row in each set of duplicate rows.
 
-11. Filtering and Aggregation:
+4. Filtering and aggregation:
    a. Using the 'tips' dataset, filter the rows where the total bill is greater than $10.
    b. Create a new column in the 'tips' dataset called 'bill_per_person' which is the total bill divided by the size of the party.
    c. Group by the 'day' column and compute the average total bill for each day.
