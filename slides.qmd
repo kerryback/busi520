@@ -7,3 +7,5 @@
 
 [3. WRDS](03-WRDS.slides.html){target="_blank"}
 
+[4. Time Series and Panel Data](04-TimeSeries_Panel.slides.html){target="_blank"}
+
