@@ -7465,7 +7465,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Scripts,-environments,-and-jgsrc1">Scripts, environments, and jgsrc1<a class="anchor-link" href="#Scripts,-environments,-and-jgsrc1">¶</a></h2>
+<h2 id="1.-Scripts,-environments,-and-jgsrc1">1. Scripts, environments, and jgsrc1<a class="anchor-link" href="#1.-Scripts,-environments,-and-jgsrc1">¶</a></h2>
 </div>
 </div>
 </div>
@@ -7477,10 +7477,12 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Python-scripts">Python scripts<a class="anchor-link" href="#Python-scripts">¶</a></h3><ul>
-<li>Create in a text editor or in VS Code with File/New File/Python File or export Jupyter notebook.</li>
-<li>Usually save with extension .py</li>
-<li>Run in VS Code (click run button at top) or at command line with <code>python scriptname.py</code></li>
-<li>Print statements will print to the console (terminal).  Can save files, figures, etc. as in a notebook.</li>
+<li>Scripts are text files with python code.  We can create a script with any text editor.</li>
+<li>In VS Code, we can select File/New File/Python File.</li>
+<li>We can also convert a notebook to a script in VS Code (more later).</li>
+<li>Scripts are usually saved with the file extension .py.</li>
+<li>We can run a script in VS Code (click run button at top) or at command line with <code>python scriptname.py</code></li>
+<li>Print statements will print to the console (terminal).  We can save files, figures, etc. as in a notebook.</li>
 </ul>
 </div>
 </div>
@@ -7508,7 +7510,7 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Example">Example<a class="anchor-link" href="#Example">¶</a></h3><ul>
-<li>Do File/New File/Python file.</li>
+<li>Select File/New File/Python file in VS Code.</li>
 <li>Type the following code into the file.</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -7533,11 +7535,10 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Running-at-the-command-line">Running at the command line<a class="anchor-link" href="#Running-at-the-command-line">¶</a></h3><ul>
-<li>Edit the file to save the dataframe as example2.csv (so we can see that it runs again).</li>
 <li>Save the file as example.py.</li>
 <li>Open a terminal window and navigate to the directory where example.py is saved (use cd directoryname to move around).</li>
 <li>Type <code>python example.py</code> at the command line.</li>
-<li>If command line stuff is new to you, do yourself a favor and spend ten minutes googling "MS DOS shell commands."</li>
+<li>If command line stuff is new to you, do yourself a favor and spend a few minutes googling "MS DOS shell commands."</li>
 </ul>
 </div>
 </div>
@@ -7553,7 +7554,7 @@ main {
 <li>After working in a notebook to write code, it is easy to export the notebook as a script.</li>
 <li>Type the above code into multiple cells in a notebook (just break it up arbitrarily - for illustration).</li>
 <li>Do CTRL-SHFT-P to open the command palette and find "Jupyter: Export to Python Script."</li>
-<li>The comments inserted between what were different cells in the notebook do not affect execution, but you can delete them to clean up the script.</li>
+<li>The comments inserted between what were different cells in the notebook do not affect execution, but we can delete them to clean up the script.</li>
 </ul>
 </div>
 </div>
@@ -7566,10 +7567,11 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Running-code-on-jgsrc1">Running code on jgsrc1<a class="anchor-link" href="#Running-code-on-jgsrc1">¶</a></h3><ul>
-<li>You can connect to jgsrc1 using an ssh client (I use bitvise) or remote desktop (I guess).  You can transfer example.py and run it from a terminal window as we just did.</li>
-<li>You can also run jupyter notebooks in a web browser by going to jupyterhub.rice.edu.</li>
-<li>You can also connect and run either notebooks or scripts using VS Code.</li>
+<li>Any SSH client: bitvise, remote desktop, etc.</li>
+<li>jupyterhub.rice.edu in a browser</li>
+<li>VS Code</li>
 </ul>
+<p>We can run either notebooks or scripts with either jupyterhub or VS Code.</p>
 </div>
 </div>
 </div>
@@ -7599,8 +7601,8 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Virtual-environments">Virtual environments<a class="anchor-link" href="#Virtual-environments">¶</a></h3><ul>
-<li>My understanding is that everyone shares the same environment on jupyterhub.  So, you cannot control what packages or what versions of packages you have.</li>
-<li>For using VS Code or running scripts, you can customize your python environment.</li>
+<li>Everyone shares the same environment on jupyterhub.  So, you cannot control what packages or what versions of packages you have.</li>
+<li>For using notebooks in VS Code or for running scripts, you can customize your python environment.</li>
 <li>In VS Code on jgsrc1, do CTRL-SHFT-P and type "Python: Select Interpreter" and select "Create Virtual Environment"</li>
 <li>You should end up with a new folder in your home directory called .venv.<ul>
 <li>You could do the same thing in a terminal with <code>python -m venv .venv</code></li>
@@ -7640,7 +7642,7 @@ main {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>You can also create new environments on a Windows computer.</li>
-<li>The only change is that you use <code>myenv\Scripts\activate</code> instead of <code>source myenv/bin/activate</code> to activate the environment.</li>
+<li>The only change is that you use <code>.venv\Scripts\activate</code> instead of <code>source .venv/bin/activate</code> to activate the environment.</li>
 </ul>
 </div>
 </div>
@@ -7654,9 +7656,9 @@ main {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Using-tmux-on-linux">Using tmux on linux<a class="anchor-link" href="#Using-tmux-on-linux">¶</a></h3><ul>
 <li>To run things on jgsrc1 that will keep running if you lose your connection (e.g., you close your laptop), run scripts with tmux.</li>
-<li>You can do this from a VS Code connection or using any ssh client (e.g., bitvise).</li>
+<li>You can do this from a VS Code connection or using any ssh client (e.g., bitvise) or a terminal window opened from jupyterhub.</li>
 <li>At the command line type <code>tmux new -s mysessionname</code> to start a new session.</li>
-<li>Activate your environment in the tmux session (if you want) with <code>source myenv/bin/activate</code>.</li>
+<li>Activate your python environment within the tmux session (if you want) with <code>source .venv/bin/activate</code>.</li>
 </ul>
 </div>
 </div>
@@ -7685,11 +7687,11 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Regression">Regression<a class="anchor-link" href="#Regression">¶</a></h2><ul>
+<h2 id="2.-Regression">2. Regression<a class="anchor-link" href="#2.-Regression">¶</a></h2><ul>
 <li>statsmodels implements OLS with HAC standard errors (Newey-West, etc.)</li>
 <li>statsmodels has two flavors of OLS:  formula-based (like R) and array-based.</li>
 <li>linearmodels is a possible Stata replacement with fixed effects, clustered standard errors, 2SLS, SUR, etc.</li>
-<li>use statsmodels for repeated regressions and linearmodels for more complex models.</li>
+<li>use statsmodels for repeated regressions and use linearmodels for more complex models.</li>
 <li>pystout saves regression output to latex (python version of stata out).</li>
 <li>scikit-learn implements OLS, LASSO, and Ridge.</li>
 </ul>
@@ -7718,7 +7720,7 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [83]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
@@ -7736,7 +7738,7 @@ main {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[83]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Index(['wage', 'educ', 'exper', 'tenure', 'nonwhite', 'female', 'married',
        'numdep', 'smsa', 'northcen', 'south', 'west', 'construc', 'ndurman',
@@ -7768,11 +7770,12 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [84]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span> 
 
+<span class="c1"># right-hand side variables</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span>
     <span class="p">[</span>
         <span class="s2">"educ"</span><span class="p">,</span> 
@@ -7784,10 +7787,19 @@ main {
     <span class="p">]</span>
 <span class="p">]</span>
 
+<span class="c1"># include an intercept</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># left-hand side variable</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">wage</span>
+
+<span class="c1"># define the model</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">exog</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">endog</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># fit the model</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># look at results</span>
 <span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -7799,7 +7811,7 @@ main {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[84]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <table class="simpletable">
 <caption>OLS Regression Results</caption>
@@ -7813,10 +7825,10 @@ main {
 <th>Method:</th> <td>Least Squares</td> <th>  F-statistic:       </th> <td>   50.41</td>
 </tr>
 <tr>
-<th>Date:</th> <td>Tue, 10 Sep 2024</td> <th>  Prob (F-statistic):</th> <td>8.27e-49</td>
+<th>Date:</th> <td>Wed, 11 Sep 2024</td> <th>  Prob (F-statistic):</th> <td>8.27e-49</td>
 </tr>
 <tr>
-<th>Time:</th> <td>15:26:48</td> <th>  Log-Likelihood:    </th> <td> -1312.3</td>
+<th>Time:</th> <td>07:52:53</td> <th>  Log-Likelihood:    </th> <td> -1312.3</td>
 </tr>
 <tr>
 <th>No. Observations:</th> <td>   526</td> <th>  AIC:               </th> <td>   2639.</td>
@@ -7880,10 +7892,12 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [86]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># if you want only the main table </span>
+
+<span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -7894,7 +7908,7 @@ main {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[86]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <table class="simpletable">
 <tr>
@@ -7931,10 +7945,14 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [102]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">params</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># getting the main table as a dataframe (generates a future warning that we can ignore for now)</span>
+
+<span class="n">table_as_html</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">as_html</span><span class="p">()</span>
+<span class="n">table_as_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">table_as_html</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">table_as_df</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7944,17 +7962,130 @@ main {
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>C:\Users\kerry\AppData\Local\Temp\ipykernel_22164\2205508342.py:4: FutureWarning: Passing literal html to 'read_html' is deprecated and will be removed in a future version. To read from a literal string, wrap it in a 'StringIO' object.
+  table_as_df = pd.read_html(table_as_html, header=0, index_col=0)[0]
+</pre>
+</div>
+</div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>const      -1.602213
-educ        0.555099
-exper       0.018747
-tenure      0.138829
-nonwhite   -0.065810
-female     -1.742405
-married     0.556565
-dtype: float64</pre>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[102]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>coef</th>
+<th>std err</th>
+<th>t</th>
+<th>P&gt;|t|</th>
+<th>[0.025</th>
+<th>0.975]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>const</th>
+<td>-1.602</td>
+<td>0.731</td>
+<td>-2.192</td>
+<td>0.029</td>
+<td>-3.038</td>
+<td>-0.166</td>
+</tr>
+<tr>
+<th>educ</th>
+<td>0.555</td>
+<td>0.050</td>
+<td>11.090</td>
+<td>0.000</td>
+<td>0.457</td>
+<td>0.653</td>
+</tr>
+<tr>
+<th>exper</th>
+<td>0.019</td>
+<td>0.012</td>
+<td>1.557</td>
+<td>0.120</td>
+<td>-0.005</td>
+<td>0.042</td>
+</tr>
+<tr>
+<th>tenure</th>
+<td>0.139</td>
+<td>0.021</td>
+<td>6.562</td>
+<td>0.000</td>
+<td>0.097</td>
+<td>0.180</td>
+</tr>
+<tr>
+<th>nonwhite</th>
+<td>-0.066</td>
+<td>0.427</td>
+<td>-0.154</td>
+<td>0.877</td>
+<td>-0.904</td>
+<td>0.772</td>
+</tr>
+<tr>
+<th>female</th>
+<td>-1.742</td>
+<td>0.267</td>
+<td>-6.530</td>
+<td>0.000</td>
+<td>-2.267</td>
+<td>-1.218</td>
+</tr>
+<tr>
+<th>married</th>
+<td>0.557</td>
+<td>0.287</td>
+<td>1.941</td>
+<td>0.053</td>
+<td>-0.007</td>
+<td>1.120</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [101]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># save to excel (may need to pip install openpyxl)</span>
+
+<span class="n">table_as_df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">"table.xlsx"</span><span class="p">)</span>
+
+<span class="c1"># save to latex</span>
+
+<span class="n">table_as_df</span><span class="o">.</span><span class="n">to_latex</span><span class="p">(</span><span class="s2">"table.tex"</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -8028,6 +8159,7 @@ dtype: float64</pre>
 <li>Includes intercept by default</li>
 <li>If you don't want intercept use -1 in the formula</li>
 <li>Do model.fit().summary() to get the summary or .params or whatever like before.</li>
+<li>Convert to dataframe and save to excel or latex as before.</li>
 </ul>
 </div>
 </div>
@@ -8102,7 +8234,7 @@ dtype: float64</pre>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># the covariance estimator to use when computing std errors is passed </span>
-<span class="c1"># as an argument to .fit() </span>
+<span class="c1"># as an argument to .fit() in both statsmodels flavors</span>
 
 <span class="n">help</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">)</span>
 </pre></div>
@@ -8401,6 +8533,21 @@ fit(method: "Literal['pinv', 'qr']" = 'pinv', cov_type: "Literal['nonrobust', 'f
 </table>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Indexing-for-linearmodels-data">Indexing for linearmodels data<a class="anchor-link" href="#Indexing-for-linearmodels-data">¶</a></h3><ul>
+<li>The indexing is crucial for fixed effects and clustered standard errors to work.</li>
+<li>The outside index should be the entity (firm, person, ...)</li>
+<li>The inside index should be a time index.</li>
+</ul>
 </div>
 </div>
 </div>
