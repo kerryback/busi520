@@ -25,7 +25,7 @@
     "href": "slides.html",
     "title": "",
     "section": "",
-    "text": "1. Introduction to Python\n2. Pandas\n3. Merges, Visualization, and WRDS\n4. Dates and Time Series and Panel Data\n5. Scripts, Remote SSH, and Regressions"
+    "text": "1. Introduction to Python\n2. Pandas\n2b. Another Pandas\n3. Merges, Visualization, and WRDS\n4. Dates and Time Series and Panel Data\n5. Scripts, Remote SSH, and Regressions"
   },
   {
     "objectID": "assignment2.html",
@@ -46,7 +46,7 @@
     "href": "slides.html#slide-decks-busi-520-python-for-business-research",
     "title": "",
     "section": "",
-    "text": "1. Introduction to Python\n2. Pandas\n3. Merges, Visualization, and WRDS\n4. Dates and Time Series and Panel Data\n5. Scripts, Remote SSH, and Regressions"
+    "text": "1. Introduction to Python\n2. Pandas\n2b. Another Pandas\n3. Merges, Visualization, and WRDS\n4. Dates and Time Series and Panel Data\n5. Scripts, Remote SSH, and Regressions"
   },
   {
     "objectID": "index.html#python-for-business-research-rice-university-fall-2023",

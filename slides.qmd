@@ -5,6 +5,8 @@
 
 [2. Pandas](02-pandas.slides.html){target="_blank"}
 
+[2b. Another Pandas](02b-Another_Intro_Pandas.slides.html){target="_blank"}
+
 [3. Merges, Visualization, and WRDS](03-WRDS.slides.html){target="_blank"}
 
 [4. Dates and Time Series and Panel Data](04-TimeSeries_Panel.slides.html){target="_blank"}
