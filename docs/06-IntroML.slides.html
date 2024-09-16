@@ -8188,8 +8188,11 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Out-of-sample-$R%5E2$">Out of sample $R^2$<a class="anchor-link" href="#Out-of-sample-$R%5E2$">¶</a></h3><p>$$R^2 = \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2}$$</p>
-<p>where $\bar{y}$ is the mean of the out-of-sample data.  This is returned by the score method of a model.</p>
+<h3 id="Out-of-sample-$R%5E2$">Out of sample $R^2$<a class="anchor-link" href="#Out-of-sample-$R%5E2$">¶</a></h3><p>$$R^2 = 1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2}$$</p>
+<ul>
+<li>where $\bar{y}$ is the mean of the out-of-sample data.</li>
+<li>This is returned by the score method of a model.</li>
+</ul>
 </div>
 </div>
 </div>
