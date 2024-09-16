@@ -13,3 +13,5 @@
 
 [5. Scripts, Remote SSH, and Regressions](05-Scripts_Regression.slides.html){target="_blank"}
 
+[6. Intro to Machine Learning](06-IntroML.slides.html){target="_blank"}
+
