@@ -15,3 +15,5 @@
 
 [6. Intro to Machine Learning](06-IntroML.slides.html){target="_blank"}
 
+[7. Tree-Based Models and Classifiers](07_Trees_Classification.slides.html){target="_blank"}
+
