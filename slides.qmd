@@ -17,5 +17,5 @@
 
 [7. Tree-Based Models and Classifiers](07_Trees_Classification.slides.html){target="_blank"}
 
-[8. Web Scraping](08_WebScraping.slides.html){target="_blank"}
+[8. Web Scraping](08-WebScraping.slides.html){target="_blank"}
 
