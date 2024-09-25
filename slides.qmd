@@ -19,3 +19,5 @@
 
 [8. Web Scraping](08-WebScraping.slides.html){target="_blank"}
 
+[9. Numerical Programming](09-NumericalProgramming.slides.html){target="_blank"}
+
