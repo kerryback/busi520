@@ -21,3 +21,7 @@
 
 [9. Numerical Programming](09-NumericalProgramming.slides.html){target="_blank"}
 
+[10a. Dynamic Programming](10a-DynamicProgramming.slides.html){target="_blank"}
+
+[10b. Neural Networks](10b-NeuralNetworks.slides.html){target="_blank"}
+
