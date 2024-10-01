@@ -40,7 +40,7 @@ There will be weekly assignments.  You are allowed to google and/or use generati
 9. Tree models for machine learning: scikit-learn, xgboost
 10. Neural networks for machine learning: pytorch
 11. Web scraping: beautiful soup, selenium
-12. Reinforcement learning
+
 
 #### Course Preliminaries
 

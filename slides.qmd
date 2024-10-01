@@ -25,5 +25,7 @@
 
 [10. Neural Networks](10-NeuralNetworks.slides.html){target="_blank"}
 
-[11. More Neural Networks](10-MoreNeuralNetworks.slides.html){target="_blank"}
+[11. More Neural Networks](11-MoreNeuralNetworks.slides.html){target="_blank"}
+
+[11. Odds and Ends](11-OddsAndEnds.slides.html){target="_blank"}
 
