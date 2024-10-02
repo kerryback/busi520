@@ -7790,11 +7790,12 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="OLS">OLS<a class="anchor-link" href="#OLS">¶</a></h3><ul>
+<li>$N$ observations, $K$ regressors, $K&lt;N$</li>
 <li>Demean $X$ and $y$, with no constant column in $X$</li>
 <li>$(1/N)X'y$ is sample covariance of $y$ with $x$'s.</li>
 <li>$(1/N)X'X$ is sample covariance matrix of $x$'s.</li>
 <li>OLS is
-$$(\text{sample cov of $X$})^{-1} \times \text{sample cov of $X$ with $y$}$$</li>
+$$\hat\beta = (\text{sample cov of $X$})^{-1} \times \text{sample cov of $X$ with $y$}$$</li>
 </ul>
 </div>
 </div>
@@ -7808,11 +7809,11 @@ $$(\text{sample cov of $X$})^{-1} \times \text{sample cov of $X$ with $y$}$$</li
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Why-ridge-is-called-ridge">Why ridge is called ridge<a class="anchor-link" href="#Why-ridge-is-called-ridge">¶</a></h3><ul>
 <li>Ridge is
-$$\min \frac{1}{2}(y-X\beta)'(y-X\beta) + \lambda \beta'\beta$$</li>
+$$\min \frac{1}{2}(y-X\hat\beta)'(y-X\hat\beta) + \frac{1}{2}\lambda \hat\beta'\hat\beta$$</li>
 <li>FOC is
-$$X'(y-X\beta) - \lambda \beta = 0$$</li>
+$$X'(y-X\hat\beta) - \lambda \hat\beta = 0$$</li>
 <li>Solution is
-$$\beta = (X'X + \lambda I)^{-1}X'y$$</li>
+$$\hat\beta = (X'X + \lambda I)^{-1}X'y$$</li>
 <li>So replace sample cov matrix of $X$ with $(1/N)(X'X + \lambda I)$.</li>
 <li>$\lambda I$ adds a ridge to the diagonal of the sample cov matrix of $X$.</li>
 </ul>
@@ -7828,13 +7829,13 @@ $$\beta = (X'X + \lambda I)^{-1}X'y$$</li>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Singular-value-decomposition">Singular value decomposition<a class="anchor-link" href="#Singular-value-decomposition">¶</a></h3><p>Take the singular value decomposition $X = UDV'$.</p>
 <ul>
-<li>U is $N \times K$, D is $K \times N$, V is $N \times K$.</li>
+<li>U is $N \times N$, D is $N \times K$, V is $K \times K$.</li>
 <li>U and V are orthogonal matrices.<ul>
-<li>Columns of U are the eigenvectors of $XX'$ corresponding to nonzero eigenvalues.</li>
-<li>Columns of V are the eigenvectors of $X'X$.</li>
+<li>Columns of U are eigenvectors of $XX'$.</li>
+<li>Columns of V are eigenvectors of $X'X$.</li>
 </ul>
 </li>
-<li>First $K$ columns of $D$ is a diagonal matrix containing the nonzero singular values of $X$.  Other columns are zero.</li>
+<li>First $K$ rows of $D$ is a diagonal matrix containing the nonzero singular values of $X$.  Other rows are zero.</li>
 </ul>
 </div>
 </div>
@@ -7846,10 +7847,45 @@ $$\beta = (X'X + \lambda I)^{-1}X'y$$</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="OLS-again">OLS again<a class="anchor-link" href="#OLS-again">¶</a></h3><ul>
-<li>$X'X = VD^2V'$.  This is the diagonalization of the nonsingular matrix $X'X$.</li>
-<li>The elements of $D^2$ are the eigenvalues of $X'X$.</li>
-<li>$(X'X)^{-1} = VD^{-2}V'$.</li>
+<p>$$\begin{pmatrix}
+X_1 &amp; \cdots &amp; X_K
+\end{pmatrix} = 
+\begin{pmatrix}
+U_1 &amp; \cdots &amp; U_N
+\end{pmatrix}
+\begin{pmatrix} 
+d_1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; d_2 &amp; 0 &amp; \cdots &amp; 0\\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\ 
+0 &amp; 0 &amp; 0 &amp; \cdots &amp; d_K \\
+0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 
+\end{pmatrix} 
+\begin{pmatrix}
+V_1'\\
+\vdots \\
+V_K'
+\end{pmatrix}
+$$</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>Let $\hat U$ denote the $N \times K$ matrix consisting of the first $K$ columns of $U$.</li>
+<li>Let $\hat D$ denote the first $K$ rows of $D$ (the nonzero rows).</li>
+<li>Then, if we multiply $UDV'$ using the fact that
+$$D = \begin{pmatrix} \hat D \\ 0 \end{pmatrix}$$
+we get
+$$X = UDV' = \hat U \hat D V'$$</li>
+<li>$X = \hat U\hat D V'$ is called the compact SVD of $X$.</li>
 </ul>
 </div>
 </div>
@@ -7861,16 +7897,10 @@ $$\beta = (X'X + \lambda I)^{-1}X'y$$</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Ridge-again">Ridge again<a class="anchor-link" href="#Ridge-again">¶</a></h3><ul>
-<li>We can write
-$$(X'X + \lambda I) = VD^2V' + \lambda VV' = V(D^2 + \lambda I)V'$$</li>
-<li>This implies
-$$(X'X + \lambda I)^{-1} = V(D^2 + \lambda I)^{-1}V'$$</li>
-<li>The matrix $(D^2 + \lambda I)^{-1}$ is diagonal with
-$$\frac{1}{d_i^2 + \lambda}$$
-on the diagonal.</li>
-<li>So ridge works by inflating the variances of the eigenvectors of the sample cov matrix of $X$.</li>
-<li>The proportional inflation ($(d_i^2 + \lambda)/d_i^2$) is larger for eigenvectors with smaller eigenvalues.</li>
+<ul>
+<li>Because $X = \hat U \hat U D V'$ and $U$ is orthogonal, we have $X'X = V\hat D^2V'$.</li>
+<li>This is the diagonalization of the nonsingular matrix $X'X$.</li>
+<li>The $d_i^2$ are the eigenvalues of $X'X$.</li>
 </ul>
 </div>
 </div>
@@ -7882,13 +7912,62 @@ on the diagonal.</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="OLS-and-Ridge-predictions">OLS and Ridge predictions<a class="anchor-link" href="#OLS-and-Ridge-predictions">¶</a></h3><ul>
-<li>OLS:
-$$X\beta = UDV'V(D^2)^{-1}V'VDU'y = UU'y = \sum_{i=1}^K u_i(u_i'y)$$</li>
-<li>Ridge:
-$$X\beta = UDV'V(D^2 \lambda I)^{-1}V'VDU'y$$
-$$ = UD^2(D^2 \lambda I)^{-1}U'y = \sum_{i=1}^K u_i\frac{d_i^2}{d_i^2 + \lambda}(u_i'y)$$</li>
-<li>Ridge can be seen as scaling down the covariances - proportional effect is larger for lower variance eigenvectors.</li>
+<ul>
+<li>Because $X = \hat U \hat D V'$, we have $\hat U = XV\hat{D}^{-1}$.</li>
+<li>So the first $K$ columns of $U$ are linear combination of the columns of $X$</li>
+<li>The change of variables $X \mapsto \hat U$ is a conversion to $K$ orthogonal variables with unit variances.</li>
+<li>Change of variables $X \mapsto \hat U \hat D$ is a conversion to $K$ orthogonal variables with variances equal to $d_i^2$.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="OLS-predictions">OLS predictions<a class="anchor-link" href="#OLS-predictions">¶</a></h3><ul>
+<li>We have $X'X = V\hat D^2V'$, so $(X'X)^{-1} = V\hat D^{-2} V'$</li>
+<li>For OLS,
+$$X \hat\beta = XV\hat D^{-2}V'X'y = \hat U \hat D \hat D^{-2} \hat D \hat U'y = \sum_{i=1}^K (\U_i'y) U_i$$</li>
+<li>This just repeats what you know: multivariate betas = univariate betas after you orthogonalize the regressors, and if the regressors have unit variances, then betas = covariances.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Ridge-predictions">Ridge predictions<a class="anchor-link" href="#Ridge-predictions">¶</a></h3><ul>
+<li>We have
+$$X'X + \lambda I = V\hat D^2V' + \lambda VV' = V(\hat D^2 + \lambda I)V'$$</li>
+<li>So
+$$X \hat\beta = \hat U \hat D (\hat D^2 + \lambda I)^{-1} \hat D \hat U' y = \sum_{i=1}^K \frac{d_i^2}{d_i^2 + \lambda} (U_i'y) U_i$$</li>
+<li>So, the regression is as if the $U_i$ had variances equal to
+$$\frac{d_i^2 + \lambda}{d_i^2}$$</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="What-if-there-are-more-regressors-than-observations?">What if there are more regressors than observations?<a class="anchor-link" href="#What-if-there-are-more-regressors-than-observations?">¶</a></h3><ul>
+<li>In the singular value decomposition, $D$ has $N$ nonzero columns and $K-N$ zero columns when $K&gt;N$.</li>
+<li>And $X = UDV' = U\hat D \hat V'$ where $\hat D$ is $N \times N$ and $\hat V$ is the first $N$ columns of $V$.</li>
+<li>But we get the same result for the predictions:
+$$X\hat\beta =\sum_{i=1}^N \frac{d_i^2}{d_i^2 + \lambda} (U_i'y) U_i$$</li>
+<li>Here, the $U_i$ are $N$ linearly independent (and orthogonal and unit variance) regressors constructed from the $K&gt;N$ regressors.</li>
 </ul>
 </div>
 </div>
