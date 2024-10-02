@@ -7792,10 +7792,9 @@ main {
 <h3 id="OLS">OLS<a class="anchor-link" href="#OLS">¶</a></h3><ul>
 <li>$N$ observations, $K$ regressors, $K&lt;N$</li>
 <li>Demean $X$ and $y$, with no constant column in $X$</li>
-<li>$(1/N)X'y$ is sample covariance of $y$ with $x$'s.</li>
-<li>$(1/N)X'X$ is sample covariance matrix of $x$'s.</li>
 <li>OLS is
-$$\hat\beta = (\text{sample cov of $X$})^{-1} \times \text{sample cov of $X$ with $y$}$$</li>
+$$\hat\beta = (X'X)^{-1} = ((1/N)X'X)^{-1}((1/N)X'y)$$
+$$ = (\text{sample cov of $X$})^{-1} \times \text{sample cov of $X$ with $y$}$$</li>
 </ul>
 </div>
 </div>
@@ -7808,14 +7807,30 @@ $$\hat\beta = (\text{sample cov of $X$})^{-1} \times \text{sample cov of $X$ wit
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Why-ridge-is-called-ridge">Why ridge is called ridge<a class="anchor-link" href="#Why-ridge-is-called-ridge">¶</a></h3><ul>
-<li>Ridge is
-$$\min \frac{1}{2}(y-X\hat\beta)'(y-X\hat\beta) + \frac{1}{2}\lambda \hat\beta'\hat\beta$$</li>
+<li>Ridge is obtained by
+$$\min \quad \frac{1}{2}(y-X\hat\beta)'(y-X\hat\beta) + \frac{1}{2}\lambda \hat\beta'\hat\beta$$</li>
 <li>FOC is
 $$X'(y-X\hat\beta) - \lambda \hat\beta = 0$$</li>
 <li>Solution is
 $$\hat\beta = (X'X + \lambda I)^{-1}X'y$$</li>
 <li>So replace sample cov matrix of $X$ with $(1/N)(X'X + \lambda I)$.</li>
 <li>$\lambda I$ adds a ridge to the diagonal of the sample cov matrix of $X$.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Bias-variance-tradeoff">Bias-variance tradeoff<a class="anchor-link" href="#Bias-variance-tradeoff">¶</a></h3><ul>
+<li>Ridge predictions are
+$$\hat y = X\hat\beta = X(X'X + \lambda I)^{-1}X'y$$</li>
+<li>If $y=X\beta +$ conditional-mean-zero noise, then OLS is unbiased</li>
+<li>Ridge is biased but could have lower variance</li>
 </ul>
 </div>
 </div>
@@ -7879,9 +7894,9 @@ $$</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>Let $\hat U$ denote the $N \times K$ matrix consisting of the first $K$ columns of $U$.</li>
 <li>Let $\hat D$ denote the first $K$ rows of $D$ (the nonzero rows).</li>
-<li>Then, if we multiply $UDV'$ using the fact that
+<li>Let $\hat U$ denote the $N \times K$ matrix consisting of the first $K$ columns of $U$.</li>
+<li>Then, if we multiply out $UDV'$ using the fact that
 $$D = \begin{pmatrix} \hat D \\ 0 \end{pmatrix}$$
 we get
 $$X = UDV' = \hat U \hat D V'$$</li>
@@ -7898,7 +7913,7 @@ $$X = UDV' = \hat U \hat D V'$$</li>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>Because $X = \hat U \hat U D V'$ and $U$ is orthogonal, we have $X'X = V\hat D^2V'$.</li>
+<li>Because $X =  \hat U \hat D V'$ and $U$ is orthogonal, we have $X'X = V\hat D^2V'$.</li>
 <li>This is the diagonalization of the nonsingular matrix $X'X$.</li>
 <li>The $d_i^2$ are the eigenvalues of $X'X$.</li>
 </ul>
@@ -7914,7 +7929,7 @@ $$X = UDV' = \hat U \hat D V'$$</li>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>Because $X = \hat U \hat D V'$, we have $\hat U = XV\hat{D}^{-1}$.</li>
-<li>So the first $K$ columns of $U$ are linear combination of the columns of $X$</li>
+<li>So the first $K$ columns of $U$ are linear combinations of the columns of $X$</li>
 <li>The change of variables $X \mapsto \hat U$ is a conversion to $K$ orthogonal variables with unit variances.</li>
 <li>Change of variables $X \mapsto \hat U \hat D$ is a conversion to $K$ orthogonal variables with variances equal to $d_i^2$.</li>
 </ul>
@@ -7931,7 +7946,7 @@ $$X = UDV' = \hat U \hat D V'$$</li>
 <h3 id="OLS-predictions">OLS predictions<a class="anchor-link" href="#OLS-predictions">¶</a></h3><ul>
 <li>We have $X'X = V\hat D^2V'$, so $(X'X)^{-1} = V\hat D^{-2} V'$</li>
 <li>For OLS,
-$$X \hat\beta = XV\hat D^{-2}V'X'y = \hat U \hat D \hat D^{-2} \hat D \hat U'y = \sum_{i=1}^K (\U_i'y) U_i$$</li>
+$$X \hat\beta = XV\hat D^{-2}V'X'y = \hat U \hat D \hat D^{-2} \hat D \hat U'y = \sum_{i=1}^K (U_i'y) U_i$$</li>
 <li>This just repeats what you know: multivariate betas = univariate betas after you orthogonalize the regressors, and if the regressors have unit variances, then betas = covariances.</li>
 </ul>
 </div>
