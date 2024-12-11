@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>assignment4</title>
+<title>assignments</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -108,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Slides</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./assignments.html" rel="" target="">
+    <a class="nav-link active" href="./assignments.html" rel="" target="" aria-current="page">
  <span class="menu-text">Assignments</span></a>
   </li>  
   <li class="nav-item">
@@ -136,26 +102,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="assignment-4-busi-520-python-for-business-research-jones-graduate-school-of-business-rice-university" class="level2">
-<h2 class="anchored" data-anchor-id="assignment-4-busi-520-python-for-business-research-jones-graduate-school-of-business-rice-university">Assignment 4<br>BUSI 520: Python for Business Research<br>Jones Graduate School of Business<br>Rice University<br></h2>
-<p>Submit a Jupyter notebook. Answer the “what do you learn” questions in markdown cells.</p>
-<ol type="1">
-<li><p>Create a figure or figures to show the different distributions of wages for white males, white females, nonwhite males, and nonwhite females in the WAGES1 dataset. What do you learn from the figure.</p></li>
-<li><p>Create a figure or figures to show how wage depends on education for white males, white females, nonwhite males, and nonwhite females in the WAGES1 dataset. Change the 0-1 dummy variables to more informative names so the legend will be easier to interpret. What do you learn from the figure?</p></li>
-<li><p>Create a pairplot of educ and wage. Use hue=“female.” Change the dummy variable to more informative names so the legend will be easier to interpret. Add regression lines to the scatterplot in a different color than the points. Create it as a lower diagonal matrix to reduce the clutter (i.e., only one scatter plot). Put educ on the x-axis of the scatter plot. What do you learn from the figure?</p></li>
-<li><p>For 3d plotting, we used code like the following:</p></li>
-</ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode .p code-with-copy"><code class="sourceCode pascal"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a = np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>b = np.linspace(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">11</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>A, B = np.meshgrid(a, b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Look at A and B and explain what they are. Define</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode .p code-with-copy"><code class="sourceCode pascal"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>C = A + B</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Create a filled contour plot with three labeled contour lines at the values C=15, C=20, and C=25.</p>
-<ol start="5" type="1">
-<li><p>The file option_sims.csv contains simulations from a model of market maker profits and stock and option order imbalances. Produce a bivariate density plot of the stock and option order imbalances. What do you learn from the figure?</p></li>
-<li><p>Bin the stock and option order imbalances into a 100 x 100 grid and compute the average market maker profits in each cell. Use a heatmap to show the average market maker profits as a function of the stock and option order imbalances. What do you learn from the figure?</p></li>
-<li><p>Create a stacked bar chart to show the different distributions of tips for males and females in the seaborn tips dataset. What do you learn from the figure?</p></li>
-</ol>
+<section id="assignments-busi-520-python-for-business-research" class="level2">
+<h2 class="anchored" data-anchor-id="assignments-busi-520-python-for-business-research">Assignments<br>BUSI 520: Python for Business Research<br><br><img src="RiceBusiness-transparent-logo-sm.png" height="50"><br></h2>
+<p><a href="assignment1.html" target="_blank">1. Intro to Python</a></p>
+<p><a href="assignment2.html" target="_blank">2. Numpy and Pandas</a></p>
+<p><a href="assignment3.html" target="_blank">3. More Pandas</a></p>
+<p><a href="assignment4.html" target="_blank">4. Visualizaton</a></p>
+<p><a href="assignment5.html" target="_blank">5. Scientific Programming</a></p>
+<p><a href="assignment6.html" target="_blank">6. Machine Learning</a></p>
 
 
 </section>

@@ -33,7 +33,7 @@ website:
         
 format: 
   html:
-    theme: cosmo
+    theme: yeti
     scss: styles.css
     
    
