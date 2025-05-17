@@ -31,10 +31,11 @@ website:
       - text: Datasets 
         file: datasets.qmd
         
-format: 
+format:
   html:
-    theme: yeti
-    scss: styles.css
+    theme:
+      light: flatly
+      dark: superhero
     
    
 
